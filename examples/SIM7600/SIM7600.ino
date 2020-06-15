@@ -79,10 +79,10 @@ void setup()
     // The time of active low level impulse of PWRKEY pin to power on module , type 500 ms
     pinMode(PWR_PIN, OUTPUT);
     digitalWrite(PWR_PIN, HIGH);
-    delay(500);    
+    delay(500);
     digitalWrite(PWR_PIN, LOW);
 
-    // IND_PIN: It is connected to the SIM7600 status Pin, 
+    // IND_PIN: It is connected to the SIM7600 status Pin,
     // through which you can know whether the module starts normally.
     pinMode(IND_PIN, INPUT);
 
@@ -117,6 +117,7 @@ void setup()
 
 
 #if 0
+    //https://github.com/vshymanskyy/TinyGSM/pull/405
     uint8_t mode = modem.getGNSSMode();
     Serial.print("Get GNSS Mode:");
     Serial.println(mode);
@@ -130,11 +131,11 @@ void setup()
      *      2 : GALILEO
      *      3 : QZSS
      *  dpo_mode :
-     *      0 disable  
+     *      0 disable
      *      1 enable
      */
     Serial.print("Set GNSS Mode BEIDOU :");
-    String res = modem.setGNSSMode(1,1);
+    String res = modem.setGNSSMode(1, 1);
     Serial.println(res);
     delay(1000);
 #endif
