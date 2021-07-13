@@ -1,7 +1,8 @@
 <h1 align = "center">LilyGO T-PCIE</h1>
 
 ## Precautions:
-1.Because SIM868 has different firmware versions, using 1418B05SIM868M32 version requires uncomment **#define TINY_GSM_GNSS_BAUD_9600**.Use the AtDebug.ino sketch to send AT+CGMR to view version information.
+1.Due to SIM868 version differences, if version is 6R(as shown below), it should be enabled **#define TINY_GSM_GNSS_BAUD_9600**.Otherwise it should be commented out
+![](../../image/6R.png)
 
 
 
