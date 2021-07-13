@@ -1,6 +1,6 @@
 #define TINY_GSM_MODEM_SIM868
 
-// Set serial for debug console (to the Serial Monitor, default speed 115200)
+//Set serial for debug console (to the Serial Monitor, default speed 115200)
 #define SerialMon Serial
 
 // Set serial for AT commands (to the module)
@@ -8,14 +8,19 @@
 #define SerialAT Serial1
 
 // See all AT commands, if wanted
-// #define DUMP_AT_COMMANDS
+#define DUMP_AT_COMMANDS
 
 // Define the serial console for debug prints, if needed
 #define TINY_GSM_DEBUG SerialMon
 
+
+//Set GNSS baud rate to 9600
+//#define  TINY_GSM_GNSS_BAUD_9600
+
+
 /*
- * Tests enabled
- */
+   Tests enabled
+*/
 #define TINY_GSM_TEST_GPRS true
 #define TINY_GSM_TEST_WIFI false
 #define TINY_GSM_TEST_CALL false
@@ -26,6 +31,9 @@
 // powerdown modem after tests
 #define TINY_GSM_POWERDOWN true
 
+
+
+
 // set GSM PIN, if any
 #define GSM_PIN ""
 
@@ -33,6 +41,10 @@
 const char apn[]  = "YourAPN";
 const char gprsUser[] = "";
 const char gprsPass[] = "";
+
+
+
+
 
 #include <TinyGsmClient.h>
 #include <Ticker.h>
@@ -59,6 +71,9 @@ Ticker tick;
 #define POWER_PIN               25
 #define IND_PIN                 36
 
+// Range to attempt to autobaud
+#define GSM_AUTOBAUD_MIN 9600
+#define GSM_AUTOBAUD_MAX 115200
 
 void setup()
 {
@@ -97,21 +112,22 @@ void setup()
 
     DBG("Wait...");
 
+
     delay(3000);
 
     SerialAT.begin(UART_BAUD, SERIAL_8N1, PIN_RX, PIN_TX);
 
-
-    // Uncomment below will perform loopback test
-    // while (1) {
-    //     while (SerialMon.available()) {
-    //         SerialAT.write(SerialMon.read());
-    //     }
-    //     while (SerialAT.available()) {
-    //         SerialMon.write(SerialAT.read());
-    //     }
-    // }
-
+/*
+    //    // Uncomment below will perform loopback test
+  while (1) {
+    while (SerialMon.available()) {
+      SerialAT.write(SerialMon.read());
+    }
+    while (SerialAT.available()) {
+      SerialMon.write(SerialAT.read());
+    }
+  }
+*/
     // Restart takes quite some time
     // To skip it, call init() instead of restart()
     DBG("Initializing modem...");
@@ -123,6 +139,8 @@ void setup()
 
 void loop()
 {
+
+
     // Restart takes quite some time
     // To skip it, call init() instead of restart()
     DBG("Initializing modem...");
@@ -196,14 +214,32 @@ void loop()
     }
 #endif
 
+
 #if TINY_GSM_TEST_GPS
 
     // Set SIM7000G GPIO4 HIGH ,Open GPS power
     // CMD:AT+SGPIO=0,4,1,1
     // modem.sendAT("+CGPIO=0,57,1,1");
+    //delay(500);
     modem.sendAT("+CGPIO=0,58,1,1");
+    if (modem.waitResponse() == 1) {
+        DBG("+CGPIO=0,58,1,1  OK");
+    }
     modem.sendAT("+CGPIO=0,57,1,1");
+    if (modem.waitResponse() == 1) {
+        DBG("+CGPIO=0,57,1,1  OK");
+    }
     modem.enableGPS();
+
+#ifdef TINY_GSM_GNSS_BAUD_9600
+    delay(500);
+    modem.sendAT("+CGNSIPR=9600");
+    if (modem.waitResponse() != 1) {
+        DBG("+CGNSIPR=9600  Faill");
+    }
+#else
+#endif
+
     float lat,  lon;
     while (1) {
         if (modem.getGPS(&lat, &lon)) {
@@ -213,11 +249,19 @@ void loop()
             });
             break;
         } else {
-            Serial.print("getGPS ");
-            Serial.println(millis());
+            //  Serial.print("getGPS ");
+            //  Serial.println(millis());
+            //DBG("getGPS");
+            String gps_raw = modem.getGPSraw();
+            DBG("GPS/GNSS Based Location String:", gps_raw);
         }
-        delay(2000);
+        delay(1000);
     }
+    DBG("Retrieving GPS/GNSS/GLONASS location again as a string");
+    String gps_raw = modem.getGPSraw();
+    DBG("GPS/GNSS Based Location String:", gps_raw);
+
+    DBG("Disabling GPS");
     modem.disableGPS();
 
     // Set SIM7000G GPIO4 HIGH ,Close GPS power
