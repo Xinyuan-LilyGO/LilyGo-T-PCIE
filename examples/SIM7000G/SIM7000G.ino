@@ -218,7 +218,10 @@ void loop()
     // Set SIM7000G GPIO4 HIGH ,Open GPS power
     // CMD:AT+SGPIO=0,4,1,1
     modem.sendAT("+SGPIO=0,4,1,1");
-
+    if (modem.waitResponse(20000L) != 1) {
+        DBG(" AT+SGPIO=0,4,1,1 faill");
+        return ;
+    }
     modem.enableGPS();
     float lat,  lon;
     while (1) {
