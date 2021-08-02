@@ -3,9 +3,9 @@
 
 <h2 align = "left">Product 📷:</h2>
 
-|  Examples  |  Product  Link   |        Schematic        | Status |
-| :--------: | :--------------: | :---------------------: | :----: |
-| [T-PCIE]() | [Product link]() | [Schematic](Schematic/) |   ✅    |
+| Examples |  Product  Link   | Status |
+| :------: | :--------------: | :----: |
+|  T-PCIE  | [Product link]() |   ✅    |
 
 
 ## 1.Steps:
