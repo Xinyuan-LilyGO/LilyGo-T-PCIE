@@ -16,7 +16,7 @@
     Follow the above steps to install the driver for the remaining ports that are not installed.
     ![](../image/update_simxxxx_7.png)
 
-5. Unzip [upgrade_tool]([../image/update_simxxxx_firmware/USB_driver/](https://github.com/Xinyuan-LilyGO/LilyGo-T-PCIE/tree/master/update_simxxxx_firmware/upgrade_tool/SIM7080_SIM7500_SIM7600_SIM7900_SIM8200%20QDL%20V1.58%20Only%20for%20Update))`SIM7080_SIM7500_SIM7600_SIM7900_SIM8200 QDL V1.58 Only for Update.rar`
+5. [upgrade_tool](https://github.com/Xinyuan-LilyGO/LilyGo-T-PCIE/tree/master/update_simxxxx_firmware/upgrade_tool/SIM7080_SIM7500_SIM7600_SIM7900_SIM8200%20QDL%20V1.58%20Only%20for%20Update)
 6. Open `sim7080_sim7500_sim7600_sim7900_sim8200 qdl v1.58 only for update.exe` 
 7.  Open the upgrade tool and follow the diagram below 
 
