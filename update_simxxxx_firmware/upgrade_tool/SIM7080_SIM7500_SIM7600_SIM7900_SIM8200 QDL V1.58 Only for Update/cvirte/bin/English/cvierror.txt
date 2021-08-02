@@ -1,0 +1,1665 @@
+<?xml version="1.0"?>
+<nidocument>
+<nierror code="-2147220991">
+The type passed is not a valid Automation data type.
+</nierror>
+<nierror code="-2147220990">
+The type passed not a valid return type.
+</nierror>
+<nierror code="-2147220989">
+Use CAVT_ constants for data types instead of VT_ constants.
+</nierror>
+<nierror code="-2147220988">
+The number of dimensions in the Safe Array does not match the number required by this function.
+</nierror>
+<nierror code="-2147220987">
+The Safe Array type does not match the requested type.
+</nierror>
+<nierror code="-2147220986">
+The Variant does not contain a Safe Array.
+</nierror>
+<nierror code="-2147220985">
+The return value parameter must not be NULL.
+</nierror>
+<nierror code="-2147220984">
+Could not load the CVI Automation Support DLL (cviauto.dll).
+</nierror>
+<nierror code="-2147220983">
+The CVI Automation Support DLL (cviauto.dll) version does not match the import library.
+</nierror>
+<nierror code="-2147220982">
+Unable to create a required mutex.
+</nierror>
+<nierror code="-2147220981">
+You can call this function only from the thread that created the CAObjHandle.
+</nierror>
+<nierror code="-2147220980">
+The object has no registered event callbacks.
+</nierror>
+<nierror code="-2147220979">
+Invalid callback ID.
+</nierror>
+<nierror code="-2147220978">
+This event already has a registered callback.
+</nierror>
+<nierror code="-2147220977">
+This event does not have a registered callback.
+</nierror>
+<nierror code="-2147220976">
+Invalid event method index.
+</nierror>
+<nierror code="-2147220975">
+Invalid ActiveX interface pointer.
+</nierror>
+<nierror code="-2147220974">
+The automation server was not initialized.
+</nierror>
+<nierror code="-2147220973">
+The module type is invalid.
+</nierror>
+<nierror code="-2147220972">
+This operation is only permitted on in-process (DLL) servers.
+</nierror>
+<nierror code="-2147220971">
+The server was not launched for automation.
+</nierror>
+<nierror code="-2147220970">
+Aggregation is only allowed during object creation.
+</nierror>
+<nierror code="-2147220969">
+This interface is already implemented or aggregated by this object.
+</nierror>
+<nierror code="-2147220968">
+Server initialization error.
+</nierror>
+<nierror code="-2147220967">
+The class is not registered internally with the Automation Support DLL.
+</nierror>
+<nierror code="-2147220966">
+Invalid error code.
+</nierror>
+<nierror code="-2147220965">
+Invalid error code.
+</nierror>
+<nierror code="-2147220964">
+Invalid error code.
+</nierror>
+<nierror code="-2147220963">
+Invalid error code.
+</nierror>
+<nierror code="-2147220962">
+Invalid error code.
+</nierror>
+<nierror code="-2147220961">
+Invalid error code.
+</nierror>
+<nierror code="-2147220960">
+A user interface library error occurred.
+</nierror>
+<nierror code="-2147220959">
+This object does not implement the ISupportErrorInfo interface.
+</nierror>
+<nierror code="-2147220958">
+This interface does not support ErrorInfo.
+</nierror>
+<nierror code="-2147220957">
+This function cannot be called from the server or object callback.
+</nierror>
+<nierror code="-2147220224">
+Could not load the DataSocket Support DLL
+</nierror>
+<nierror code="-2147220223">
+The DLL version does not match the import library
+</nierror>
+<nierror code="-2147220222">
+Cannot create DataSocket for buffered operation in 'Multithreaded Apartment' thread with event model
+</nierror>
+<nierror code="-2147220221">
+The DataSocket operation timed-out
+</nierror>
+<nierror code="-2147220220">
+Cannot access polling queue in event model
+</nierror>
+<nierror code="-2147219968">
+The index passed in is invalid.
+</nierror>
+<nierror code="-2147219967">
+The path passed in is invalid.
+</nierror>
+<nierror code="-2147219966">
+The XML document is invalid.
+</nierror>
+<nierror code="-5001">
+Could Not Open File For Reading
+</nierror>
+<nierror code="-5002">
+Error Reading From File
+</nierror>
+<nierror code="-5003">
+Could Not Find Unused Temporary File Name
+</nierror>
+<nierror code="-5004">
+Could Not Create Temporary File
+</nierror>
+<nierror code="-5005">
+Incorrect File Format
+</nierror>
+<nierror code="-5006">
+Unexpected End Of File
+</nierror>
+<nierror code="-5021">
+Invalid Integer Number
+</nierror>
+<nierror code="-5022">
+Invalid Unsigned Integer Number
+</nierror>
+<nierror code="-5023">
+Invalid Floating Point Number
+</nierror>
+<nierror code="-5024">
+Invalid Boolean Value
+</nierror>
+<nierror code="-5025">
+Missing Section
+</nierror>
+<nierror code="-5026">
+Missing Item
+</nierror>
+<nierror code="-5027">
+Unrecognized Value
+</nierror>
+<nierror code="-5050">
+Could not perform requested action because of an operation currently in progress
+</nierror>
+<nierror code="-5051">
+Too many items
+</nierror>
+<nierror code="-5052">
+Duplicate item or value
+</nierror>
+<nierror code="-5060">
+Panel is not a child panel of the correct panel
+</nierror>
+<nierror code="-5065">
+Could not open Registry Key
+</nierror>
+<nierror code="-5066">
+Could not set data for Registry Value
+</nierror>
+<nierror code="-5067">
+Could not access Registry Value
+</nierror>
+<nierror code="-5068">
+Registry Value does not exist
+</nierror>
+<nierror code="-5069">
+Incorrect type for Registry Value
+</nierror>
+<nierror code="-5070">
+Registry Key does not exist
+</nierror>
+<nierror code="-5071">
+Out of memory
+</nierror
+<nierror code="-5072">
+Could not remove Registry Key
+</nierror>
+<nierror code="-5073">
+Cannot remove a Registry Key containing subkeys
+</nierror>
+<nierror code="-5074">
+Could not remove Registry Value
+</nierror>
+<nierror code="-5075">
+Invalid display item
+</nierror>
+<nierror code="-5080">
+Message-callback not installed
+</nierror>
+<nierror code="-5081">
+Message-callback already installed.
+</nierror>
+<nierror code="-5082">
+Panel not top-level.
+</nierror>
+<nierror code="-5083">
+Panel does not have a callback function.
+</nierror>
+<nierror code="-5084">
+Drag-and-Drop not enabled for panel
+</nierror>
+<nierror code="-5085">
+Invalid message-callback execution-mode
+</nierror>
+<nierror code="-5087">
+No menu for Tray Icon
+</nierror>
+<nierror code="-5088">
+Invalid item for Tray Icon popup menu
+</nierror>
+<nierror code="-5089">
+Invalid Tray Icon
+</nierror>
+<nierror code="-5090">
+Could not load icon from file
+</nierror>
+<nierror code="-5093">
+Could not load required system DLL
+</nierror>
+<nierror code="-5094">
+Required function not found in system DLL
+</nierror>
+<nierror code="-5095">
+Unknown system error
+</nierror>
+<nierror code="-5096">
+There is no application associated with the given file name extension
+</nierror>
+<nierror code="-5200">
+The hash table is invalid.
+</nierror>
+<nierror code="-5201">
+The key type is invalid.
+</nierror>
+<nierror code="-5202">
+The key size is invalid.
+</nierror>
+<nierror code="-5203">
+The value size is invalid.
+</nierror>
+<nierror code="-5204">
+The key argument is invalid.
+</nierror>
+<nierror code="-5205">
+The value argument is invalid.
+</nierror>
+<nierror code="-5206">
+A null pointer was passed when a non-null pointer was expected.
+</nierror>
+<nierror code="-5207">
+The buffer is not large enough to hold the data.
+</nierror>
+<nierror code="-5208">
+The attribute passed is invalid.
+</nierror>
+<nierror code="-5209">
+The attribute value passed is invalid.
+</nierror>
+<nierror code="-5210">
+The iterator is no longer valid because the hash table has had items added or removed.
+</nierror>
+<nierror code="-5211">
+The iterator is not allocated for use.
+</nierror>
+<nierror code="-5212">
+Cannot allocate iterator. Your program must dispose hash table iterators when it is done using them.
+</nierror>
+<nierror code="-5213">
+The iterator references the end of the hash table.
+</nierror>
+<nierror code="-5214">
+Operation would exceed the maximum number of hash table buckets.
+</nierror>
+<nierror code="-5215">
+Operation would exceed the maximum hash bucket chain length.
+</nierror>
+<nierror code="-5216">
+Failed to resize the hash table.
+</nierror>
+<nierror code="-6000">
+Invalid or corrupt language file
+</nierror>
+<nierror code="-6201">
+The library could not allocate memory.
+</nierror>
+<nierror code="-6202">
+An invalid argument was passed to the library.
+</nierror>
+<nierror code="-6203">
+An invalid data type was passed to the library.
+</nierror>
+<nierror code="-6204">
+An unexpected error occurred in the library.
+</nierror>
+<nierror code="-6205">
+The USI engine could not be loaded.
+</nierror>
+<nierror code="-6206">
+An invalid file handle was passed to the library.
+</nierror>
+<nierror code="-6207">
+An invalid channel group handle was passed to the library.
+</nierror>
+<nierror code="-6208">
+An invalid channel handle was passed to the library.
+</nierror>
+<nierror code="-6209">
+The file passed to the library does not exist.
+</nierror>
+<nierror code="-6210">
+The file passed to the library is read only and cannot be modified.
+</nierror>
+<nierror code="-6211">
+The storage could not be opened.
+</nierror>
+<nierror code="-6212">
+The file passed to the library already exists and cannot be created.
+</nierror>
+<nierror code="-6213">
+The property passed to the library does not exist.
+</nierror>
+<nierror code="-6214">
+The property passed to the library does not have a value.
+</nierror>
+<nierror code="-6215">
+The value of the property passed to the library is an array and not a scalar.
+</nierror>
+<nierror code="-6216">
+The object type passed to the library does not exist.
+</nierror>
+<nierror code="-6217">
+The current implementation does not support this operation.
+</nierror>
+<nierror code="-6218">
+The file could not be saved.
+</nierror>
+<nierror code="-6219">
+The request would exceed the maximum number of data values for a channel.
+</nierror>
+<nierror code="-6220">
+An invalid channel name was passed to the library.
+</nierror>
+<nierror code="-6221">
+The channel group already contains a channel with this name.
+</nierror>
+<nierror code="-6222">
+The current implementation does not support this data type.
+</nierror>
+<nierror code="-6223">
+The TDM Streaming plug-in must be installed for this operation.
+</nierror>
+<nierror code="-6224">
+File access denied.
+</nierror>
+<nierror code="-6225">
+The specified time value is invalid.
+</nierror>
+<nierror code="-6226">
+The replace operation is not supported on data that has already been saved to a TDM Streaming file.
+</nierror>
+<nierror code="-6227">
+The data type of the property does not match the expected data type.
+</nierror>
+<nierror code="-6228">
+The data type of the channel does not match the expected data type.
+</nierror>
+<nierror code="-6599">
+An internal error occurred in the LabWindows/CVI .NET Library.
+</nierror>
+<nierror code="-6598">
+The version of cvidotnet.dll, the LabWindows/CVI .NET Library DLL, is incorrect.
+</nierror>
+<nierror code="-6597">
+Could not load cvidotnet.dll, the LabWindows/CVI .NET Library DLL.
+</nierror>
+<nierror code="-6596">
+The LabWindows/CVI .NET Library could not create a required mutex.
+</nierror>
+<nierror code="-6595">
+The input passed to the LabWindows/CVI .NET Library is invalid.
+</nierror>
+<nierror code="-6594">
+The LabWindows/CVI .NET Library could not be initialized.
+</nierror>
+<nierror code="-6593">
+A .NET exception occurred in the LabWindows/CVI .NET Library.
+</nierror>
+<nierror code="-6592">
+An invalid or mismatched type was passed to the LabWindows/CVI .NET Library.
+</nierror>
+<nierror code="-6591">
+The LabWindows/CVI .NET Library could not allocate memory.
+</nierror>
+<nierror code="-6590">
+A security error occurred in the LabWindows/CVI .NET Library.
+</nierror>
+<nierror code="-6589">
+The requested LabWindows/CVI .NET Library operation is not supported.
+</nierror>
+<nierror code="-6588">
+The LabWindows/CVI .NET Library could not invoke the method because it is inaccessible.
+</nierror>
+<nierror code="-6587">
+The LabWindows/CVI .NET Library could not invoke the member because it is inaccessible.
+</nierror>
+<nierror code="-6586">
+The item passed to the LabWindows/CVI .NET Library is not a valid COM object.
+</nierror>
+<nierror code="-6585">
+The LabWindows/CVI .NET Library could not access the method because it does not exist.
+</nierror>
+<nierror code="-6584">
+The LabWindows/CVI .NET Library could not access the member because it does not exist.
+</nierror>
+<nierror code="-6583">
+An unknown HRESULT was returned to the LabWindows/CVI .NET Library by a COM call.
+</nierror>
+<nierror code="-6582">
+An error occurred in the LabWindows/CVI .NET Library during a remote call.
+</nierror>
+<nierror code="-6581">
+An invalid file path was passed to the LabWindows/CVI .NET Library.
+</nierror>
+<nierror code="-6580">
+Could not load the LabWindows/CVI .NET Library assembly.
+</nierror>
+<nierror code="-6579">
+The LabWindows/CVI .NET Library could not load the specified assembly.
+</nierror>
+<nierror code="-6578">
+The LabWindows/CVI .NET Library could not load the required type information.
+</nierror>
+<nierror code="-6577">
+An invalid object handle was passed to the LabWindows/CVI .NET Library.
+</nierror>
+<nierror code="-6576">
+An invalid memory address or NULL pointer was passed to the LabWindows/CVI .NET Library.
+</nierror>
+<nierror code="-6575">
+An invalid LabWindows/CVI .NET type was passed to the library.
+</nierror>
+<nierror code="-6574">
+An invalid number of parameters was passed to the LabWindows/CVI .NET Library.
+</nierror>
+<nierror code="-6573">
+An invalid parameter typed ID array was passed to the LabWindows/CVI .NET Library.
+</nierror>
+<nierror code="-6572">
+An invalid parameter array was passed to the LabWindows/CVI .NET Library.
+</nierror>
+<nierror code="-6571">
+The target invoked by the LabWindows/CVI .NET Library threw an exception.
+</nierror>
+<nierror code="-6570">
+An invalid invocation target was passed to the LabWindows/CVI .NET Library.
+</nierror>
+<nierror code="-6569">
+An invalid number of parameters was passed to the LabWindows/CVI .NET Library for a target invocation.
+</nierror>
+<nierror code="-6568">
+The requested LabWindows/CVI .NET target invocation operation is ambiguous.
+</nierror>
+<nierror code="-6567">
+One or more requested types could not be loaded by the LabWindows/CVI .NET Library during reflection.
+</nierror>
+<nierror code="-6566">
+An invalid LabWindows/CVI .NET invocation was passed to the library.
+</nierror>
+<nierror code="-6565">
+The item passed to the LabWindows/CVI .NET Library is not of array type.
+</nierror>
+<nierror code="-6564">
+The object passed to the LabWindows/CVI .NET Library is not an array.
+</nierror>
+<nierror code="-6563">
+The number of dimensions passed to the LabWindows/CVI .NET Library is invalid.
+</nierror>
+<nierror code="-6562">
+The element type passed to the LabWindows/CVI .NET Library has the array flag. This is invalid.
+</nierror>
+<nierror code="-6561">
+An invalid array element type was passed to the LabWindows/CVI .NET Library.
+</nierror>
+<nierror code="-6560">
+An invalid array dimension was passed to the LabWindows/CVI .NET Library.
+</nierror>
+<nierror code="-6559">
+An invalid number of array elements was passed to the LabWindows/CVI .NET Library.
+</nierror>
+<nierror code="-6558">
+An out of range array index was passed to the LabWindows/CVI .NET Library.
+</nierror>
+<nierror code="-6557">
+The LabWindows/CVI .NET Library could not access the requested array element.
+</nierror>
+<nierror code="-6556">
+The type of the enumeration passed to the LabWindows/CVI .NET Library is not supported.
+</nierror>
+<nierror code="-6555">
+The item passed to the LabWindows/CVI .NET Library is not an enumeration.
+</nierror>
+<nierror code="-6554">
+The type passed to the LabWindows/CVI .NET Library is neither a COM-imported type nor the sub-type of a COM-imported type.
+</nierror>
+<nierror code="-6553">
+The item passed to the LabWindows/CVI .NET Library is not a COM object.
+</nierror>
+<nierror code="-6552">
+The item passed to the LabWindows/CVI .NET Library is not a .NET exception object.
+</nierror>
+<nierror code="-6551">
+An attempt was made to access an unloaded application domain in the LabWindows/CVI .NET Library.
+</nierror>
+<nierror code="-6550">
+An arithmetic error occurred in the LabWindows/CVI .NET Library.
+</nierror>
+<nierror code="-6549">
+An attempt was made in the LabWindows/CVI .NET Library to store an element of the wrong type in an array.
+</nierror>
+<nierror code="-6548">
+The file image of a DLL or executable program accessed by the LabWindows/CVI .NET Library is invalid.
+</nierror>
+<nierror code="-6547">
+An attempt to unload an application domain failed in the LabWindows/CVI .NET Library.
+</nierror>
+<nierror code="-6546">
+An attempt to marshal an object across a context boundary failed in the LabWindows/CVI .NET Library.
+</nierror>
+<nierror code="-6545">
+An internal error occurred in the execution engine of the .NET common language runtime used by the LabWindows/CVI .NET Library.
+</nierror>
+<nierror code="-6544">
+The format of an argument did not meet the parameter specifications of the method invoked by the LabWindows/CVI .NET Library.
+</nierror>
+<nierror code="-6543">
+A method call in the LabWindows/CVI .NET Library is invalid for the object's current state.
+</nierror>
+<nierror code="-6542">
+A program accessed by the LabWindows/CVI .NET Library contains invalid Microsoft intermediate language (MSIL) or metadata.
+</nierror>
+<nierror code="-6541">
+An attempt was made to dereference a null object reference in the LabWindows/CVI .NET Library.
+</nierror>
+<nierror code="-6540">
+A method or operation requested by the LabWindows/CVI .NET Library is not implemented.
+</nierror>
+<nierror code="-6539">
+The execution stack has overflowed because of too many pending method calls in the LabWindows/CVI .NET Library.
+</nierror>
+<nierror code="-6538">
+A type initialization failed in the LabWindows/CVI .NET Library.
+</nierror>
+<nierror code="-6537">
+An attempt was made to access an unloaded type in the LabWindows/CVI .NET Library.
+</nierror>
+<nierror code="-6536">
+The operating system denied access because of an I/O error or a security error in the LabWindows/CVI .NET Library.
+</nierror>
+<nierror code="-6535">
+A .NET component could not be granted license in the LabWindows/CVI .NET Library.
+</nierror>
+<nierror code="-6399">
+Could not load network variable DLL
+</nierror>
+<nierror code="-6398">
+Version of network variable DLL is incorrect
+</nierror>
+<nierror code="-6397">
+Could not create a required mutex
+</nierror>
+<nierror code="-6396">
+Unexpected error occurred
+</nierror>
+<nierror code="-6395">
+Required feature is not available
+</nierror>
+<nierror code="-6394">
+Could not allocate memory
+</nierror>
+<nierror code="-6393">
+Argument is invalid
+</nierror>
+<nierror code="-6392">
+Operation was aborted
+</nierror>
+<nierror code="-6391">
+A general access denied error occurred
+</nierror>
+<nierror code="-6390">
+Data necessary to complete this operation is not yet available
+</nierror>
+<nierror code="-6389">
+Packet is invalid
+</nierror>
+<nierror code="-6388">
+Duplicate item or name already exists
+</nierror>
+<nierror code="-6387">
+Command not allowed in this particular context
+</nierror>
+<nierror code="-6386">
+Item not found
+</nierror>
+<nierror code="-6385">
+Object is not valid or does not exist any more
+</nierror>
+<nierror code="-6384">
+Already has an input connection
+</nierror>
+<nierror code="-6383">
+Name could not be resolved to a network address
+</nierror>
+<nierror code="-6382">
+Socket has been disconnected by its peer
+</nierror>
+<nierror code="-6381">
+Service could not be resolved to a port address. Variable Engine or other required service may not be installed or running.
+</nierror>
+<nierror code="-6380">
+Socket timed out while trying to connect to peer
+</nierror>
+<nierror code="-6379">
+Logos sockets failed to start up
+</nierror>
+<nierror code="-6378">
+Writer already exists
+</nierror>
+<nierror code="-6377">
+Unspecified network error
+</nierror>
+<nierror code="-6376">
+Cache overflow
+</nierror>
+<nierror code="-6375">
+There are no more data points to return from this query
+</nierror>
+<nierror code="-6374">
+Data retrieved from the network is incorrect
+</nierror>
+<nierror code="-6373">
+User is already subscribed
+</nierror>
+<nierror code="-6372">
+Buffer is full
+</nierror>
+<nierror code="-6371">
+Cannot write to read-only item
+</nierror>
+<nierror code="-6370">
+Network variable name is invalid
+</nierror>
+<nierror code="-6369">
+Machine name is invalid
+</nierror>
+<nierror code="-6368">
+Process name is invalid
+</nierror>
+<nierror code="-6367">
+Variable name is invalid
+</nierror>
+<nierror code="-6366">
+Process manager server is not available
+</nierror>
+<nierror code="-6365">
+Thread initialization failed
+</nierror>
+<nierror code="-6364">
+Item does not exist
+</nierror>
+<nierror code="-6363">
+Process server has shut down
+</nierror>
+<nierror code="-6362">
+Read access was requested and denied
+</nierror>
+<nierror code="-6361">
+Write access was requested and denied
+</nierror>
+<nierror code="-6360">
+Disabled event or alarm was activated
+</nierror>
+<nierror code="-6359">
+Could not resolve host name
+</nierror>
+<nierror code="-6358">
+Could not resolve IP address from gethostbyname
+</nierror>
+<nierror code="-6357">
+Could not recognize the attribute name
+</nierror>
+<nierror code="-6356">
+Attribute value is invalid
+</nierror>
+<nierror code="-6355">
+Failed to get or set attribute
+</nierror>
+<nierror code="-6354">
+Data type is invalid
+</nierror>
+<nierror code="-6353">
+Handle is invalid
+</nierror>
+<nierror code="-6352">
+Data handle is invalid
+</nierror>
+<nierror code="-6351">
+Browser handle is invalid
+</nierror>
+<nierror code="-6350">
+Number of dimensions is invalid
+</nierror>
+<nierror code="-6349">
+Data is not an array
+</nierror>
+<nierror code="-6348">
+Array size is invalid
+</nierror>
+<nierror code="-6347">
+Data attribute is not available
+</nierror>
+<nierror code="-6346">
+Connection attribute is invalid
+</nierror>
+<nierror code="-6345">
+Could not complete operation in specified time
+</nierror>
+<nierror code="-6344">
+Data is empty
+</nierror>
+<nierror code="-6343">
+Not supported on real-time systems
+</nierror>
+<nierror code="-6342">
+Not supported when thread is in a network variable callback function
+</nierror>
+<nierror code="-6341">
+Could not register machine
+</nierror>
+<nierror code="-6340">
+DNS lookup failed for the server
+</nierror>
+<nierror code="-6339">
+The server is not reachable
+</nierror>
+<nierror code="-6338">
+Service lookup failed for the server	
+</nierror>
+<nierror code="-6337">
+The network variable process was not found or is not responding	
+</nierror>
+<nierror code="-6336">
+URL could not be resolved for this network variable
+</nierror>
+<nierror code="-6335">
+The subscription to this network variable failed	
+</nierror>
+<nierror code="-6334">
+Data is not a scalar
+</nierror>
+<nierror code="-6333">
+Data is not a struct
+</nierror>
+<nierror code="-6332">
+Path is invalid
+</nierror>
+<nierror code="-6331">
+Folder name is invalid
+</nierror>
+<nierror code="-6601">
+Invalid argument.
+</nierror>
+<nierror code="-6602">
+Out of memory.
+</nierror>
+<nierror code="-6603">
+The file is already open.
+</nierror>
+<nierror code="-6604">
+The file could not be opened.
+</nierror>
+<nierror code="-6605">
+The file could not be found.
+</nierror>
+<nierror code="-6606">
+File access denied.
+</nierror>
+<nierror code="-6607">
+The drive is full.
+</nierror>
+<nierror code="-6608">
+The maximum number of open files has been reached. Close one or more files and try again.
+</nierror>
+<nierror code="-6609">
+The path could not be found.
+</nierror>
+<nierror code="-6610">
+The file is not a valid TDMS file.
+</nierror>
+<nierror code="-6611">
+The file could not be closed.
+</nierror>
+<nierror code="-6612">
+Write to file failed.
+</nierror>
+<nierror code="-6613">
+Read from file failed.
+</nierror>
+<nierror code="-6614">
+The library failed to load.
+</nierror>
+<nierror code="-6615">
+TDM files are not supported. Only TDMS files are supported.
+</nierror>
+<nierror code="-6616">
+The specified property is read only.
+</nierror>
+<nierror code="-6617">
+The file already contains an object with that name.
+</nierror>
+<nierror code="-6618">
+The request cannot be completed while there are unsaved changes through another file handle. Close or save the file using the other file handle and try again.
+</nierror>
+<nierror code="-6619">
+An unexpected error occurred.
+</nierror>
+<nierror code="-6620">
+A null pointer was passed where a non-null pointer was expected.
+</nierror>
+<nierror code="-6621">
+Invalid file handle.
+</nierror>
+<nierror code="-6622">
+Invalid channel group handle.
+</nierror>
+<nierror code="-6623">
+Invalid channel handle.
+</nierror>
+<nierror code="-6624">
+Invalid file path.
+</nierror>
+<nierror code="-6625">
+Invalid data type.
+</nierror>
+<nierror code="-6626">
+Invalid value for file format.
+</nierror>
+<nierror code="-6627">
+Invalid name.
+</nierror>
+<nierror code="-6628">
+Invalid property name.
+</nierror>
+<nierror code="-6629">
+The property does not exist.
+</nierror>
+<nierror code="-6630">
+The property already exists.
+</nierror>
+<nierror code="-6631">
+The data type of the property does not match the expected data type.
+</nierror>
+<nierror code="-6632">
+The request exceeds the actual number of available values.
+</nierror>
+<nierror code="-6633">
+The buffer is too small to hold all values.
+</nierror>
+<nierror code="-6634">
+String contains invalid characters.
+</nierror>
+<nierror code="-6635">
+A file opened for read-only access cannot be modified.
+</nierror>
+<nierror code="-6636">
+The file must have a .tdms extension.
+</nierror>
+<nierror code="-6637">
+The specified time value is invalid.
+</nierror>
+<nierror code="-6638">
+Invalid value for byte order.
+</nierror>
+<nierror code="-6639">
+Invalid value for options.
+</nierror>
+<nierror code="-6640">
+The channel group could not be found.
+</nierror>
+<nierror code="-6641">
+The channel could not be found.
+</nierror>
+<nierror code="-6642">
+A feature you have requested is not supported for this version of the TDMS file format.
+</nierror>
+<nierror code="-6643">
+The handle is invalid because the channel group or channel it referred to was renamed.
+</nierror>
+<nierror code="-6644">
+The file format is too new to be supported by this version of the library.
+</nierror>
+<nierror code="-6645">
+Invalid value for data layout.
+</nierror>
+<nierror code="-6646">
+All channels must have the same data type.
+</nierror>
+<nierror code="-6647">
+Interleaved data layout not supported for channels of string data type.
+</nierror>
+<nierror code="-6648">
+Interleaved data layout requires multiple channels.
+</nierror>
+<nierror code="-6649">
+The number of values must be an even multiple of the number of channels.
+</nierror>
+<nierror code="-6650">
+Interleaved data layout requires the save file parameter to be true.
+</nierror>
+<nierror code="-6651">
+The request cannot be completed while there is a pending change to the name property of a channel or channelgroup through another file handle. Close or save the file using the other file handle and try again.
+</nierror>
+<nierror code="-6652">
+This channel or property value contains a data type that is not recognized by this version of the TDMS library.
+</nierror>
+<nierror code="-6653">
+The version of TDMS found on this system does not meet the minimum version requirement of the LabWindows/CVI TDMS library.
+</nierror>
+<nierror code="-6654">
+Advanced I/O requires a newer version of the TDMS file format than specified.
+</nierror>
+<nierror code="-6655">
+Invalid value for reserve file mode.
+</nierror>
+<nierror code="-6656">
+Invalid value for maximum number of concurrent operations.
+</nierror>
+<nierror code="-6657">
+All channels must belong to the same file.
+</nierror>
+<nierror code="-6658">
+This operation does not support the string data type.
+</nierror>
+<nierror code="-6659">
+Invalid value for offset reference point.
+</nierror>
+<nierror code="-6660">
+Invalid value for offset.
+</nierror>
+<nierror code="-6661">
+This function requires handles that were obtained from a file that was opened using an advanced create or open function.
+</nierror>
+<nierror code="-6662">
+This function is incompatible with handles that were obtained from a file that was opened by calling an advanced create or open function.
+</nierror>
+<nierror code="-6663">
+This function requires handles that were obtained from a file that was opened by calling an advanced create or open function with the asynchronous option.
+</nierror>
+<nierror code="-6664">
+This function is incompatible with handles that were obtained from a file that was opened by calling an advanced create or open function with the asynchronous option.
+</nierror>
+<nierror code="-6665">
+Memory buffers greater than 4GB in size are not supported.
+</nierror>
+<nierror code="-6666">
+Samples per channel value must not be zero.
+</nierror>
+<nierror code="-6667">
+End of file reached.
+</nierror>
+<nierror code="-6668">
+TDMS library functions cannot be called from callback functions.
+</nierror>
+<nierror code="-6669">
+File position must be aligned on disk sector boundary when performing advanced I/O and buffering is disabled.
+</nierror>
+<nierror code="-6670">
+Invalid value for number of samples.
+</nierror>
+<nierror code="-6671">
+Invalid value for timeout.
+</nierror>
+<nierror code="-6672">
+The operation exceeded the requested timeout.
+</nierror>
+<nierror code="-6673">
+Failed to reserve file size. Confirm that application has elevated privileges if required by the operating system.
+</nierror>
+<nierror code="-6674">
+File cannot be truncated. This can happen if there are currently multiple open references to the file.
+</nierror>
+<nierror code="-6675">
+The operation was cancelled because it could not be completed within the requested timeout period.
+</nierror>
+<nierror code="-6676">
+The asynchronous operation has not been configured. Call the appropriate asynchronous configuration function first.
+</nierror>
+<nierror code="-6677">
+One or more of the specified channels is already present in the channel information.
+</nierror>
+<nierror code="-6678">
+The option to disable buffering is not supported on this operating system.
+</nierror>
+<nierror code="-6679">
+The option to enable asynchronous operations is not supported on this operating system.
+</nierror>
+<nierror code="-6680">
+Function not supported on this operating system.
+</nierror>
+<nierror code="-6681">
+The specified channel contains data with a number of dimensions that does not match the number of dimensions expected by this function.
+</nierror>
+<nierror code="-6682">
+This function does not support files containing channels with multidimensional data in this version of the TDMS library.
+</nierror>
+<nierror code="-6683">
+This function does not support files containing additional levels of hierarchy in this version of the TDMS library.
+</nierror>
+<nierror code="-6684">
+Invalid file, channel group, or channel handle.
+</nierror>
+<nierror code="-6685">
+The scaling information could not be created or the scaling information could not be applied to the data values.
+</nierror>
+<nierror code="-6800">
+Invalid channel
+</nierror>
+<nierror code="-6801">
+Invalid port number
+</nierror>
+<nierror code="-6802">
+Invalid address
+</nierror>
+<nierror code="-6803">
+The write size specified exceeds the maximum datagram size supported on this platform.
+</nierror>
+<nierror code="-6804">
+Invalid argument passed
+</nierror>
+<nierror code="-6805">
+Null pointer passed when a non-null pointer was expected
+</nierror>
+<nierror code="-6806">
+Invalid attribute
+</nierror>
+<nierror code="-6807">
+Invalid attribute value
+</nierror>
+<nierror code="-6808">
+Timeout expired
+</nierror>
+<nierror code="-6809">
+The received data was too large for the buffer. Some data was lost.
+</nierror>
+<nierror code="-6810">
+The channel has been disposed
+</nierror>
+<nierror code="-6811">
+The port has already been reserved for use on this interface.
+</nierror>
+<nierror code="-6812">
+A network error occurred
+</nierror>
+<nierror code="-6813">
+Host address was not found
+</nierror>
+<nierror code="-6814">
+Invalid multicast address. Valid multicast addresses range from 224.0.0.0 to 239.255.255.255
+</nierror>
+<nierror code="-6815">
+This port or another port on the same interface is already subscribed to that multicast group.
+</nierror>
+<nierror code="-6816">
+The port is already subscribed to that source for the multicast group.
+</nierror>
+<nierror code="-6817">
+The port is not subscribed to the multicast group.
+</nierror>
+<nierror code="-6818">
+The port is not subscribed to that source for the multicast group.
+</nierror>
+<nierror code="-6819">
+The Windows Sockets library could not be loaded.
+</nierror>
+<nierror code="-6820">
+Failed to initialize the library
+</nierror>
+<nierror code="-6821">
+Library is shutting down
+</nierror>
+<nierror code="-6822">
+A Windows Sockets function call returned an unexpected error.
+</nierror>
+<nierror code="-6823">
+The operation is not supported on this platform.
+</nierror>
+<nierror code="-6824">
+General system error
+</nierror>
+<nierror code="-6825">
+Out of memory
+</nierror>
+<nierror code="-6826">
+Out of system resources
+</nierror>
+<nierror code="-6827">
+Internal error
+</nierror>
+<nierror code="-6828">
+A resource is busy.
+</nierror>
+<nierror code="-6999">
+The Network Streams Engine does not exist.
+</nierror>
+<nierror code="-6998">
+The Network Streams Engine was already initialized.
+</nierror>
+<nierror code="-6997">
+The Network Streams Engine is not initialized.
+</nierror>
+<nierror code="-6996">
+The Network Streams Engine initialization failed.
+</nierror>
+<nierror code="-6995">
+The Network Streams Engine uninitialization failed.
+</nierror>
+<nierror code="-6994">
+The specified endpoint does not exist.
+</nierror>
+<nierror code="-6993">
+An endpoint with the same name already exists.
+</nierror>
+<nierror code="-6992">
+The buffer size of the endpoint must be greater than zero.
+</nierror>
+<nierror code="-6991">
+You did not specify a valid endpoint name.
+</nierror>
+<nierror code="-6990">
+You cannot write to a reader endpoint.
+</nierror>
+<nierror code="-6989">
+You cannot read from a writer endpoint.
+</nierror>
+<nierror code="-6988">
+The local endpoint is not connected to a remote endpoint.
+</nierror>
+<nierror code="-6987">
+The local endpoint is already connected to another endpoint. Each endpoint can connect to only one other endpoint at a time.
+</nierror>
+<nierror code="-6986">
+The name of one endpoint cannot be the partial name of another endpoint within the same application.  Change the name of this endpoint so that it does not overlap with an existing name, or destroy the other endpoint before creating this endpoint.
+</nierror>
+<nierror code="-6985">
+The name of one endpoint cannot be the partial name of another endpoint within the same application.  Change the name of this endpoint so that it does not overlap with an existing name, or destroy the other endpoint before creating this endpoint.
+</nierror>
+<nierror code="-6984">
+The local endpoint lost connection and reconnected with the remote endpoint, but some data was lost.
+</nierror>
+<nierror code="-6983">
+You cannot flush a stream from the reader endpoint.
+</nierror>
+<nierror code="-6982">
+You cannot read or write a number of elements that is larger than the size of the endpoint buffer.
+</nierror>
+<nierror code="-6981">
+The remote endpoint has been destroyed.
+</nierror>
+<nierror code="-6980">
+Incompatible format.
+</nierror>
+<nierror code="-6979">
+The Network Streams Library could not create the local endpoint because the computer that hosts the endpoint ran out of memory.
+</nierror>
+<nierror code="-6978">
+The remote endpoint was restarted because the computer that hosts the endpoint crashed, was rebooted, or experienced a hang.
+</nierror>
+<nierror code="-6977">
+The stream detected an unrecoverable loss of data. Contact National Instruments for support.
+</nierror>
+<nierror code="-6976">
+The data type of the remote endpoint does not match the data type of the local endpoint. The data types of the endpoints must match.
+</nierror>
+<nierror code="-6975">
+The remote and local endpoints are either both reader endpoints or both writer endpoints. You can prompt a connection between a reader and writer endpoint.
+</nierror>
+<nierror code="-6974">
+The remote endpoint is already connected to another endpoint. Each endpoint can connect to only one other endpoint at a time.
+</nierror>
+<nierror code="-6973">
+The remote endpoint has been destroyed.
+</nierror>
+<nierror code="-6972">
+The Network Streams Library could not create the remote endpoint because the computer that hosts the endpoint ran out of memory.
+</nierror>
+<nierror code="-6971">
+The local endpoint was restarted because the computer that hosts the remote endpoint crashed, was rebooted, or experienced a hang.
+</nierror>
+<nierror code="-6970">
+The local endpoint found the remote endpoint at the URL you specified, but the remote endpoint was trying to connect to a third endpoint. Ensure that corresponding endpoints each specify the URL of the other endpoint, or specify a URL with only one of the endpoints so the other endpoint accepts a connection from the first endpoint that connects to it.
+</nierror>
+<nierror code="-6969">
+The protocol version of the writer endpoint is not compatible with the protocol version of the reader endpoint. To transfer data between these endpoints, you must upgrade the version of LabVIEW or LabWindows/CVI that the older endpoint uses.
+</nierror>
+<nierror code="-6968">
+Another application is already streaming data to an endpoint in the context you specified. If you specified a context name in the reader name or writer name terminal of the endpoint, you must specify an unused context name. If you did not specify a context name, you must specify an unused context name by entering an endpoint URL in the reader name or writer name terminal.
+</nierror>
+<nierror code="-6967">
+A NULL pointer was passed to the Network Streams Library.
+</nierror>
+<nierror code="-6966">
+Not enough memory.
+</nierror>
+<nierror code="-6965">
+Unexpected error. Please contact National Instruments for support.
+</nierror>
+<nierror code="-6964">
+Unexpected exception. Please contact National Instruments for support.
+</nierror>
+<nierror code="-6963">
+ni_nwstreams_local.dll could not be loaded.
+</nierror>
+<nierror code="-6962">
+cnetstreams.dll could not be loaded.
+</nierror>
+<nierror code="-6961">
+cnetstreams.dll version does not match ni_nwstreams_local.dll
+</nierror>
+<nierror code="-6960">
+Function not found in cnetstreams.dll. You may have installed an older version of the Network Streams library. Please install the correct version.
+</nierror>
+<nierror code="-6959">
+Unable to create mutex for loading cnetstreams.dll
+</nierror>
+<nierror code="-6958">
+Operation has timed out.
+</nierror>
+<nierror code="-6957">
+The network stream data does not contain a scalar.
+</nierror>
+<nierror code="-6956">
+The network stream data does not contain an array.
+</nierror>
+<nierror code="-6955">
+The network stream data does not contain a structure.
+</nierror>
+<nierror code="-6954">
+The data type of this endpoint is not an array.
+</nierror>
+<nierror code="-6953">
+The array does not contain the specified number of element.
+</nierror>
+<nierror code="-6952">
+The array size cannot be 0 or exceed INT_MAX. For multidimensional arrays the number of dimension cannot be 0 or exceed USHRT_MAX.
+</nierror>
+<nierror code="-6951">
+This function does not support the given data type.
+</nierror>
+<nierror code="-6950">
+The network stream data handle is invalid.
+</nierror>
+<nierror code="-6949">
+One of the function arguments has an invalid value.
+</nierror>
+<nierror code="-6948">
+This function cannot be called for this endpoint. Please check the data type.
+</nierror>
+<nierror code="-6947">
+The number of elements in the network stream data does not match the specified size.
+</nierror>
+<nierror code="-6946">
+This attribute is only valid for a writer endpoint.
+</nierror>
+<nierror code="-6945">
+This attribute is only valid for a reader endpoint.
+</nierror>
+<nierror code="-6944">
+Invalid attribute.
+</nierror>
+<nierror code="-6943">
+Invalid URL. The URL cannot contain # or ? characters.
+</nierror>
+<nierror code="-6942">
+The URL contains one or more unsupported path segments. Path segments of the form '/./', '/../', and empty path segments '//' are not supported.
+</nierror>
+<nierror code="-6941">
+The endpointUrl specifies a host name that does not correspond to the local host.
+</nierror>
+<nierror code="-6940">
+The endpointUrl cannot be empty or NULL.
+</nierror>
+<nierror code="-6939">
+You cannot specify a relative URL for the otherEndpointUrl parameter. You must use an absolute URL.
+</nierror>
+<nierror code="-6938">
+The scheme specified in the URL is not supported.
+</nierror>
+<nierror code="-6937">
+Some connections are still open. Please discard all endpoints before uninitializing the Network Streams Library.
+</nierror>
+<nierror code="-6936">
+CNSReadMultipleData and CNSWriteMultipleData do not support network stream data containing scalar arrays.
+</nierror>
+<nierror code="-14901">
+Invalid handle.
+</nierror>
+<nierror code="-14902">
+Invalid parameter.
+</nierror>
+<nierror code="-14903">
+Invalid attribute ID.
+</nierror>
+<nierror code="-14904">
+Invalid event ID.
+</nierror>
+<nierror code="-14905">
+Out of memory.
+</nierror>
+<nierror code="-14906">
+The time limit expired.
+</nierror>
+<nierror code="-14907">
+Another callback is registered for this event (you can only register one callback per event).
+</nierror>
+<nierror code="-14908">
+Invalid callback ID.
+</nierror>
+<nierror code="-14909">
+Invalid thread ID.
+</nierror>
+<nierror code="-14910">
+System error occurred.
+</nierror>
+<nierror code="-14911">
+This thread or another thread is currently reading from the thread safe queue.
+</nierror>
+<nierror code="-14912">
+This thread or another thread is currently writing to the thread safe queue.
+</nierror>
+<nierror code="-14913">
+The thread safe queue is full.
+</nierror>
+<nierror code="-14914">
+The thread safe queue is empty.
+</nierror>
+<nierror code="-14915">
+You read more data than was available in the thread safe queue.
+</nierror>
+<nierror code="-14916">
+You wrote more data than space was available in the thread safe queue (memory outside the queue might have been overwritten, putting your system in an unstable state).
+</nierror>
+<nierror code="-14917">
+The thread safe queue is configured to automatically flush when full.  You cannot write more items to it than it can hold.
+</nierror>
+<nierror code="-14918">
+This type of access to the queue is not permitted.
+</nierror>
+<nierror code="-14919">
+The thread currently holding the write pointer cannot resize the thread safe queue.
+</nierror>
+<nierror code="-14920">
+You must release the pointer from the same thread that got it.
+</nierror>
+<nierror code="-14921">
+You cannot set this attribute while threads exist in the thread pool.
+</nierror>
+<nierror code="-14922">
+Invalid thread priority.
+</nierror>
+<nierror code="-14923">
+Invalid function ID.
+</nierror>
+<nierror code="-14924">
+The function ID you passed is owned by the thread pool.  This operation can only be performed on a function ID that you own.
+</nierror>
+<nierror code="-14925">
+The function attribute is not available at this time.
+</nierror>
+<nierror code="-14926">
+You can only perform this operation on a thread pool thread.
+</nierror>
+<nierror code="-14927">
+You cannot perform this operation on the default thread pool.
+</nierror>
+<nierror code="-14928">
+You cannot reduce the maximum number of threads in the thread pool.
+</nierror>
+<nierror code="-14929">
+You must release the thread safe variable from the same thread that got it.
+</nierror>
+<nierror code="-14930">
+You must release the lock from the same thread that got it.
+</nierror>
+<nierror code="-14931">
+You cannot discard a lock that is still owned.
+</nierror>
+<nierror code="-14932">
+You must get the lock before releasing it.
+</nierror>
+<nierror code="-14933">
+The lock you passed was not created with the options necessary to perform this operation.
+</nierror>
+<nierror code="-14981">
+The real-time target is installing software.
+</nierror>
+<nierror code="-14982">
+The real-time target is locked.
+</nierror>
+<nierror code="-14983">
+The real-time target could not be rebooted.
+</nierror>
+<nierror code="-15200">
+This function is supported only on real-time systems.
+</nierror>
+<nierror code="-15201">
+This function is not supported on real-time systems.
+</nierror>
+<nierror code="-15202">
+Badly formed IP address
+</nierror>
+<nierror code="-15203">
+Badly formed MAC address
+</nierror>
+<nierror code="-15204">
+Target not found
+</nierror>
+<nierror code="-15205">
+Invalid address type specified.
+</nierror>
+<nierror code="-15206">
+One or more IP settings were invalid.
+</nierror>
+<nierror code="-15207">
+Unknown setting type"
+</nierror>
+<nierror code="-15208">
+Invalid value passed
+</nierror>
+<nierror code="-15209">
+The target system must be on the local subnet.
+</nierror>
+<nierror code="-15210">
+Operation not supported by the remote system.
+</nierror>
+<nierror code="-15211">
+Operation timed out
+</nierror>
+<nierror code="-15212">
+The remote system did not respond, or gave an unexpected response.
+</nierror>
+<nierror code="-15213">
+An operation on the remote system failed.
+</nierror>
+<nierror code="-15214">
+The remote system's IP settings are not configured.
+</nierror>
+<nierror code="-15215">
+The remote system must first be booted into safe mode. This may require using a safe-mode boot disk, changing a BIOS setting, or setting a DIP switch on the controller.
+</nierror>
+<nierror code="-15216">
+The remote system failed to boot into safe mode.
+</nierror>
+<nierror code="-15217">
+The remote system failed to reboot.
+</nierror>
+<nierror code="-15218">
+System is locked
+</nierror>
+<nierror code="-15219">
+Incorrect password
+</nierror>
+<nierror code="-15220">
+A specified option is unrecognized or not supported by the function.
+</nierror>
+<nierror code="-15221">
+One or more files could not be copied from the target. The image is incomplete.
+</nierror>
+<nierror code="-15222">
+One or more files could not be copied to the target. The target may not boot properly or may be otherwise corrupted.
+</nierror>
+<nierror code="-15223">
+The specified path does not contain a valid image.
+</nierror>
+<nierror code="-15224">
+The specified image is incompatible with the target.
+</nierror>
+<nierror code="-15225">
+This image was not originally created from the specified target.
+</nierror>
+<nierror code="-15226">
+Null pointer was passed
+</nierror>
+<nierror code="-15227">
+A required DLL failed to load.
+</nierror>
+<nierror code="-15228">
+A required DLL is of an incompatible version.
+</nierror>
+<nierror code="-15229">
+Execution tracing is not supported on this platform.
+</nierror>
+<nierror code="-15230">
+You can call this function only during execution tracing.
+</nierror>
+<nierror code="-15231">
+An execution trace is in progress.
+</nierror>
+<nierror code="-15232">
+The execution trace could not be written to the file.
+</nierror>
+<nierror code="-15233">
+The execution trace could not be read from the file.
+</nierror>
+<nierror code="-15234">
+The execution trace could not be sent to the Real-Time Trace Viewer. Ensure that the Real-Time Trace Viewer is running on the host computer and that the host computer is connected to the network.
+</nierror>
+<nierror code="-15235">
+The event ID is invalid.
+</nierror>
+<nierror code="-15236">
+Out of memory
+</nierror>
+<nierror code="-15237">
+General network error
+</nierror>
+<nierror code="-15238">
+Internal error
+</nierror>
+<nierror code="-15239">
+Unclassified error
+</nierror>
+<nierror code="-15240">
+Unknown error
+</nierror>
+<nierror code="-15241">
+Invalid processor pool ID.
+</nierror>
+<nierror code="-15242">
+The system pool must include the first processor.
+</nierror>
+<nierror code="-15243">
+The processor mask contains no valid processors.
+</nierror>
+<nierror code="-15244">
+The processor mask contains invalid processors.
+</nierror>
+<nierror code="-15245">
+The processor index specifies an invalid processor.
+</nierror>
+<nierror code="-15246">
+Operation not supported on single processor systems.
+</nierror>
+<nierror code="-15247">
+The watchdog library could not be loaded. Ensure that NI Watchdog support is installed on the target computer.
+</nierror>
+<nierror code="-15248">
+Invalid parameter.
+</nierror>
+<nierror code="-15249">
+Invalid attribute.
+</nierror>
+<nierror code="-15250">
+Invalid watchdog handle.
+</nierror>
+<nierror code="-15251">
+Multiple whack input sources are not supported.
+</nierror>
+<nierror code="-15252">
+Unexpected watchdog error.
+</nierror>
+<nierror code="-15253">
+Unable to return a value because it would exceed the width of the return data type.
+</nierror>
+<nierror code="-15254">
+This watchdog timer has been locked. No further changes can be made to the watchdog hardware until the system restarts.
+</nierror>
+<nierror code="-15255">
+The kernel portion of the watchdog driver is not present or failed to load correctly. Watchdog hardware cannot be used.
+</nierror>
+<nierror code="-15256">
+This watchdog timer cannot drive the specified trigger line in the requested manner. Not all watchdog hardware can drive trigger lines in all possible ways.
+</nierror>
+<nierror code="-15257">
+The watchdog hardware you requested is already in use or has been locked.
+</nierror>
+<nierror code="-15258">
+This watchdog timer cannot drive the specified trigger line. Not all watchdog hardware can drive all trigger lines.
+</nierror>
+<nierror code="-15259">
+A memory allocation by the watchdog driver failed. Check available memory and disk space.
+</nierror>
+<nierror code="-15260">
+The specified action cannot be added to the watchdog timer. Some actions can only be added once and others can only be added a maximum number of times.
+</nierror>
+<nierror code="-15261">
+The watchdog driver has experienced an unexpected low-level error. The watchdog hardware cannot be used.
+</nierror>
+<nierror code="-15262">
+The watchdog hardware you requested is either not in the system or has not been registered with the driver.
+</nierror>
+<nierror code="-15263">
+The specified action cannot be handled by this watchdog hardware.
+</nierror>
+<nierror code="-15264">
+The specified attribute is not supported by this watchdog hardware.
+</nierror>
+<nierror code="-15265">
+The specified method or attribute is not supported by this watchdog hardware.
+</nierror>
+<nierror code="-15266">
+File not found.
+</nierror>
+<nierror code="-15267">
+Invalid module ID.
+</nierror>
+<nierror code="-15268">
+Symbol not found.
+</nierror>
+<nierror code="-15269">
+Failed to load module. Verify that all dependencies of this module are present on the system.
+</nierror>
+<nierror code="-15270">
+System error.
+</nierror>
+<nierror code="-15271">
+Invalid parameter.
+</nierror>
+<nierror code="-15272">
+The specified LED ID is not supported on this system.
+</nierror>
+<nierror code="-15273">
+The specified LED ID or LED state is not supported on this system.
+</nierror>
+<nierror code="-15274">
+The specified switch ID is not supported on this system.
+</nierror>
+</nidocument>

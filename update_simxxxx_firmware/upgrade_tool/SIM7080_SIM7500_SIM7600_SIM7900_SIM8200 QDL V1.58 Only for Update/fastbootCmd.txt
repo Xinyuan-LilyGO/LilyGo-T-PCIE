@@ -1,0 +1,15 @@
+adb shell sys_reboot bootloader
+fastboot devices
+fastboot flash boot E:\Firmware\SIM7200\2035B01SIM7200\Firmware\2035B01SIM7200\boot.img
+fastboot flash system E:\Firmware\SIM7200\2035B01SIM7200\Firmware\2035B01SIM7200\system.img
+fastboot flash userdata F:\ligang\sim7250\DownLoadTool\2033\userdata.img
+fastboot reboot
+
+fastboot getvar partition-size:system
+fastboot getvar max-download-size
+
+--------------x55-------------------
+fastboot flash modem
+fastboot flash boot
+fastboot falsh system 
+-----------------------------------------

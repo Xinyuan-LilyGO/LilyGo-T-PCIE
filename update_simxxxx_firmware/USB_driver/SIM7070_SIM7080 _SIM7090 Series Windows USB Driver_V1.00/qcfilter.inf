@@ -1,0 +1,1310 @@
+;-------------------------------------------------------------------------------
+; qcfilter.INF
+;
+; Qualcomm Wireless Composite Device
+;
+; Copyright (c) 2018 Qualcomm Technologies, Inc.
+; All rights reserved.
+;-------------------------------------------------------------------------------
+
+[Version]
+Signature   = "$WINDOWS NT$"
+Class       = USB
+Provider    = %QUALCOMM%
+ClassGUID   = {36FC9E60-C465-11CF-8056-444553540000}
+DriverVer   = 12/10/2018,1.0.5.7
+CatalogFile = qcfilter.cat
+
+[Manufacturer]
+%QUALCOMM%  = QualcommFilter, NTx86.5.1, NTamd64.5.1, NTx86.10.0, NTamd64.10.0
+
+[ControlFlags]
+ExcludeFromSelect = *
+
+[SourceDisksNames.x86]
+1000 = %QcomSrcDisk%,"",,\filter\i386
+
+[SourceDisksNames.amd64]
+1000 = %QcomSrcDisk%,"",,\filter\amd64
+
+[SourceDisksFiles]
+qcusbfilter.sys  = 1000
+
+[QualcommFilter.NTx86.5.1]
+%qcfilter.DeviceDesc9205%     = qcfilter, USB\VID_1E0E&PID_9205
+%qcfilter.DeviceDesc9206%     = qcfilter, USB\VID_1E0E&PID_9206
+%qcfilter.DeviceDesc3197%     = qcfilter, USB\VID_05C6&PID_3197
+%qcfilter.DeviceDesc3199%     = qcfilter, USB\VID_05C6&PID_3199
+%qcfilter.DeviceDesc319A%     = qcfilter, USB\VID_05C6&PID_319A
+%qcfilter.DeviceDesc319B%     = qcfilter, USB\VID_05C6&PID_319B
+%qcfilter.DeviceDesc3200%     = qcfilter, USB\VID_05C6&PID_3200
+%qcfilter.DeviceDesc6000%     = qcfilter, USB\VID_05C6&PID_6000
+%qcfilter.DeviceDesc7000%     = qcfilter, USB\VID_05C6&PID_7000
+%qcfilter.DeviceDesc7001%     = qcfilter, USB\VID_05C6&PID_7001
+%qcfilter.DeviceDesc7002%     = qcfilter, USB\VID_05C6&PID_7002
+%qcfilter.DeviceDesc7101%     = qcfilter, USB\VID_05C6&PID_7101
+%qcfilter.DeviceDesc7102%     = qcfilter, USB\VID_05C6&PID_7102
+%qcfilter.DeviceDesc8000%     = qcfilter, USB\VID_05C6&PID_8000
+%qcfilter.DeviceDesc8001%     = qcfilter, USB\VID_05C6&PID_8001
+%qcfilter.DeviceDesc8002%     = qcfilter, USB\VID_05C6&PID_8002
+%qcfilter.DeviceDesc9000%     = qcfilter, USB\VID_05C6&PID_9000
+%qcfilter.DeviceDesc9001%     = qcfilter, USB\VID_05C6&PID_9001
+%qcfilter.DeviceDesc9002%     = qcfilter, USB\VID_05C6&PID_9002
+%qcfilter.DeviceDesc9003%     = qcfilter, USB\VID_05C6&PID_9003
+%qcfilter.DeviceDesc9004%     = qcfilter, USB\VID_05C6&PID_9004
+%qcfilter.DeviceDesc9005%     = qcfilter, USB\VID_05C6&PID_9005
+%qcfilter.DeviceDesc9006%     = qcfilter, USB\VID_05C6&PID_9006
+%qcfilter.DeviceDesc900A%     = qcfilter, USB\VID_05C6&PID_900A
+%qcfilter.DeviceDesc900B%     = qcfilter, USB\VID_05C6&PID_900B
+%qcfilter.DeviceDesc900C%     = qcfilter, USB\VID_05C6&PID_900C
+%qcfilter.DeviceDesc900D%     = qcfilter, USB\VID_05C6&PID_900D
+%qcfilter.DeviceDesc900F%     = qcfilter, USB\VID_05C6&PID_900F
+%qcfilter.DeviceDesc9010%     = qcfilter, USB\VID_05C6&PID_9010
+%qcfilter.DeviceDesc9011%     = qcfilter, USB\VID_05C6&PID_9011
+%qcfilter.DeviceDesc9012%     = qcfilter, USB\VID_05C6&PID_9012
+%qcfilter.DeviceDesc9013%     = qcfilter, USB\VID_05C6&PID_9013
+%qcfilter.DeviceDesc9016%     = qcfilter, USB\VID_05C6&PID_9016
+%qcfilter.DeviceDesc9017%     = qcfilter, USB\VID_05C6&PID_9017
+%qcfilter.DeviceDesc9018%     = qcfilter, USB\VID_05C6&PID_9018
+%qcfilter.DeviceDesc9019%     = qcfilter, USB\VID_05C6&PID_9019
+%qcfilter.DeviceDesc901B%     = qcfilter, USB\VID_05C6&PID_901B
+%qcfilter.DeviceDesc901C%     = qcfilter, USB\VID_05C6&PID_901C
+%qcfilter.DeviceDesc901D%     = qcfilter, USB\VID_05C6&PID_901D
+%qcfilter.DeviceDesc901F%     = qcfilter, USB\VID_05C6&PID_901F
+%qcfilter.DeviceDesc9020%     = qcfilter, USB\VID_05C6&PID_9020
+%qcfilter.DeviceDesc9021%     = qcfilter, USB\VID_05C6&PID_9021
+%qcfilter.DeviceDesc9022%     = qcfilter, USB\VID_05C6&PID_9022
+%qcfilter.DeviceDesc9025%     = qcfilter, USB\VID_05C6&PID_9025
+%qcfilter.DeviceDesc9026%     = qcfilter, USB\VID_05C6&PID_9026
+%qcfilter.DeviceDesc9028%     = qcfilter, USB\VID_05C6&PID_9028
+%qcfilter.DeviceDesc9029%     = qcfilter, USB\VID_05C6&PID_9029
+%qcfilter.DeviceDesc902C%     = qcfilter, USB\VID_05C6&PID_902C
+%qcfilter.DeviceDesc902D%     = qcfilter, USB\VID_05C6&PID_902D
+%qcfilter.DeviceDesc902E%     = qcfilter, USB\VID_05C6&PID_902E
+%qcfilter.DeviceDesc902F%     = qcfilter, USB\VID_05C6&PID_902F
+%qcfilter.DeviceDesc9030%     = qcfilter, USB\VID_05C6&PID_9030
+%qcfilter.DeviceDesc9031%     = qcfilter, USB\VID_05C6&PID_9031
+%qcfilter.DeviceDesc9032%     = qcfilter, USB\VID_05C6&PID_9032
+%qcfilter.DeviceDesc9033%     = qcfilter, USB\VID_05C6&PID_9033
+%qcfilter.DeviceDesc9034%     = qcfilter, USB\VID_05C6&PID_9034
+%qcfilter.DeviceDesc9035%     = qcfilter4, USB\VID_05C6&PID_9035
+%qcfilter.DeviceDesc9036%     = qcfilter, USB\VID_05C6&PID_9036
+%qcfilter.DeviceDesc9037%     = qcfilter, USB\VID_05C6&PID_9037
+%qcfilter.DeviceDesc9038%     = qcfilter, USB\VID_05C6&PID_9038
+%qcfilter.DeviceDesc903A%     = qcfilter, USB\VID_05C6&PID_903A
+%qcfilter.DeviceDesc903B%     = qcfilter, USB\VID_05C6&PID_903B
+%qcfilter.DeviceDesc903C%     = qcfilter, USB\VID_05C6&PID_903C
+%qcfilter.DeviceDesc903D%     = qcfilter, USB\VID_05C6&PID_903D
+%qcfilter.DeviceDesc903E%     = qcfilter, USB\VID_05C6&PID_903E
+%qcfilter.DeviceDesc903F%     = qcfilter, USB\VID_05C6&PID_903F
+%qcfilter.DeviceDesc9040%     = qcfilter, USB\VID_05C6&PID_9040
+%qcfilter.DeviceDesc9041%     = qcfilter, USB\VID_05C6&PID_9041
+%qcfilter.DeviceDesc9042%     = qcfilter, USB\VID_05C6&PID_9042
+%qcfilter.DeviceDesc9043%     = qcfilter, USB\VID_05C6&PID_9043
+%qcfilter.DeviceDesc9044%     = qcfilter, USB\VID_05C6&PID_9044
+%qcfilter.DeviceDesc9045%     = qcfilter, USB\VID_05C6&PID_9045
+%qcfilter.DeviceDesc9046%     = qcfilter, USB\VID_05C6&PID_9046
+%qcfilter.DeviceDesc9047%     = qcfilter, USB\VID_05C6&PID_9047
+%qcfilter.DeviceDesc9048%     = qcfilter, USB\VID_05C6&PID_9048
+%qcfilter.DeviceDesc9049%     = qcfilter, USB\VID_05C6&PID_9049
+%qcfilter.DeviceDesc904B%     = qcfilter, USB\VID_05C6&PID_904B
+%qcfilter.DeviceDesc904C%     = qcfilter, USB\VID_05C6&PID_904C
+%qcfilter.DeviceDesc904F%     = qcfilter, USB\VID_05C6&PID_904F
+%qcfilter.DeviceDesc9050%     = qcfilter, USB\VID_05C6&PID_9050
+%qcfilter.DeviceDesc9051%     = qcfilter, USB\VID_05C6&PID_9051
+%qcfilter.DeviceDesc9052%     = qcfilter, USB\VID_05C6&PID_9052
+%qcfilter.DeviceDesc9053%     = qcfilter, USB\VID_05C6&PID_9053
+%qcfilter.DeviceDesc9054%     = qcfilter, USB\VID_05C6&PID_9054
+%qcfilter.DeviceDesc9055%     = qcfilter, USB\VID_05C6&PID_9055
+%qcfilter.DeviceDesc9056%     = qcfilter, USB\VID_05C6&PID_9056
+%qcfilter.DeviceDesc9059%     = qcfilter, USB\VID_05C6&PID_9059
+%qcfilter.DeviceDesc905A%     = qcfilter, USB\VID_05C6&PID_905A
+%qcfilter.DeviceDesc905D%     = qcfilter, USB\VID_05C6&PID_905D
+%qcfilter.DeviceDesc905E%     = qcfilter, USB\VID_05C6&PID_905E
+%qcfilter.DeviceDesc905F%     = qcfilter, USB\VID_05C6&PID_905F
+%qcfilter.DeviceDesc9060%     = qcfilter, USB\VID_05C6&PID_9060
+%qcfilter.DeviceDesc9061%     = qcfilter, USB\VID_05C6&PID_9061
+%qcfilter.DeviceDesc9062%     = qcfilter, USB\VID_05C6&PID_9062
+%qcfilter.DeviceDesc9064%     = qcfilter, USB\VID_05C6&PID_9064
+%qcfilter.DeviceDesc9065%     = qcfilter, USB\VID_05C6&PID_9065
+%qcfilter.DeviceDesc9066%     = qcfilter, USB\VID_05C6&PID_9066
+%qcfilter.DeviceDesc9067%     = qcfilter, USB\VID_05C6&PID_9067
+%qcfilter.DeviceDesc9068%     = qcfilter, USB\VID_05C6&PID_9068
+%qcfilter.DeviceDesc9069%     = qcfilter, USB\VID_05C6&PID_9069
+%qcfilter.DeviceDesc9070%     = qcfilter, USB\VID_05C6&PID_9070
+%qcfilter.DeviceDesc9071%     = qcfilter, USB\VID_05C6&PID_9071
+%qcfilter.DeviceDesc9072%     = qcfilter, USB\VID_05C6&PID_9072
+%qcfilter.DeviceDesc9073%     = qcfilter, USB\VID_05C6&PID_9073
+%qcfilter.DeviceDesc9074%     = qcfilter, USB\VID_05C6&PID_9074
+%qcfilter.DeviceDesc9075%     = qcfilter, USB\VID_05C6&PID_9075
+%qcfilter.DeviceDesc9076%     = qcfilter, USB\VID_05C6&PID_9076
+%qcfilter.DeviceDesc9077%     = qcfilter, USB\VID_05C6&PID_9077
+%qcfilter.DeviceDesc9078%     = qcfilter, USB\VID_05C6&PID_9078
+%qcfilter.DeviceDesc9079%     = qcfilter, USB\VID_05C6&PID_9079
+%qcfilter.DeviceDesc9080%     = qcfilter, USB\VID_05C6&PID_9080
+%qcfilter.DeviceDesc9081%     = qcfilter, USB\VID_05C6&PID_9081
+%qcfilter.DeviceDesc9082%     = qcfilter, USB\VID_05C6&PID_9082
+%qcfilter.DeviceDesc9083%     = qcfilter, USB\VID_05C6&PID_9083
+%qcfilter.DeviceDesc9084%     = qcfilter, USB\VID_05C6&PID_9084
+%qcfilter.DeviceDesc9085%     = qcfilter, USB\VID_05C6&PID_9085
+%qcfilter.DeviceDesc9086%     = qcfilter, USB\VID_05C6&PID_9086
+%qcfilter.DeviceDesc9087%     = qcfilter, USB\VID_05C6&PID_9087
+%qcfilter.DeviceDesc9088%     = qcfilter, USB\VID_05C6&PID_9088
+%qcfilter.DeviceDesc9089%     = qcfilter, USB\VID_05C6&PID_9089
+%qcfilter.DeviceDesc908A%     = qcfilter, USB\VID_05C6&PID_908A
+%qcfilter.DeviceDesc908B%     = qcfilter, USB\VID_05C6&PID_908B
+%qcfilter.DeviceDesc908E%     = qcfilter, USB\VID_05C6&PID_908E
+%qcfilter.DeviceDesc908F%     = qcfilter4, USB\VID_05C6&PID_908F
+%qcfilter.DeviceDesc9090%     = qcfilter, USB\VID_05C6&PID_9090
+%qcfilter.DeviceDesc9091%     = qcfilter, USB\VID_05C6&PID_9091
+%qcfilter.DeviceDesc9092%     = qcfilter, USB\VID_05C6&PID_9092
+%qcfilter.DeviceDesc9093%     = qcfilter, USB\VID_05C6&PID_9093
+%qcfilter.DeviceDesc9094%     = qcfilter, USB\VID_05C6&PID_9094
+%qcfilter.DeviceDesc9095%     = qcfilter, USB\VID_05C6&PID_9095
+%qcfilter.DeviceDesc9096%     = qcfilter, USB\VID_05C6&PID_9096
+%qcfilter.DeviceDesc9097%     = qcfilter, USB\VID_05C6&PID_9097
+%qcfilter.DeviceDesc9098%     = qcfilter, USB\VID_05C6&PID_9098
+%qcfilter.DeviceDesc9099%     = qcfilter, USB\VID_05C6&PID_9099
+%qcfilter.DeviceDesc909A%     = qcfilter, USB\VID_05C6&PID_909A
+%qcfilter.DeviceDesc909B%     = qcfilter, USB\VID_05C6&PID_909B
+%qcfilter.DeviceDesc909C%     = qcfilter, USB\VID_05C6&PID_909C
+%qcfilter.DeviceDesc909D%     = qcfilter, USB\VID_05C6&PID_909D
+%qcfilter.DeviceDesc909E%     = qcfilter, USB\VID_05C6&PID_909E
+%qcfilter.DeviceDesc909F%     = qcfilter, USB\VID_05C6&PID_909F
+%qcfilter.DeviceDesc90A0%     = qcfilter, USB\VID_05C6&PID_90A0
+%qcfilter.DeviceDesc90A1%     = qcfilter2, USB\VID_05C6&PID_90A1
+%qcfilter.DeviceDesc90A2%     = qcfilter, USB\VID_05C6&PID_90A2
+%qcfilter.DeviceDesc90A3%     = qcfilter, USB\VID_05C6&PID_90A3
+%qcfilter.DeviceDesc90A5%     = qcfilter3, USB\VID_05C6&PID_90A5
+%qcfilter.DeviceDesc90A6%     = qcfilter4, USB\VID_05C6&PID_90A6
+%qcfilter.DeviceDesc90A7%     = qcfilter, USB\VID_05C6&PID_90A7
+%qcfilter.DeviceDesc90A8%     = qcfilter, USB\VID_05C6&PID_90A8
+%qcfilter.DeviceDesc90A9%     = qcfilter, USB\VID_05C6&PID_90A9
+%qcfilter.DeviceDesc90AA%     = qcfilter, USB\VID_05C6&PID_90AA
+%qcfilter.DeviceDesc90AB%     = qcfilter, USB\VID_05C6&PID_90AB
+%qcfilter.DeviceDesc90AC%     = qcfilter, USB\VID_05C6&PID_90AC
+%qcfilter.DeviceDesc90AD%     = qcfilter, USB\VID_05C6&PID_90AD
+%qcfilter.DeviceDesc90AE%     = qcfilter4, USB\VID_05C6&PID_90AE
+%qcfilter.DeviceDesc90AF%     = qcfilter3, USB\VID_05C6&PID_90AF
+%qcfilter.DeviceDesc90B0%     = qcfilter, USB\VID_05C6&PID_90B0
+%qcfilter.DeviceDesc90B2%     = qcfilter, USB\VID_05C6&PID_90B2
+%qcfilter.DeviceDesc90B3%     = qcfilter, USB\VID_05C6&PID_90B3
+%qcfilter.DeviceDesc90B4%     = qcfilter, USB\VID_05C6&PID_90B4
+%qcfilter.DeviceDesc90B5%     = qcfilter, USB\VID_05C6&PID_90B5
+%qcfilter.DeviceDesc90B6%     = qcfilter, USB\VID_05C6&PID_90B6
+%qcfilter.DeviceDesc90B7%     = qcfilter, USB\VID_05C6&PID_90B7
+%qcfilter.DeviceDesc90B8%     = qcfilter, USB\VID_05C6&PID_90B8
+%qcfilter.DeviceDesc90B9%     = qcfilter, USB\VID_05C6&PID_90B9
+%qcfilter.DeviceDesc90BF%     = qcfilter, USB\VID_05C6&PID_90BF
+%qcfilter.DeviceDesc90C0%     = qcfilter, USB\VID_05C6&PID_90C0
+%qcfilter.DeviceDesc90C1%     = qcfilter, USB\VID_05C6&PID_90C1
+%qcfilter.DeviceDesc90C2%     = qcfilter, USB\VID_05C6&PID_90C2
+%qcfilter.DeviceDesc90C3%     = qcfilter, USB\VID_05C6&PID_90C3
+%qcfilter.DeviceDesc90C5%     = qcfilter, USB\VID_05C6&PID_90C5
+%qcfilter.DeviceDesc90C6%     = qcfilter, USB\VID_05C6&PID_90C6
+%qcfilter.DeviceDesc90C7%     = qcfilter, USB\VID_05C6&PID_90C7
+%qcfilter.DeviceDesc90C8%     = qcfilter, USB\VID_05C6&PID_90C8
+%qcfilter.DeviceDesc90C9%     = qcfilter4, USB\VID_05C6&PID_90C9
+%qcfilter.QcomDevice90CA%     = qcfilter, USB\VID_05C6&PID_90CA
+%qcfilter.QcomDevice90CB%     = qcfilter, USB\VID_05C6&PID_90CB
+%qcfilter.QcomDevice90CC%     = qcfilter, USB\VID_05C6&PID_90CC
+%qcfilter.QcomDevice90CD%     = qcfilter, USB\VID_05C6&PID_90CD
+%qcfilter.QcomDevice90D0%     = qcfilter, USB\VID_05C6&PID_90D0
+%qcfilter.QcomDevice90D1%     = qcfilter, USB\VID_05C6&PID_90D1
+%qcfilter.DeviceDesc90D2%     = qcfilter, USB\VID_05C6&PID_90D2
+%qcfilter.DeviceDesc90D3%     = qcfilter, USB\VID_05C6&PID_90D3
+%qcfilter.DeviceDesc90D4%     = qcfilter, USB\VID_05C6&PID_90D4
+%qcfilter.DeviceDesc90D5%     = qcfilter, USB\VID_05C6&PID_90D5
+%qcfilter.DeviceDesc90D6%     = qcfilter, USB\VID_05C6&PID_90D6
+%qcfilter.DeviceDesc90D7%     = qcfilter, USB\VID_05C6&PID_90D7
+%qcfilter.DeviceDesc90D8%     = qcfilter, USB\VID_05C6&PID_90D8
+%qcfilter.DeviceDesc90D9%     = qcfilter, USB\VID_05C6&PID_90D9
+%qcfilter.DeviceDesc90DA%     = qcfilter, USB\VID_05C6&PID_90DA
+%qcfilter.DeviceDesc90DB%     = qcfilter, USB\VID_05C6&PID_90DB
+%qcfilter.DeviceDesc90DC%     = qcfilter, USB\VID_05C6&PID_90DC
+%qcfilter.DeviceDesc90DD%     = qcfilter, USB\VID_05C6&PID_90DD
+%qcfilter.DeviceDesc90DE%     = qcfilter, USB\VID_05C6&PID_90DE
+%qcfilter.DeviceDesc90DF%     = qcfilter, USB\VID_05C6&PID_90DF
+%qcfilter.DeviceDesc90E0%     = qcfilter, USB\VID_05C6&PID_90E0
+%qcfilter.DeviceDesc90E1%     = qcfilter, USB\VID_05C6&PID_90E1
+%qcfilter.DeviceDesc90E2%     = qcfilter, USB\VID_05C6&PID_90E2
+%qcfilter.DeviceDesc90E3%     = qcfilter, USB\VID_05C6&PID_90E3
+%qcfilter.DeviceDesc90E4%     = qcfilter, USB\VID_05C6&PID_90E4
+%qcfilter.DeviceDesc90E5%     = qcfilter, USB\VID_05C6&PID_90E5
+%qcfilter.DeviceDesc90E6%     = qcfilter, USB\VID_05C6&PID_90E6
+%qcfilter.DeviceDesc90E7%     = qcfilter, USB\VID_05C6&PID_90E7
+%qcfilter.DeviceDesc90E8%     = qcfilter, USB\VID_05C6&PID_90E8
+%qcfilter.DeviceDesc90E9%     = qcfilter, USB\VID_05C6&PID_90E9
+%qcfilter.DeviceDesc90EA%     = qcfilter, USB\VID_05C6&PID_90EA
+%qcfilter.DeviceDesc90EB%     = qcfilter, USB\VID_05C6&PID_90EB
+%qcfilter.DeviceDesc90EC%     = qcfilter, USB\VID_05C6&PID_90EC
+%qcfilter.DeviceDesc90ED%     = qcfilter, USB\VID_05C6&PID_90ED
+%qcfilter.DeviceDesc90EE%     = qcfilter, USB\VID_05C6&PID_90EE
+%qcfilter.DeviceDesc90EF%     = qcfilter, USB\VID_05C6&PID_90EF
+%qcfilter.DeviceDesc90F0%     = qcfilter, USB\VID_05C6&PID_90F0
+%qcfilter.DeviceDesc90F1%     = qcfilter, USB\VID_05C6&PID_90F1
+%qcfilter.DeviceDesc90F2%     = qcfilter, USB\VID_05C6&PID_90F2
+%qcfilter.DeviceDesc9100%     = qcfilter, USB\VID_05C6&PID_9100
+%qcfilter.DeviceDesc9101%     = qcfilter, USB\VID_05C6&PID_9101
+%qcfilter.DeviceDesc9402%     = qcfilter, USB\VID_05C6&PID_9402
+%qcfilter.DeviceDesc9404%     = qcfilter, USB\VID_05C6&PID_9404
+%qcfilter.DeviceDesc920D%     = qcfilter, USB\VID_05C6&PID_920D
+
+[QualcommFilter.NTamd64.5.1]
+%qcfilter.DeviceDesc9205%     = qcfilter, USB\VID_1E0E&PID_9205
+%qcfilter.DeviceDesc9206%     = qcfilter, USB\VID_1E0E&PID_9206
+%qcfilter.DeviceDesc3197%     = qcfilter, USB\VID_05C6&PID_3197
+%qcfilter.DeviceDesc3199%     = qcfilter, USB\VID_05C6&PID_3199
+%qcfilter.DeviceDesc319A%     = qcfilter, USB\VID_05C6&PID_319A
+%qcfilter.DeviceDesc319B%     = qcfilter, USB\VID_05C6&PID_319B
+%qcfilter.DeviceDesc3200%     = qcfilter, USB\VID_05C6&PID_3200
+%qcfilter.DeviceDesc6000%     = qcfilter, USB\VID_05C6&PID_6000
+%qcfilter.DeviceDesc7000%     = qcfilter, USB\VID_05C6&PID_7000
+%qcfilter.DeviceDesc7001%     = qcfilter, USB\VID_05C6&PID_7001
+%qcfilter.DeviceDesc7002%     = qcfilter, USB\VID_05C6&PID_7002
+%qcfilter.DeviceDesc7101%     = qcfilter, USB\VID_05C6&PID_7101
+%qcfilter.DeviceDesc7102%     = qcfilter, USB\VID_05C6&PID_7102
+%qcfilter.DeviceDesc8000%     = qcfilter, USB\VID_05C6&PID_8000
+%qcfilter.DeviceDesc8001%     = qcfilter, USB\VID_05C6&PID_8001
+%qcfilter.DeviceDesc8002%     = qcfilter, USB\VID_05C6&PID_8002
+%qcfilter.DeviceDesc9000%     = qcfilter, USB\VID_05C6&PID_9000
+%qcfilter.DeviceDesc9001%     = qcfilter, USB\VID_05C6&PID_9001
+%qcfilter.DeviceDesc9002%     = qcfilter, USB\VID_05C6&PID_9002
+%qcfilter.DeviceDesc9003%     = qcfilter, USB\VID_05C6&PID_9003
+%qcfilter.DeviceDesc9004%     = qcfilter, USB\VID_05C6&PID_9004
+%qcfilter.DeviceDesc9005%     = qcfilter, USB\VID_05C6&PID_9005
+%qcfilter.DeviceDesc9006%     = qcfilter, USB\VID_05C6&PID_9006
+%qcfilter.DeviceDesc900A%     = qcfilter, USB\VID_05C6&PID_900A
+%qcfilter.DeviceDesc900B%     = qcfilter, USB\VID_05C6&PID_900B
+%qcfilter.DeviceDesc900C%     = qcfilter, USB\VID_05C6&PID_900C
+%qcfilter.DeviceDesc900D%     = qcfilter, USB\VID_05C6&PID_900D
+%qcfilter.DeviceDesc900F%     = qcfilter, USB\VID_05C6&PID_900F
+%qcfilter.DeviceDesc9010%     = qcfilter, USB\VID_05C6&PID_9010
+%qcfilter.DeviceDesc9011%     = qcfilter, USB\VID_05C6&PID_9011
+%qcfilter.DeviceDesc9012%     = qcfilter, USB\VID_05C6&PID_9012
+%qcfilter.DeviceDesc9013%     = qcfilter, USB\VID_05C6&PID_9013
+%qcfilter.DeviceDesc9016%     = qcfilter, USB\VID_05C6&PID_9016
+%qcfilter.DeviceDesc9017%     = qcfilter, USB\VID_05C6&PID_9017
+%qcfilter.DeviceDesc9018%     = qcfilter, USB\VID_05C6&PID_9018
+%qcfilter.DeviceDesc9019%     = qcfilter, USB\VID_05C6&PID_9019
+%qcfilter.DeviceDesc901B%     = qcfilter, USB\VID_05C6&PID_901B
+%qcfilter.DeviceDesc901C%     = qcfilter, USB\VID_05C6&PID_901C
+%qcfilter.DeviceDesc901D%     = qcfilter, USB\VID_05C6&PID_901D
+%qcfilter.DeviceDesc901F%     = qcfilter, USB\VID_05C6&PID_901F
+%qcfilter.DeviceDesc9020%     = qcfilter, USB\VID_05C6&PID_9020
+%qcfilter.DeviceDesc9021%     = qcfilter, USB\VID_05C6&PID_9021
+%qcfilter.DeviceDesc9022%     = qcfilter, USB\VID_05C6&PID_9022
+%qcfilter.DeviceDesc9025%     = qcfilter, USB\VID_05C6&PID_9025
+%qcfilter.DeviceDesc9026%     = qcfilter, USB\VID_05C6&PID_9026
+%qcfilter.DeviceDesc9028%     = qcfilter, USB\VID_05C6&PID_9028
+%qcfilter.DeviceDesc9029%     = qcfilter, USB\VID_05C6&PID_9029
+%qcfilter.DeviceDesc902C%     = qcfilter, USB\VID_05C6&PID_902C
+%qcfilter.DeviceDesc902D%     = qcfilter, USB\VID_05C6&PID_902D
+%qcfilter.DeviceDesc902E%     = qcfilter, USB\VID_05C6&PID_902E
+%qcfilter.DeviceDesc902F%     = qcfilter, USB\VID_05C6&PID_902F
+%qcfilter.DeviceDesc9030%     = qcfilter, USB\VID_05C6&PID_9030
+%qcfilter.DeviceDesc9031%     = qcfilter, USB\VID_05C6&PID_9031
+%qcfilter.DeviceDesc9032%     = qcfilter, USB\VID_05C6&PID_9032
+%qcfilter.DeviceDesc9033%     = qcfilter, USB\VID_05C6&PID_9033
+%qcfilter.DeviceDesc9034%     = qcfilter, USB\VID_05C6&PID_9034
+%qcfilter.DeviceDesc9035%     = qcfilter4, USB\VID_05C6&PID_9035
+%qcfilter.DeviceDesc9036%     = qcfilter, USB\VID_05C6&PID_9036
+%qcfilter.DeviceDesc9037%     = qcfilter, USB\VID_05C6&PID_9037
+%qcfilter.DeviceDesc9038%     = qcfilter, USB\VID_05C6&PID_9038
+%qcfilter.DeviceDesc903A%     = qcfilter, USB\VID_05C6&PID_903A
+%qcfilter.DeviceDesc903B%     = qcfilter, USB\VID_05C6&PID_903B
+%qcfilter.DeviceDesc903C%     = qcfilter, USB\VID_05C6&PID_903C
+%qcfilter.DeviceDesc903D%     = qcfilter, USB\VID_05C6&PID_903D
+%qcfilter.DeviceDesc903E%     = qcfilter, USB\VID_05C6&PID_903E
+%qcfilter.DeviceDesc903F%     = qcfilter, USB\VID_05C6&PID_903F
+%qcfilter.DeviceDesc9040%     = qcfilter, USB\VID_05C6&PID_9040
+%qcfilter.DeviceDesc9041%     = qcfilter, USB\VID_05C6&PID_9041
+%qcfilter.DeviceDesc9042%     = qcfilter, USB\VID_05C6&PID_9042
+%qcfilter.DeviceDesc9043%     = qcfilter, USB\VID_05C6&PID_9043
+%qcfilter.DeviceDesc9044%     = qcfilter, USB\VID_05C6&PID_9044
+%qcfilter.DeviceDesc9045%     = qcfilter, USB\VID_05C6&PID_9045
+%qcfilter.DeviceDesc9046%     = qcfilter, USB\VID_05C6&PID_9046
+%qcfilter.DeviceDesc9047%     = qcfilter, USB\VID_05C6&PID_9047
+%qcfilter.DeviceDesc9048%     = qcfilter, USB\VID_05C6&PID_9048
+%qcfilter.DeviceDesc9049%     = qcfilter, USB\VID_05C6&PID_9049
+%qcfilter.DeviceDesc904B%     = qcfilter, USB\VID_05C6&PID_904B
+%qcfilter.DeviceDesc904C%     = qcfilter, USB\VID_05C6&PID_904C
+%qcfilter.DeviceDesc904F%     = qcfilter, USB\VID_05C6&PID_904F
+%qcfilter.DeviceDesc9050%     = qcfilter, USB\VID_05C6&PID_9050
+%qcfilter.DeviceDesc9051%     = qcfilter, USB\VID_05C6&PID_9051
+%qcfilter.DeviceDesc9052%     = qcfilter, USB\VID_05C6&PID_9052
+%qcfilter.DeviceDesc9053%     = qcfilter, USB\VID_05C6&PID_9053
+%qcfilter.DeviceDesc9054%     = qcfilter, USB\VID_05C6&PID_9054
+%qcfilter.DeviceDesc9055%     = qcfilter, USB\VID_05C6&PID_9055
+%qcfilter.DeviceDesc9056%     = qcfilter, USB\VID_05C6&PID_9056
+%qcfilter.DeviceDesc9059%     = qcfilter, USB\VID_05C6&PID_9059
+%qcfilter.DeviceDesc905A%     = qcfilter, USB\VID_05C6&PID_905A
+%qcfilter.DeviceDesc905D%     = qcfilter, USB\VID_05C6&PID_905D
+%qcfilter.DeviceDesc905E%     = qcfilter, USB\VID_05C6&PID_905E
+%qcfilter.DeviceDesc905F%     = qcfilter, USB\VID_05C6&PID_905F
+%qcfilter.DeviceDesc9060%     = qcfilter, USB\VID_05C6&PID_9060
+%qcfilter.DeviceDesc9061%     = qcfilter, USB\VID_05C6&PID_9061
+%qcfilter.DeviceDesc9062%     = qcfilter, USB\VID_05C6&PID_9062
+%qcfilter.DeviceDesc9064%     = qcfilter, USB\VID_05C6&PID_9064
+%qcfilter.DeviceDesc9065%     = qcfilter, USB\VID_05C6&PID_9065
+%qcfilter.DeviceDesc9066%     = qcfilter, USB\VID_05C6&PID_9066
+%qcfilter.DeviceDesc9067%     = qcfilter, USB\VID_05C6&PID_9067
+%qcfilter.DeviceDesc9068%     = qcfilter, USB\VID_05C6&PID_9068
+%qcfilter.DeviceDesc9069%     = qcfilter, USB\VID_05C6&PID_9069
+%qcfilter.DeviceDesc9070%     = qcfilter, USB\VID_05C6&PID_9070
+%qcfilter.DeviceDesc9071%     = qcfilter, USB\VID_05C6&PID_9071
+%qcfilter.DeviceDesc9072%     = qcfilter, USB\VID_05C6&PID_9072
+%qcfilter.DeviceDesc9073%     = qcfilter, USB\VID_05C6&PID_9073
+%qcfilter.DeviceDesc9074%     = qcfilter, USB\VID_05C6&PID_9074
+%qcfilter.DeviceDesc9075%     = qcfilter, USB\VID_05C6&PID_9075
+%qcfilter.DeviceDesc9076%     = qcfilter, USB\VID_05C6&PID_9076
+%qcfilter.DeviceDesc9077%     = qcfilter, USB\VID_05C6&PID_9077
+%qcfilter.DeviceDesc9078%     = qcfilter, USB\VID_05C6&PID_9078
+%qcfilter.DeviceDesc9079%     = qcfilter, USB\VID_05C6&PID_9079
+%qcfilter.DeviceDesc9080%     = qcfilter, USB\VID_05C6&PID_9080
+%qcfilter.DeviceDesc9081%     = qcfilter, USB\VID_05C6&PID_9081
+%qcfilter.DeviceDesc9082%     = qcfilter, USB\VID_05C6&PID_9082
+%qcfilter.DeviceDesc9083%     = qcfilter, USB\VID_05C6&PID_9083
+%qcfilter.DeviceDesc9084%     = qcfilter, USB\VID_05C6&PID_9084
+%qcfilter.DeviceDesc9085%     = qcfilter, USB\VID_05C6&PID_9085
+%qcfilter.DeviceDesc9086%     = qcfilter, USB\VID_05C6&PID_9086
+%qcfilter.DeviceDesc9087%     = qcfilter, USB\VID_05C6&PID_9087
+%qcfilter.DeviceDesc9088%     = qcfilter, USB\VID_05C6&PID_9088
+%qcfilter.DeviceDesc9089%     = qcfilter, USB\VID_05C6&PID_9089
+%qcfilter.DeviceDesc908A%     = qcfilter, USB\VID_05C6&PID_908A
+%qcfilter.DeviceDesc908B%     = qcfilter, USB\VID_05C6&PID_908B
+%qcfilter.DeviceDesc908E%     = qcfilter, USB\VID_05C6&PID_908E
+%qcfilter.DeviceDesc908F%     = qcfilter4, USB\VID_05C6&PID_908F
+%qcfilter.DeviceDesc9090%     = qcfilter, USB\VID_05C6&PID_9090
+%qcfilter.DeviceDesc9091%     = qcfilter, USB\VID_05C6&PID_9091
+%qcfilter.DeviceDesc9092%     = qcfilter, USB\VID_05C6&PID_9092
+%qcfilter.DeviceDesc9093%     = qcfilter, USB\VID_05C6&PID_9093
+%qcfilter.DeviceDesc9094%     = qcfilter, USB\VID_05C6&PID_9094
+%qcfilter.DeviceDesc9095%     = qcfilter, USB\VID_05C6&PID_9095
+%qcfilter.DeviceDesc9096%     = qcfilter, USB\VID_05C6&PID_9096
+%qcfilter.DeviceDesc9097%     = qcfilter, USB\VID_05C6&PID_9097
+%qcfilter.DeviceDesc9098%     = qcfilter, USB\VID_05C6&PID_9098
+%qcfilter.DeviceDesc9099%     = qcfilter, USB\VID_05C6&PID_9099
+%qcfilter.DeviceDesc909A%     = qcfilter, USB\VID_05C6&PID_909A
+%qcfilter.DeviceDesc909B%     = qcfilter, USB\VID_05C6&PID_909B
+%qcfilter.DeviceDesc909C%     = qcfilter, USB\VID_05C6&PID_909C
+%qcfilter.DeviceDesc909D%     = qcfilter, USB\VID_05C6&PID_909D
+%qcfilter.DeviceDesc909E%     = qcfilter, USB\VID_05C6&PID_909E
+%qcfilter.DeviceDesc909F%     = qcfilter, USB\VID_05C6&PID_909F
+%qcfilter.DeviceDesc90A0%     = qcfilter, USB\VID_05C6&PID_90A0
+%qcfilter.DeviceDesc90A1%     = qcfilter2, USB\VID_05C6&PID_90A1
+%qcfilter.DeviceDesc90A2%     = qcfilter, USB\VID_05C6&PID_90A2
+%qcfilter.DeviceDesc90A3%     = qcfilter, USB\VID_05C6&PID_90A3
+%qcfilter.DeviceDesc90A5%     = qcfilter3, USB\VID_05C6&PID_90A5
+%qcfilter.DeviceDesc90A6%     = qcfilter4, USB\VID_05C6&PID_90A6
+%qcfilter.DeviceDesc90A7%     = qcfilter, USB\VID_05C6&PID_90A7
+%qcfilter.DeviceDesc90A8%     = qcfilter, USB\VID_05C6&PID_90A8
+%qcfilter.DeviceDesc90A9%     = qcfilter, USB\VID_05C6&PID_90A9
+%qcfilter.DeviceDesc90AA%     = qcfilter, USB\VID_05C6&PID_90AA
+%qcfilter.DeviceDesc90AB%     = qcfilter, USB\VID_05C6&PID_90AB
+%qcfilter.DeviceDesc90AC%     = qcfilter, USB\VID_05C6&PID_90AC
+%qcfilter.DeviceDesc90AD%     = qcfilter, USB\VID_05C6&PID_90AD
+%qcfilter.DeviceDesc90AE%     = qcfilter4, USB\VID_05C6&PID_90AE
+%qcfilter.DeviceDesc90AF%     = qcfilter3, USB\VID_05C6&PID_90AF
+%qcfilter.DeviceDesc90B0%     = qcfilter, USB\VID_05C6&PID_90B0
+%qcfilter.DeviceDesc90B2%     = qcfilter, USB\VID_05C6&PID_90B2
+%qcfilter.DeviceDesc90B3%     = qcfilter, USB\VID_05C6&PID_90B3
+%qcfilter.DeviceDesc90B4%     = qcfilter, USB\VID_05C6&PID_90B4
+%qcfilter.DeviceDesc90B5%     = qcfilter, USB\VID_05C6&PID_90B5
+%qcfilter.DeviceDesc90B6%     = qcfilter, USB\VID_05C6&PID_90B6
+%qcfilter.DeviceDesc90B7%     = qcfilter, USB\VID_05C6&PID_90B7
+%qcfilter.DeviceDesc90B8%     = qcfilter, USB\VID_05C6&PID_90B8
+%qcfilter.DeviceDesc90B9%     = qcfilter, USB\VID_05C6&PID_90B9
+%qcfilter.DeviceDesc90BF%     = qcfilter, USB\VID_05C6&PID_90BF
+%qcfilter.DeviceDesc90C0%     = qcfilter, USB\VID_05C6&PID_90C0
+%qcfilter.DeviceDesc90C1%     = qcfilter, USB\VID_05C6&PID_90C1
+%qcfilter.DeviceDesc90C2%     = qcfilter, USB\VID_05C6&PID_90C2
+%qcfilter.DeviceDesc90C3%     = qcfilter, USB\VID_05C6&PID_90C3
+%qcfilter.DeviceDesc90C5%     = qcfilter, USB\VID_05C6&PID_90C5
+%qcfilter.DeviceDesc90C6%     = qcfilter, USB\VID_05C6&PID_90C6
+%qcfilter.DeviceDesc90C7%     = qcfilter, USB\VID_05C6&PID_90C7
+%qcfilter.DeviceDesc90C8%     = qcfilter, USB\VID_05C6&PID_90C8
+%qcfilter.DeviceDesc90C9%     = qcfilter4, USB\VID_05C6&PID_90C9
+%qcfilter.QcomDevice90CA%     = qcfilter, USB\VID_05C6&PID_90CA
+%qcfilter.QcomDevice90CB%     = qcfilter, USB\VID_05C6&PID_90CB
+%qcfilter.QcomDevice90CC%     = qcfilter, USB\VID_05C6&PID_90CC
+%qcfilter.QcomDevice90CD%     = qcfilter, USB\VID_05C6&PID_90CD
+%qcfilter.QcomDevice90D0%     = qcfilter, USB\VID_05C6&PID_90D0
+%qcfilter.QcomDevice90D1%     = qcfilter, USB\VID_05C6&PID_90D1
+%qcfilter.DeviceDesc90D2%     = qcfilter, USB\VID_05C6&PID_90D2
+%qcfilter.DeviceDesc90D3%     = qcfilter, USB\VID_05C6&PID_90D3
+%qcfilter.DeviceDesc90D4%     = qcfilter, USB\VID_05C6&PID_90D4
+%qcfilter.DeviceDesc90D5%     = qcfilter, USB\VID_05C6&PID_90D5
+%qcfilter.DeviceDesc90D6%     = qcfilter, USB\VID_05C6&PID_90D6
+%qcfilter.DeviceDesc90D7%     = qcfilter, USB\VID_05C6&PID_90D7
+%qcfilter.DeviceDesc90D8%     = qcfilter, USB\VID_05C6&PID_90D8
+%qcfilter.DeviceDesc90D9%     = qcfilter, USB\VID_05C6&PID_90D9
+%qcfilter.DeviceDesc90DA%     = qcfilter, USB\VID_05C6&PID_90DA
+%qcfilter.DeviceDesc90DB%     = qcfilter, USB\VID_05C6&PID_90DB
+%qcfilter.DeviceDesc90DC%     = qcfilter, USB\VID_05C6&PID_90DC
+%qcfilter.DeviceDesc90DD%     = qcfilter, USB\VID_05C6&PID_90DD
+%qcfilter.DeviceDesc90DE%     = qcfilter, USB\VID_05C6&PID_90DE
+%qcfilter.DeviceDesc90DF%     = qcfilter, USB\VID_05C6&PID_90DF
+%qcfilter.DeviceDesc90E0%     = qcfilter, USB\VID_05C6&PID_90E0
+%qcfilter.DeviceDesc90E1%     = qcfilter, USB\VID_05C6&PID_90E1
+%qcfilter.DeviceDesc90E2%     = qcfilter, USB\VID_05C6&PID_90E2
+%qcfilter.DeviceDesc90E3%     = qcfilter, USB\VID_05C6&PID_90E3
+%qcfilter.DeviceDesc90E4%     = qcfilter, USB\VID_05C6&PID_90E4
+%qcfilter.DeviceDesc90E5%     = qcfilter, USB\VID_05C6&PID_90E5
+%qcfilter.DeviceDesc90E6%     = qcfilter, USB\VID_05C6&PID_90E6
+%qcfilter.DeviceDesc90E7%     = qcfilter, USB\VID_05C6&PID_90E7
+%qcfilter.DeviceDesc90E8%     = qcfilter, USB\VID_05C6&PID_90E8
+%qcfilter.DeviceDesc90E9%     = qcfilter, USB\VID_05C6&PID_90E9
+%qcfilter.DeviceDesc90EA%     = qcfilter, USB\VID_05C6&PID_90EA
+%qcfilter.DeviceDesc90EB%     = qcfilter, USB\VID_05C6&PID_90EB
+%qcfilter.DeviceDesc90EC%     = qcfilter, USB\VID_05C6&PID_90EC
+%qcfilter.DeviceDesc90ED%     = qcfilter, USB\VID_05C6&PID_90ED
+%qcfilter.DeviceDesc90EE%     = qcfilter, USB\VID_05C6&PID_90EE
+%qcfilter.DeviceDesc90EF%     = qcfilter, USB\VID_05C6&PID_90EF
+%qcfilter.DeviceDesc90F0%     = qcfilter, USB\VID_05C6&PID_90F0
+%qcfilter.DeviceDesc90F1%     = qcfilter, USB\VID_05C6&PID_90F1
+%qcfilter.DeviceDesc90F2%     = qcfilter, USB\VID_05C6&PID_90F2
+%qcfilter.DeviceDesc9100%     = qcfilter, USB\VID_05C6&PID_9100
+%qcfilter.DeviceDesc9101%     = qcfilter, USB\VID_05C6&PID_9101
+%qcfilter.DeviceDesc9402%     = qcfilter, USB\VID_05C6&PID_9402
+%qcfilter.DeviceDesc9404%     = qcfilter, USB\VID_05C6&PID_9404
+%qcfilter.DeviceDesc920D%     = qcfilter, USB\VID_05C6&PID_920D
+
+[QualcommFilter.NTx86.10.0]
+%qcfilter.DeviceDesc9205%     = qcfilter, USB\VID_1E0E&PID_9205
+%qcfilter.DeviceDesc9206%     = qcfilter, USB\VID_1E0E&PID_9206
+%qcfilter.DeviceDesc3197%     = qcfilter, USB\VID_05C6&PID_3197
+%qcfilter.DeviceDesc3199%     = qcfilter, USB\VID_05C6&PID_3199
+%qcfilter.DeviceDesc319A%     = qcfilter, USB\VID_05C6&PID_319A
+%qcfilter.DeviceDesc319B%     = qcfilter, USB\VID_05C6&PID_319B
+%qcfilter.DeviceDesc3200%     = qcfilter, USB\VID_05C6&PID_3200
+%qcfilter.DeviceDesc6000%     = qcfilter, USB\VID_05C6&PID_6000
+%qcfilter.DeviceDesc7000%     = qcfilter, USB\VID_05C6&PID_7000
+%qcfilter.DeviceDesc7001%     = qcfilter, USB\VID_05C6&PID_7001
+%qcfilter.DeviceDesc7002%     = qcfilter, USB\VID_05C6&PID_7002
+%qcfilter.DeviceDesc7101%     = qcfilter, USB\VID_05C6&PID_7101
+%qcfilter.DeviceDesc7102%     = qcfilter, USB\VID_05C6&PID_7102
+%qcfilter.DeviceDesc8000%     = qcfilter, USB\VID_05C6&PID_8000
+%qcfilter.DeviceDesc8001%     = qcfilter, USB\VID_05C6&PID_8001
+%qcfilter.DeviceDesc8002%     = qcfilter, USB\VID_05C6&PID_8002
+%qcfilter.DeviceDesc9000%     = qcfilter, USB\VID_05C6&PID_9000
+%qcfilter.DeviceDesc9001%     = qcfilter, USB\VID_05C6&PID_9001
+%qcfilter.DeviceDesc9002%     = qcfilter, USB\VID_05C6&PID_9002
+%qcfilter.DeviceDesc9003%     = qcfilter, USB\VID_05C6&PID_9003
+%qcfilter.DeviceDesc9004%     = qcfilter, USB\VID_05C6&PID_9004
+%qcfilter.DeviceDesc9005%     = qcfilter, USB\VID_05C6&PID_9005
+%qcfilter.DeviceDesc9006%     = qcfilter, USB\VID_05C6&PID_9006
+%qcfilter.DeviceDesc900A%     = qcfilter, USB\VID_05C6&PID_900A
+%qcfilter.DeviceDesc900B%     = qcfilter, USB\VID_05C6&PID_900B
+%qcfilter.DeviceDesc900C%     = qcfilter, USB\VID_05C6&PID_900C
+%qcfilter.DeviceDesc900D%     = qcfilter, USB\VID_05C6&PID_900D
+%qcfilter.DeviceDesc900F%     = qcfilter, USB\VID_05C6&PID_900F
+%qcfilter.DeviceDesc9010%     = qcfilter, USB\VID_05C6&PID_9010
+%qcfilter.DeviceDesc9011%     = qcfilter, USB\VID_05C6&PID_9011
+%qcfilter.DeviceDesc9012%     = qcfilter, USB\VID_05C6&PID_9012
+%qcfilter.DeviceDesc9013%     = qcfilter, USB\VID_05C6&PID_9013
+%qcfilter.DeviceDesc9016%     = qcfilter, USB\VID_05C6&PID_9016
+%qcfilter.DeviceDesc9017%     = qcfilter, USB\VID_05C6&PID_9017
+%qcfilter.DeviceDesc9018%     = qcfilter, USB\VID_05C6&PID_9018
+%qcfilter.DeviceDesc9019%     = qcfilter, USB\VID_05C6&PID_9019
+%qcfilter.DeviceDesc901B%     = qcfilter, USB\VID_05C6&PID_901B
+%qcfilter.DeviceDesc901C%     = qcfilter, USB\VID_05C6&PID_901C
+%qcfilter.DeviceDesc901D%     = qcfilter, USB\VID_05C6&PID_901D
+%qcfilter.DeviceDesc901F%     = qcfilter, USB\VID_05C6&PID_901F
+%qcfilter.DeviceDesc9020%     = qcfilter, USB\VID_05C6&PID_9020
+%qcfilter.DeviceDesc9021%     = qcfilter, USB\VID_05C6&PID_9021
+%qcfilter.DeviceDesc9022%     = qcfilter, USB\VID_05C6&PID_9022
+%qcfilter.DeviceDesc9025%     = qcfilter, USB\VID_05C6&PID_9025
+%qcfilter.DeviceDesc9026%     = qcfilter, USB\VID_05C6&PID_9026
+%qcfilter.DeviceDesc9028%     = qcfilter, USB\VID_05C6&PID_9028
+%qcfilter.DeviceDesc9029%     = qcfilter, USB\VID_05C6&PID_9029
+%qcfilter.DeviceDesc902C%     = qcfilter, USB\VID_05C6&PID_902C
+%qcfilter.DeviceDesc902D%     = qcfilter, USB\VID_05C6&PID_902D
+%qcfilter.DeviceDesc902E%     = qcfilter, USB\VID_05C6&PID_902E
+%qcfilter.DeviceDesc902F%     = qcfilter, USB\VID_05C6&PID_902F
+%qcfilter.DeviceDesc9030%     = qcfilter, USB\VID_05C6&PID_9030
+%qcfilter.DeviceDesc9031%     = qcfilter, USB\VID_05C6&PID_9031
+%qcfilter.DeviceDesc9032%     = qcfilter, USB\VID_05C6&PID_9032
+%qcfilter.DeviceDesc9033%     = qcfilter, USB\VID_05C6&PID_9033
+%qcfilter.DeviceDesc9034%     = qcfilter, USB\VID_05C6&PID_9034
+%qcfilter.DeviceDesc9035%     = qcfilter4, USB\VID_05C6&PID_9035
+%qcfilter.DeviceDesc9036%     = qcfilter, USB\VID_05C6&PID_9036
+%qcfilter.DeviceDesc9037%     = qcfilter, USB\VID_05C6&PID_9037
+%qcfilter.DeviceDesc9038%     = qcfilter, USB\VID_05C6&PID_9038
+%qcfilter.DeviceDesc903A%     = qcfilter, USB\VID_05C6&PID_903A
+%qcfilter.DeviceDesc903B%     = qcfilter, USB\VID_05C6&PID_903B
+%qcfilter.DeviceDesc903C%     = qcfilter, USB\VID_05C6&PID_903C
+%qcfilter.DeviceDesc903D%     = qcfilter, USB\VID_05C6&PID_903D
+%qcfilter.DeviceDesc903E%     = qcfilter, USB\VID_05C6&PID_903E
+%qcfilter.DeviceDesc903F%     = qcfilter, USB\VID_05C6&PID_903F
+%qcfilter.DeviceDesc9040%     = qcfilter, USB\VID_05C6&PID_9040
+%qcfilter.DeviceDesc9041%     = qcfilter, USB\VID_05C6&PID_9041
+%qcfilter.DeviceDesc9042%     = qcfilter, USB\VID_05C6&PID_9042
+%qcfilter.DeviceDesc9043%     = qcfilter, USB\VID_05C6&PID_9043
+%qcfilter.DeviceDesc9044%     = qcfilter, USB\VID_05C6&PID_9044
+%qcfilter.DeviceDesc9045%     = qcfilter, USB\VID_05C6&PID_9045
+%qcfilter.DeviceDesc9046%     = qcfilter, USB\VID_05C6&PID_9046
+%qcfilter.DeviceDesc9047%     = qcfilter, USB\VID_05C6&PID_9047
+%qcfilter.DeviceDesc9048%     = qcfilter, USB\VID_05C6&PID_9048
+%qcfilter.DeviceDesc9049%     = qcfilter, USB\VID_05C6&PID_9049
+%qcfilter.DeviceDesc904B%     = qcfilter, USB\VID_05C6&PID_904B
+%qcfilter.DeviceDesc904C%     = qcfilter, USB\VID_05C6&PID_904C
+%qcfilter.DeviceDesc904F%     = qcfilter, USB\VID_05C6&PID_904F
+%qcfilter.DeviceDesc9050%     = qcfilter, USB\VID_05C6&PID_9050
+%qcfilter.DeviceDesc9051%     = qcfilter, USB\VID_05C6&PID_9051
+%qcfilter.DeviceDesc9052%     = qcfilter, USB\VID_05C6&PID_9052
+%qcfilter.DeviceDesc9053%     = qcfilter, USB\VID_05C6&PID_9053
+%qcfilter.DeviceDesc9054%     = qcfilter, USB\VID_05C6&PID_9054
+%qcfilter.DeviceDesc9055%     = qcfilter, USB\VID_05C6&PID_9055
+%qcfilter.DeviceDesc9056%     = qcfilter, USB\VID_05C6&PID_9056
+%qcfilter.DeviceDesc9059%     = qcfilter, USB\VID_05C6&PID_9059
+%qcfilter.DeviceDesc905A%     = qcfilter, USB\VID_05C6&PID_905A
+%qcfilter.DeviceDesc905D%     = qcfilter, USB\VID_05C6&PID_905D
+%qcfilter.DeviceDesc905E%     = qcfilter, USB\VID_05C6&PID_905E
+%qcfilter.DeviceDesc905F%     = qcfilter, USB\VID_05C6&PID_905F
+%qcfilter.DeviceDesc9060%     = qcfilter, USB\VID_05C6&PID_9060
+%qcfilter.DeviceDesc9061%     = qcfilter, USB\VID_05C6&PID_9061
+%qcfilter.DeviceDesc9062%     = qcfilter, USB\VID_05C6&PID_9062
+%qcfilter.DeviceDesc9064%     = qcfilter, USB\VID_05C6&PID_9064
+%qcfilter.DeviceDesc9065%     = qcfilter, USB\VID_05C6&PID_9065
+%qcfilter.DeviceDesc9066%     = qcfilter, USB\VID_05C6&PID_9066
+%qcfilter.DeviceDesc9067%     = qcfilter, USB\VID_05C6&PID_9067
+%qcfilter.DeviceDesc9068%     = qcfilter, USB\VID_05C6&PID_9068
+%qcfilter.DeviceDesc9069%     = qcfilter, USB\VID_05C6&PID_9069
+%qcfilter.DeviceDesc9070%     = qcfilter, USB\VID_05C6&PID_9070
+%qcfilter.DeviceDesc9071%     = qcfilter, USB\VID_05C6&PID_9071
+%qcfilter.DeviceDesc9072%     = qcfilter, USB\VID_05C6&PID_9072
+%qcfilter.DeviceDesc9073%     = qcfilter, USB\VID_05C6&PID_9073
+%qcfilter.DeviceDesc9074%     = qcfilter, USB\VID_05C6&PID_9074
+%qcfilter.DeviceDesc9075%     = qcfilter, USB\VID_05C6&PID_9075
+%qcfilter.DeviceDesc9076%     = qcfilter, USB\VID_05C6&PID_9076
+%qcfilter.DeviceDesc9077%     = qcfilter, USB\VID_05C6&PID_9077
+%qcfilter.DeviceDesc9078%     = qcfilter, USB\VID_05C6&PID_9078
+%qcfilter.DeviceDesc9079%     = qcfilter, USB\VID_05C6&PID_9079
+%qcfilter.DeviceDesc9080%     = qcfilter, USB\VID_05C6&PID_9080
+%qcfilter.DeviceDesc9081%     = qcfilter, USB\VID_05C6&PID_9081
+%qcfilter.DeviceDesc9082%     = qcfilter, USB\VID_05C6&PID_9082
+%qcfilter.DeviceDesc9083%     = qcfilter, USB\VID_05C6&PID_9083
+%qcfilter.DeviceDesc9084%     = qcfilter, USB\VID_05C6&PID_9084
+%qcfilter.DeviceDesc9085%     = qcfilter, USB\VID_05C6&PID_9085
+%qcfilter.DeviceDesc9086%     = qcfilter, USB\VID_05C6&PID_9086
+%qcfilter.DeviceDesc9087%     = qcfilter, USB\VID_05C6&PID_9087
+%qcfilter.DeviceDesc9088%     = qcfilter, USB\VID_05C6&PID_9088
+%qcfilter.DeviceDesc9089%     = qcfilter, USB\VID_05C6&PID_9089
+%qcfilter.DeviceDesc908A%     = qcfilter, USB\VID_05C6&PID_908A
+%qcfilter.DeviceDesc908B%     = qcfilter, USB\VID_05C6&PID_908B
+%qcfilter.DeviceDesc908E%     = qcfilter, USB\VID_05C6&PID_908E
+%qcfilter.DeviceDesc908F%     = qcfilter4, USB\VID_05C6&PID_908F
+%qcfilter.DeviceDesc9090%     = qcfilter, USB\VID_05C6&PID_9090
+%qcfilter.DeviceDesc9091%     = qcfilter, USB\VID_05C6&PID_9091
+%qcfilter.DeviceDesc9092%     = qcfilter, USB\VID_05C6&PID_9092
+%qcfilter.DeviceDesc9093%     = qcfilter, USB\VID_05C6&PID_9093
+%qcfilter.DeviceDesc9094%     = qcfilter, USB\VID_05C6&PID_9094
+%qcfilter.DeviceDesc9095%     = qcfilter, USB\VID_05C6&PID_9095
+%qcfilter.DeviceDesc9096%     = qcfilter, USB\VID_05C6&PID_9096
+%qcfilter.DeviceDesc9097%     = qcfilter, USB\VID_05C6&PID_9097
+%qcfilter.DeviceDesc9098%     = qcfilter, USB\VID_05C6&PID_9098
+%qcfilter.DeviceDesc9099%     = qcfilter, USB\VID_05C6&PID_9099
+%qcfilter.DeviceDesc909A%     = qcfilter, USB\VID_05C6&PID_909A
+%qcfilter.DeviceDesc909B%     = qcfilter, USB\VID_05C6&PID_909B
+%qcfilter.DeviceDesc909C%     = qcfilter, USB\VID_05C6&PID_909C
+%qcfilter.DeviceDesc909D%     = qcfilter, USB\VID_05C6&PID_909D
+%qcfilter.DeviceDesc909E%     = qcfilter, USB\VID_05C6&PID_909E
+%qcfilter.DeviceDesc909F%     = qcfilter, USB\VID_05C6&PID_909F
+%qcfilter.DeviceDesc90A0%     = qcfilter, USB\VID_05C6&PID_90A0
+%qcfilter.DeviceDesc90A1%     = qcfilter2, USB\VID_05C6&PID_90A1
+%qcfilter.DeviceDesc90A2%     = qcfilter, USB\VID_05C6&PID_90A2
+%qcfilter.DeviceDesc90A3%     = qcfilter, USB\VID_05C6&PID_90A3
+%qcfilter.DeviceDesc90A5%     = qcfilter3, USB\VID_05C6&PID_90A5
+%qcfilter.DeviceDesc90A6%     = qcfilter4, USB\VID_05C6&PID_90A6
+%qcfilter.DeviceDesc90A7%     = qcfilter, USB\VID_05C6&PID_90A7
+%qcfilter.DeviceDesc90A8%     = qcfilter, USB\VID_05C6&PID_90A8
+%qcfilter.DeviceDesc90A9%     = qcfilter, USB\VID_05C6&PID_90A9
+%qcfilter.DeviceDesc90AA%     = qcfilter, USB\VID_05C6&PID_90AA
+%qcfilter.DeviceDesc90AB%     = qcfilter, USB\VID_05C6&PID_90AB
+%qcfilter.DeviceDesc90AC%     = qcfilter, USB\VID_05C6&PID_90AC
+%qcfilter.DeviceDesc90AD%     = qcfilter, USB\VID_05C6&PID_90AD
+%qcfilter.DeviceDesc90AE%     = qcfilter4, USB\VID_05C6&PID_90AE
+%qcfilter.DeviceDesc90AF%     = qcfilter3, USB\VID_05C6&PID_90AF
+%qcfilter.DeviceDesc90B0%     = qcfilter, USB\VID_05C6&PID_90B0
+%qcfilter.DeviceDesc90B2%     = qcfilter, USB\VID_05C6&PID_90B2
+%qcfilter.DeviceDesc90B3%     = qcfilter, USB\VID_05C6&PID_90B3
+%qcfilter.DeviceDesc90B4%     = qcfilter, USB\VID_05C6&PID_90B4
+%qcfilter.DeviceDesc90B5%     = qcfilter, USB\VID_05C6&PID_90B5
+%qcfilter.DeviceDesc90B6%     = qcfilter, USB\VID_05C6&PID_90B6
+%qcfilter.DeviceDesc90B7%     = qcfilter, USB\VID_05C6&PID_90B7
+%qcfilter.DeviceDesc90B8%     = qcfilter, USB\VID_05C6&PID_90B8
+%qcfilter.DeviceDesc90B9%     = qcfilter, USB\VID_05C6&PID_90B9
+%qcfilter.DeviceDesc90BF%     = qcfilter, USB\VID_05C6&PID_90BF
+%qcfilter.DeviceDesc90C0%     = qcfilter, USB\VID_05C6&PID_90C0
+%qcfilter.DeviceDesc90C1%     = qcfilter, USB\VID_05C6&PID_90C1
+%qcfilter.DeviceDesc90C2%     = qcfilter, USB\VID_05C6&PID_90C2
+%qcfilter.DeviceDesc90C3%     = qcfilter, USB\VID_05C6&PID_90C3
+%qcfilter.DeviceDesc90C5%     = qcfilter, USB\VID_05C6&PID_90C5
+%qcfilter.DeviceDesc90C6%     = qcfilter, USB\VID_05C6&PID_90C6
+%qcfilter.DeviceDesc90C7%     = qcfilter, USB\VID_05C6&PID_90C7
+%qcfilter.DeviceDesc90C8%     = qcfilter, USB\VID_05C6&PID_90C8
+%qcfilter.DeviceDesc90C9%     = qcfilter4, USB\VID_05C6&PID_90C9
+%qcfilter.QcomDevice90CA%     = qcfilter, USB\VID_05C6&PID_90CA
+%qcfilter.QcomDevice90CB%     = qcfilter, USB\VID_05C6&PID_90CB
+%qcfilter.QcomDevice90CC%     = qcfilter, USB\VID_05C6&PID_90CC
+%qcfilter.QcomDevice90CD%     = qcfilter, USB\VID_05C6&PID_90CD
+%qcfilter.QcomDevice90D0%     = qcfilter, USB\VID_05C6&PID_90D0
+%qcfilter.QcomDevice90D1%     = qcfilter, USB\VID_05C6&PID_90D1
+%qcfilter.DeviceDesc90D2%     = qcfilter, USB\VID_05C6&PID_90D2
+%qcfilter.DeviceDesc90D3%     = qcfilter, USB\VID_05C6&PID_90D3
+%qcfilter.DeviceDesc90D4%     = qcfilter, USB\VID_05C6&PID_90D4
+%qcfilter.DeviceDesc90D5%     = qcfilter, USB\VID_05C6&PID_90D5
+%qcfilter.DeviceDesc90D6%     = qcfilter, USB\VID_05C6&PID_90D6
+%qcfilter.DeviceDesc90D7%     = qcfilter, USB\VID_05C6&PID_90D7
+%qcfilter.DeviceDesc90D8%     = qcfilter, USB\VID_05C6&PID_90D8
+%qcfilter.DeviceDesc90D9%     = qcfilter, USB\VID_05C6&PID_90D9
+%qcfilter.DeviceDesc90DA%     = qcfilter, USB\VID_05C6&PID_90DA
+%qcfilter.DeviceDesc90DB%     = qcfilter, USB\VID_05C6&PID_90DB
+%qcfilter.DeviceDesc90DC%     = qcfilter, USB\VID_05C6&PID_90DC
+%qcfilter.DeviceDesc90DD%     = qcfilter, USB\VID_05C6&PID_90DD
+%qcfilter.DeviceDesc90DE%     = qcfilter, USB\VID_05C6&PID_90DE
+%qcfilter.DeviceDesc90DF%     = qcfilter, USB\VID_05C6&PID_90DF
+%qcfilter.DeviceDesc90E0%     = qcfilter, USB\VID_05C6&PID_90E0
+%qcfilter.DeviceDesc90E1%     = qcfilter, USB\VID_05C6&PID_90E1
+%qcfilter.DeviceDesc90E2%     = qcfilter, USB\VID_05C6&PID_90E2
+%qcfilter.DeviceDesc90E3%     = qcfilter, USB\VID_05C6&PID_90E3
+%qcfilter.DeviceDesc90E4%     = qcfilter, USB\VID_05C6&PID_90E4
+%qcfilter.DeviceDesc90E5%     = qcfilter, USB\VID_05C6&PID_90E5
+%qcfilter.DeviceDesc90E6%     = qcfilter, USB\VID_05C6&PID_90E6
+%qcfilter.DeviceDesc90E7%     = qcfilter, USB\VID_05C6&PID_90E7
+%qcfilter.DeviceDesc90E8%     = qcfilter, USB\VID_05C6&PID_90E8
+%qcfilter.DeviceDesc90E9%     = qcfilter, USB\VID_05C6&PID_90E9
+%qcfilter.DeviceDesc90EA%     = qcfilter1, USB\VID_05C6&PID_90EA
+%qcfilter.DeviceDesc90EB%     = qcfilter1, USB\VID_05C6&PID_90EB
+%qcfilter.DeviceDesc90EC%     = qcfilter, USB\VID_05C6&PID_90EC
+%qcfilter.DeviceDesc90ED%     = qcfilter, USB\VID_05C6&PID_90ED
+%qcfilter.DeviceDesc90EE%     = qcfilter, USB\VID_05C6&PID_90EE
+%qcfilter.DeviceDesc90EF%     = qcfilter, USB\VID_05C6&PID_90EF
+%qcfilter.DeviceDesc90F0%     = qcfilter, USB\VID_05C6&PID_90F0
+%qcfilter.DeviceDesc90F1%     = qcfilter, USB\VID_05C6&PID_90F1
+%qcfilter.DeviceDesc90F2%     = qcfilter, USB\VID_05C6&PID_90F2
+%qcfilter.DeviceDesc9100%     = qcfilter, USB\VID_05C6&PID_9100
+%qcfilter.DeviceDesc9101%     = qcfilter, USB\VID_05C6&PID_9101
+%qcfilter.DeviceDesc9402%     = qcfilter, USB\VID_05C6&PID_9402
+%qcfilter.DeviceDesc9404%     = qcfilter, USB\VID_05C6&PID_9404
+%qcfilter.DeviceDesc920D%     = qcfilter, USB\VID_05C6&PID_920D
+
+[QualcommFilter.NTamd64.10.0]
+
+%qcfilter.DeviceDesc9205%     = qcfilter, USB\VID_1E0E&PID_9205
+%qcfilter.DeviceDesc9206%     = qcfilter, USB\VID_1E0E&PID_9206
+%qcfilter.DeviceDesc3197%     = qcfilter, USB\VID_05C6&PID_3197
+%qcfilter.DeviceDesc3199%     = qcfilter, USB\VID_05C6&PID_3199
+%qcfilter.DeviceDesc319A%     = qcfilter, USB\VID_05C6&PID_319A
+%qcfilter.DeviceDesc319B%     = qcfilter, USB\VID_05C6&PID_319B
+%qcfilter.DeviceDesc3200%     = qcfilter, USB\VID_05C6&PID_3200
+%qcfilter.DeviceDesc6000%     = qcfilter, USB\VID_05C6&PID_6000
+%qcfilter.DeviceDesc7000%     = qcfilter, USB\VID_05C6&PID_7000
+%qcfilter.DeviceDesc7001%     = qcfilter, USB\VID_05C6&PID_7001
+%qcfilter.DeviceDesc7002%     = qcfilter, USB\VID_05C6&PID_7002
+%qcfilter.DeviceDesc7101%     = qcfilter, USB\VID_05C6&PID_7101
+%qcfilter.DeviceDesc7102%     = qcfilter, USB\VID_05C6&PID_7102
+%qcfilter.DeviceDesc8000%     = qcfilter, USB\VID_05C6&PID_8000
+%qcfilter.DeviceDesc8001%     = qcfilter, USB\VID_05C6&PID_8001
+%qcfilter.DeviceDesc8002%     = qcfilter, USB\VID_05C6&PID_8002
+%qcfilter.DeviceDesc9000%     = qcfilter, USB\VID_05C6&PID_9000
+%qcfilter.DeviceDesc9001%     = qcfilter, USB\VID_05C6&PID_9001
+%qcfilter.DeviceDesc9002%     = qcfilter, USB\VID_05C6&PID_9002
+%qcfilter.DeviceDesc9003%     = qcfilter, USB\VID_05C6&PID_9003
+%qcfilter.DeviceDesc9004%     = qcfilter, USB\VID_05C6&PID_9004
+%qcfilter.DeviceDesc9005%     = qcfilter, USB\VID_05C6&PID_9005
+%qcfilter.DeviceDesc9006%     = qcfilter, USB\VID_05C6&PID_9006
+%qcfilter.DeviceDesc900A%     = qcfilter, USB\VID_05C6&PID_900A
+%qcfilter.DeviceDesc900B%     = qcfilter, USB\VID_05C6&PID_900B
+%qcfilter.DeviceDesc900C%     = qcfilter, USB\VID_05C6&PID_900C
+%qcfilter.DeviceDesc900D%     = qcfilter, USB\VID_05C6&PID_900D
+%qcfilter.DeviceDesc900F%     = qcfilter, USB\VID_05C6&PID_900F
+%qcfilter.DeviceDesc9010%     = qcfilter, USB\VID_05C6&PID_9010
+%qcfilter.DeviceDesc9011%     = qcfilter, USB\VID_05C6&PID_9011
+%qcfilter.DeviceDesc9012%     = qcfilter, USB\VID_05C6&PID_9012
+%qcfilter.DeviceDesc9013%     = qcfilter, USB\VID_05C6&PID_9013
+%qcfilter.DeviceDesc9016%     = qcfilter, USB\VID_05C6&PID_9016
+%qcfilter.DeviceDesc9017%     = qcfilter, USB\VID_05C6&PID_9017
+%qcfilter.DeviceDesc9018%     = qcfilter, USB\VID_05C6&PID_9018
+%qcfilter.DeviceDesc9019%     = qcfilter, USB\VID_05C6&PID_9019
+%qcfilter.DeviceDesc901B%     = qcfilter, USB\VID_05C6&PID_901B
+%qcfilter.DeviceDesc901C%     = qcfilter, USB\VID_05C6&PID_901C
+%qcfilter.DeviceDesc901D%     = qcfilter, USB\VID_05C6&PID_901D
+%qcfilter.DeviceDesc901F%     = qcfilter, USB\VID_05C6&PID_901F
+%qcfilter.DeviceDesc9020%     = qcfilter, USB\VID_05C6&PID_9020
+%qcfilter.DeviceDesc9021%     = qcfilter, USB\VID_05C6&PID_9021
+%qcfilter.DeviceDesc9022%     = qcfilter, USB\VID_05C6&PID_9022
+%qcfilter.DeviceDesc9025%     = qcfilter, USB\VID_05C6&PID_9025
+%qcfilter.DeviceDesc9026%     = qcfilter, USB\VID_05C6&PID_9026
+%qcfilter.DeviceDesc9028%     = qcfilter, USB\VID_05C6&PID_9028
+%qcfilter.DeviceDesc9029%     = qcfilter, USB\VID_05C6&PID_9029
+%qcfilter.DeviceDesc902C%     = qcfilter, USB\VID_05C6&PID_902C
+%qcfilter.DeviceDesc902D%     = qcfilter, USB\VID_05C6&PID_902D
+%qcfilter.DeviceDesc902E%     = qcfilter, USB\VID_05C6&PID_902E
+%qcfilter.DeviceDesc902F%     = qcfilter, USB\VID_05C6&PID_902F
+%qcfilter.DeviceDesc9030%     = qcfilter, USB\VID_05C6&PID_9030
+%qcfilter.DeviceDesc9031%     = qcfilter, USB\VID_05C6&PID_9031
+%qcfilter.DeviceDesc9032%     = qcfilter, USB\VID_05C6&PID_9032
+%qcfilter.DeviceDesc9033%     = qcfilter, USB\VID_05C6&PID_9033
+%qcfilter.DeviceDesc9034%     = qcfilter, USB\VID_05C6&PID_9034
+%qcfilter.DeviceDesc9035%     = qcfilter4, USB\VID_05C6&PID_9035
+%qcfilter.DeviceDesc9036%     = qcfilter, USB\VID_05C6&PID_9036
+%qcfilter.DeviceDesc9037%     = qcfilter, USB\VID_05C6&PID_9037
+%qcfilter.DeviceDesc9038%     = qcfilter, USB\VID_05C6&PID_9038
+%qcfilter.DeviceDesc903A%     = qcfilter, USB\VID_05C6&PID_903A
+%qcfilter.DeviceDesc903B%     = qcfilter, USB\VID_05C6&PID_903B
+%qcfilter.DeviceDesc903C%     = qcfilter, USB\VID_05C6&PID_903C
+%qcfilter.DeviceDesc903D%     = qcfilter, USB\VID_05C6&PID_903D
+%qcfilter.DeviceDesc903E%     = qcfilter, USB\VID_05C6&PID_903E
+%qcfilter.DeviceDesc903F%     = qcfilter, USB\VID_05C6&PID_903F
+%qcfilter.DeviceDesc9040%     = qcfilter, USB\VID_05C6&PID_9040
+%qcfilter.DeviceDesc9041%     = qcfilter, USB\VID_05C6&PID_9041
+%qcfilter.DeviceDesc9042%     = qcfilter, USB\VID_05C6&PID_9042
+%qcfilter.DeviceDesc9043%     = qcfilter, USB\VID_05C6&PID_9043
+%qcfilter.DeviceDesc9044%     = qcfilter, USB\VID_05C6&PID_9044
+%qcfilter.DeviceDesc9045%     = qcfilter, USB\VID_05C6&PID_9045
+%qcfilter.DeviceDesc9046%     = qcfilter, USB\VID_05C6&PID_9046
+%qcfilter.DeviceDesc9047%     = qcfilter, USB\VID_05C6&PID_9047
+%qcfilter.DeviceDesc9048%     = qcfilter, USB\VID_05C6&PID_9048
+%qcfilter.DeviceDesc9049%     = qcfilter, USB\VID_05C6&PID_9049
+%qcfilter.DeviceDesc904B%     = qcfilter, USB\VID_05C6&PID_904B
+%qcfilter.DeviceDesc904C%     = qcfilter, USB\VID_05C6&PID_904C
+%qcfilter.DeviceDesc904F%     = qcfilter, USB\VID_05C6&PID_904F
+%qcfilter.DeviceDesc9050%     = qcfilter, USB\VID_05C6&PID_9050
+%qcfilter.DeviceDesc9051%     = qcfilter, USB\VID_05C6&PID_9051
+%qcfilter.DeviceDesc9052%     = qcfilter, USB\VID_05C6&PID_9052
+%qcfilter.DeviceDesc9053%     = qcfilter, USB\VID_05C6&PID_9053
+%qcfilter.DeviceDesc9054%     = qcfilter, USB\VID_05C6&PID_9054
+%qcfilter.DeviceDesc9055%     = qcfilter, USB\VID_05C6&PID_9055
+%qcfilter.DeviceDesc9056%     = qcfilter, USB\VID_05C6&PID_9056
+%qcfilter.DeviceDesc9059%     = qcfilter, USB\VID_05C6&PID_9059
+%qcfilter.DeviceDesc905A%     = qcfilter, USB\VID_05C6&PID_905A
+%qcfilter.DeviceDesc905D%     = qcfilter, USB\VID_05C6&PID_905D
+%qcfilter.DeviceDesc905E%     = qcfilter, USB\VID_05C6&PID_905E
+%qcfilter.DeviceDesc905F%     = qcfilter, USB\VID_05C6&PID_905F
+%qcfilter.DeviceDesc9060%     = qcfilter, USB\VID_05C6&PID_9060
+%qcfilter.DeviceDesc9061%     = qcfilter, USB\VID_05C6&PID_9061
+%qcfilter.DeviceDesc9062%     = qcfilter, USB\VID_05C6&PID_9062
+%qcfilter.DeviceDesc9064%     = qcfilter, USB\VID_05C6&PID_9064
+%qcfilter.DeviceDesc9065%     = qcfilter, USB\VID_05C6&PID_9065
+%qcfilter.DeviceDesc9066%     = qcfilter, USB\VID_05C6&PID_9066
+%qcfilter.DeviceDesc9067%     = qcfilter, USB\VID_05C6&PID_9067
+%qcfilter.DeviceDesc9068%     = qcfilter, USB\VID_05C6&PID_9068
+%qcfilter.DeviceDesc9069%     = qcfilter, USB\VID_05C6&PID_9069
+%qcfilter.DeviceDesc9070%     = qcfilter, USB\VID_05C6&PID_9070
+%qcfilter.DeviceDesc9071%     = qcfilter, USB\VID_05C6&PID_9071
+%qcfilter.DeviceDesc9072%     = qcfilter, USB\VID_05C6&PID_9072
+%qcfilter.DeviceDesc9073%     = qcfilter, USB\VID_05C6&PID_9073
+%qcfilter.DeviceDesc9074%     = qcfilter, USB\VID_05C6&PID_9074
+%qcfilter.DeviceDesc9075%     = qcfilter, USB\VID_05C6&PID_9075
+%qcfilter.DeviceDesc9076%     = qcfilter, USB\VID_05C6&PID_9076
+%qcfilter.DeviceDesc9077%     = qcfilter, USB\VID_05C6&PID_9077
+%qcfilter.DeviceDesc9078%     = qcfilter, USB\VID_05C6&PID_9078
+%qcfilter.DeviceDesc9079%     = qcfilter, USB\VID_05C6&PID_9079
+%qcfilter.DeviceDesc9080%     = qcfilter, USB\VID_05C6&PID_9080
+%qcfilter.DeviceDesc9081%     = qcfilter, USB\VID_05C6&PID_9081
+%qcfilter.DeviceDesc9082%     = qcfilter, USB\VID_05C6&PID_9082
+%qcfilter.DeviceDesc9083%     = qcfilter, USB\VID_05C6&PID_9083
+%qcfilter.DeviceDesc9084%     = qcfilter, USB\VID_05C6&PID_9084
+%qcfilter.DeviceDesc9085%     = qcfilter, USB\VID_05C6&PID_9085
+%qcfilter.DeviceDesc9086%     = qcfilter, USB\VID_05C6&PID_9086
+%qcfilter.DeviceDesc9087%     = qcfilter, USB\VID_05C6&PID_9087
+%qcfilter.DeviceDesc9088%     = qcfilter, USB\VID_05C6&PID_9088
+%qcfilter.DeviceDesc9089%     = qcfilter, USB\VID_05C6&PID_9089
+%qcfilter.DeviceDesc908A%     = qcfilter, USB\VID_05C6&PID_908A
+%qcfilter.DeviceDesc908B%     = qcfilter, USB\VID_05C6&PID_908B
+%qcfilter.DeviceDesc908E%     = qcfilter, USB\VID_05C6&PID_908E
+%qcfilter.DeviceDesc908F%     = qcfilter4, USB\VID_05C6&PID_908F
+%qcfilter.DeviceDesc9090%     = qcfilter, USB\VID_05C6&PID_9090
+%qcfilter.DeviceDesc9091%     = qcfilter, USB\VID_05C6&PID_9091
+%qcfilter.DeviceDesc9092%     = qcfilter, USB\VID_05C6&PID_9092
+%qcfilter.DeviceDesc9093%     = qcfilter, USB\VID_05C6&PID_9093
+%qcfilter.DeviceDesc9094%     = qcfilter, USB\VID_05C6&PID_9094
+%qcfilter.DeviceDesc9095%     = qcfilter, USB\VID_05C6&PID_9095
+%qcfilter.DeviceDesc9096%     = qcfilter, USB\VID_05C6&PID_9096
+%qcfilter.DeviceDesc9097%     = qcfilter, USB\VID_05C6&PID_9097
+%qcfilter.DeviceDesc9098%     = qcfilter, USB\VID_05C6&PID_9098
+%qcfilter.DeviceDesc9099%     = qcfilter, USB\VID_05C6&PID_9099
+%qcfilter.DeviceDesc909A%     = qcfilter, USB\VID_05C6&PID_909A
+%qcfilter.DeviceDesc909B%     = qcfilter, USB\VID_05C6&PID_909B
+%qcfilter.DeviceDesc909C%     = qcfilter, USB\VID_05C6&PID_909C
+%qcfilter.DeviceDesc909D%     = qcfilter, USB\VID_05C6&PID_909D
+%qcfilter.DeviceDesc909E%     = qcfilter, USB\VID_05C6&PID_909E
+%qcfilter.DeviceDesc909F%     = qcfilter, USB\VID_05C6&PID_909F
+%qcfilter.DeviceDesc90A0%     = qcfilter, USB\VID_05C6&PID_90A0
+%qcfilter.DeviceDesc90A1%     = qcfilter2, USB\VID_05C6&PID_90A1
+%qcfilter.DeviceDesc90A2%     = qcfilter, USB\VID_05C6&PID_90A2
+%qcfilter.DeviceDesc90A3%     = qcfilter, USB\VID_05C6&PID_90A3
+%qcfilter.DeviceDesc90A5%     = qcfilter3, USB\VID_05C6&PID_90A5
+%qcfilter.DeviceDesc90A6%     = qcfilter4, USB\VID_05C6&PID_90A6
+%qcfilter.DeviceDesc90A7%     = qcfilter, USB\VID_05C6&PID_90A7
+%qcfilter.DeviceDesc90A8%     = qcfilter, USB\VID_05C6&PID_90A8
+%qcfilter.DeviceDesc90A9%     = qcfilter, USB\VID_05C6&PID_90A9
+%qcfilter.DeviceDesc90AA%     = qcfilter, USB\VID_05C6&PID_90AA
+%qcfilter.DeviceDesc90AB%     = qcfilter, USB\VID_05C6&PID_90AB
+%qcfilter.DeviceDesc90AC%     = qcfilter, USB\VID_05C6&PID_90AC
+%qcfilter.DeviceDesc90AD%     = qcfilter, USB\VID_05C6&PID_90AD
+%qcfilter.DeviceDesc90AE%     = qcfilter4, USB\VID_05C6&PID_90AE
+%qcfilter.DeviceDesc90AF%     = qcfilter3, USB\VID_05C6&PID_90AF
+%qcfilter.DeviceDesc90B0%     = qcfilter, USB\VID_05C6&PID_90B0
+%qcfilter.DeviceDesc90B2%     = qcfilter, USB\VID_05C6&PID_90B2
+%qcfilter.DeviceDesc90B3%     = qcfilter, USB\VID_05C6&PID_90B3
+%qcfilter.DeviceDesc90B4%     = qcfilter, USB\VID_05C6&PID_90B4
+%qcfilter.DeviceDesc90B5%     = qcfilter, USB\VID_05C6&PID_90B5
+%qcfilter.DeviceDesc90B6%     = qcfilter, USB\VID_05C6&PID_90B6
+%qcfilter.DeviceDesc90B7%     = qcfilter, USB\VID_05C6&PID_90B7
+%qcfilter.DeviceDesc90B8%     = qcfilter, USB\VID_05C6&PID_90B8
+%qcfilter.DeviceDesc90B9%     = qcfilter, USB\VID_05C6&PID_90B9
+%qcfilter.DeviceDesc90BF%     = qcfilter, USB\VID_05C6&PID_90BF
+%qcfilter.DeviceDesc90C0%     = qcfilter, USB\VID_05C6&PID_90C0
+%qcfilter.DeviceDesc90C1%     = qcfilter, USB\VID_05C6&PID_90C1
+%qcfilter.DeviceDesc90C2%     = qcfilter, USB\VID_05C6&PID_90C2
+%qcfilter.DeviceDesc90C3%     = qcfilter, USB\VID_05C6&PID_90C3
+%qcfilter.DeviceDesc90C5%     = qcfilter, USB\VID_05C6&PID_90C5
+%qcfilter.DeviceDesc90C6%     = qcfilter, USB\VID_05C6&PID_90C6
+%qcfilter.DeviceDesc90C7%     = qcfilter, USB\VID_05C6&PID_90C7
+%qcfilter.DeviceDesc90C8%     = qcfilter, USB\VID_05C6&PID_90C8
+%qcfilter.DeviceDesc90C9%     = qcfilter4, USB\VID_05C6&PID_90C9
+%qcfilter.QcomDevice90CA%     = qcfilter, USB\VID_05C6&PID_90CA
+%qcfilter.QcomDevice90CB%     = qcfilter, USB\VID_05C6&PID_90CB
+%qcfilter.QcomDevice90CC%     = qcfilter, USB\VID_05C6&PID_90CC
+%qcfilter.QcomDevice90CD%     = qcfilter, USB\VID_05C6&PID_90CD
+%qcfilter.QcomDevice90D0%     = qcfilter, USB\VID_05C6&PID_90D0
+%qcfilter.QcomDevice90D1%     = qcfilter, USB\VID_05C6&PID_90D1
+%qcfilter.DeviceDesc90D2%     = qcfilter, USB\VID_05C6&PID_90D2
+%qcfilter.DeviceDesc90D3%     = qcfilter, USB\VID_05C6&PID_90D3
+%qcfilter.DeviceDesc90D4%     = qcfilter, USB\VID_05C6&PID_90D4
+%qcfilter.DeviceDesc90D5%     = qcfilter, USB\VID_05C6&PID_90D5
+%qcfilter.DeviceDesc90D6%     = qcfilter, USB\VID_05C6&PID_90D6
+%qcfilter.DeviceDesc90D7%     = qcfilter, USB\VID_05C6&PID_90D7
+%qcfilter.DeviceDesc90D8%     = qcfilter, USB\VID_05C6&PID_90D8
+%qcfilter.DeviceDesc90D9%     = qcfilter, USB\VID_05C6&PID_90D9
+%qcfilter.DeviceDesc90DA%     = qcfilter, USB\VID_05C6&PID_90DA
+%qcfilter.DeviceDesc90DB%     = qcfilter, USB\VID_05C6&PID_90DB
+%qcfilter.DeviceDesc90DC%     = qcfilter, USB\VID_05C6&PID_90DC
+%qcfilter.DeviceDesc90DD%     = qcfilter, USB\VID_05C6&PID_90DD
+%qcfilter.DeviceDesc90DE%     = qcfilter, USB\VID_05C6&PID_90DE
+%qcfilter.DeviceDesc90DF%     = qcfilter, USB\VID_05C6&PID_90DF
+%qcfilter.DeviceDesc90E0%     = qcfilter, USB\VID_05C6&PID_90E0
+%qcfilter.DeviceDesc90E1%     = qcfilter, USB\VID_05C6&PID_90E1
+%qcfilter.DeviceDesc90E2%     = qcfilter, USB\VID_05C6&PID_90E2
+%qcfilter.DeviceDesc90E3%     = qcfilter, USB\VID_05C6&PID_90E3
+%qcfilter.DeviceDesc90E4%     = qcfilter, USB\VID_05C6&PID_90E4
+%qcfilter.DeviceDesc90E5%     = qcfilter, USB\VID_05C6&PID_90E5
+%qcfilter.DeviceDesc90E6%     = qcfilter, USB\VID_05C6&PID_90E6
+%qcfilter.DeviceDesc90E7%     = qcfilter, USB\VID_05C6&PID_90E7
+%qcfilter.DeviceDesc90E8%     = qcfilter, USB\VID_05C6&PID_90E8
+%qcfilter.DeviceDesc90E9%     = qcfilter, USB\VID_05C6&PID_90E9
+%qcfilter.DeviceDesc90EA%     = qcfilter1, USB\VID_05C6&PID_90EA
+%qcfilter.DeviceDesc90EB%     = qcfilter1, USB\VID_05C6&PID_90EB
+%qcfilter.DeviceDesc90EC%     = qcfilter, USB\VID_05C6&PID_90EC
+%qcfilter.DeviceDesc90ED%     = qcfilter, USB\VID_05C6&PID_90ED
+%qcfilter.DeviceDesc90EE%     = qcfilter, USB\VID_05C6&PID_90EE
+%qcfilter.DeviceDesc90EF%     = qcfilter, USB\VID_05C6&PID_90EF
+%qcfilter.DeviceDesc90F0%     = qcfilter, USB\VID_05C6&PID_90F0
+%qcfilter.DeviceDesc90F1%     = qcfilter, USB\VID_05C6&PID_90F1
+%qcfilter.DeviceDesc90F2%     = qcfilter, USB\VID_05C6&PID_90F2
+%qcfilter.DeviceDesc9100%     = qcfilter, USB\VID_05C6&PID_9100
+%qcfilter.DeviceDesc9101%     = qcfilter, USB\VID_05C6&PID_9101
+%qcfilter.DeviceDesc9402%     = qcfilter, USB\VID_05C6&PID_9402
+%qcfilter.DeviceDesc9404%     = qcfilter, USB\VID_05C6&PID_9404
+%qcfilter.DeviceDesc920D%     = qcfilter, USB\VID_05C6&PID_920D
+
+[qcfilter.NT]  
+;-----------------------------------------------------------------
+; Get the standard stuff from USB.inf
+;-----------------------------------------------------------------
+Include   = USB.inf
+Needs     = Composite.Dev.NT
+CopyFiles = qcfilter.NT.Copy
+
+[qcfilter1.NT]  
+;-----------------------------------------------------------------
+; Get the standard stuff from USB.inf
+;-----------------------------------------------------------------
+Include   = USB.inf
+Needs     = Composite.Dev.NT
+CopyFiles = qcfilter1.NT.Copy
+
+[qcfilter2.NT]  
+;-----------------------------------------------------------------
+; Get the standard stuff from USB.inf
+;-----------------------------------------------------------------
+Include   = USB.inf
+Needs     = Composite.Dev.NT
+CopyFiles = qcfilter2.NT.Copy
+AddReg    = qcfilterAddReg2
+
+[qcfilter3.NT]  
+;-----------------------------------------------------------------
+; Get the standard stuff from USB.inf
+;-----------------------------------------------------------------
+Include   = USB.inf
+Needs     = Composite.Dev.NT
+CopyFiles = qcfilter3.NT.Copy
+AddReg    = qcfilterAddReg3
+
+[qcfilter4.NT]  
+;-----------------------------------------------------------------
+; Get the standard stuff from USB.inf
+;-----------------------------------------------------------------
+Include   = USB.inf
+Needs     = Composite.Dev.NT
+CopyFiles = qcfilter4.NT.Copy
+AddReg    = qcfilterAddReg4
+
+[qcfilterAddReg2]
+
+; Support Muxing
+HKR,, QCDeviceMuxEnable, 0x00010001, 0x00000001
+
+; Start Interface
+HKR,, QCDeviceStartIf, 0x00010001, 0x00000002
+
+; Number of Interfaces
+HKR,, QCDeviceNumIf, 0x00010001, 0x00000001
+
+; Number of Mux Interfaces
+HKR,, QCDeviceNumMuxIf, 0x00010001, 0x00000007
+
+[qcfilterAddReg3]
+
+; Support Muxing
+HKR,, QCDeviceMuxEnable, 0x00010001, 0x00000001
+
+; Start Interface
+HKR,, QCDeviceStartIf, 0x00010001, 0x00000003
+
+; Number of Interfaces
+HKR,, QCDeviceNumIf, 0x00010001, 0x00000001
+
+; Number of Mux Interfaces
+HKR,, QCDeviceNumMuxIf, 0x00010001, 0x00000007
+
+[qcfilterAddReg4]
+
+; Support Muxing
+HKR,, QCDeviceMuxEnable, 0x00010001, 0x00000001
+
+; Start Interface
+HKR,, QCDeviceStartIf, 0x00010001, 0x00000004
+
+; Number of Interfaces
+HKR,, QCDeviceNumIf, 0x00010001, 0x00000001
+
+; Number of Mux Interfaces
+HKR,, QCDeviceNumMuxIf, 0x00010001, 0x00000007
+
+[qcfilter.NT.Copy]
+qcusbfilter.sys
+
+[qcfilter1.NT.Copy]
+qcusbfilter.sys
+
+[qcfilter2.NT.Copy]
+qcusbfilter.sys
+
+[qcfilter3.NT.Copy]
+qcusbfilter.sys
+
+[qcfilter4.NT.Copy]
+qcusbfilter.sys
+
+[DestinationDirs]
+qcfilter.NT.Copy = 12
+qcfilter1.NT.Copy = 12
+qcfilter2.NT.Copy = 12
+qcfilter3.NT.Copy = 12
+qcfilter4.NT.Copy = 12
+
+[qcfilter.NT.HW]
+AddReg = LowerFilterAddReg, USBCompositionChange
+
+[qcfilter1.NT.HW]
+AddReg = LowerFilterAddReg, USBCompositionChange1
+
+[qcfilter2.NT.HW]
+AddReg = LowerFilterAddReg, USBCompositionChange
+
+[qcfilter3.NT.HW]
+AddReg = LowerFilterAddReg, USBCompositionChange
+
+[qcfilter4.NT.HW]
+AddReg = LowerFilterAddReg, USBCompositionChange
+
+[LowerFilterAddReg]
+HKR,,"LowerFilters",0x00010000,"qcfilter"
+
+[USBCompositionChange]
+; OriginalConfigurationValue
+HKR,,"OriginalConfigurationValue",0x00010001,0
+
+; AltConfigurationValue
+HKR,,"AltConfigurationValue",0x00010001,1
+
+[USBCompositionChange1]
+; OriginalConfigurationValue
+HKR,,"OriginalConfigurationValue",0x00010001,1
+
+; AltConfigurationValue
+HKR,,"AltConfigurationValue",0x00010001,0
+
+;-----------------------------------------------------------------
+; Filter Device Filter Service Section
+;-----------------------------------------------------------------
+[qcfilter.NT.Services]
+Include    = USB.inf
+Needs      = Composite.Dev.NT.Services
+AddService = qcfilter,, filter_Service_Inst 
+
+[qcfilter1.NT.Services]
+Include    = USB.inf
+Needs      = Composite.Dev.NT.Services
+AddService = qcfilter,, filter_Service_Inst 
+
+[qcfilter2.NT.Services]
+Include    = USB.inf
+Needs      = Composite.Dev.NT.Services
+AddService = qcfilter,, filter_Service_Inst 
+
+[qcfilter3.NT.Services]
+Include    = USB.inf
+Needs      = Composite.Dev.NT.Services
+AddService = qcfilter,, filter_Service_Inst 
+
+[qcfilter4.NT.Services]
+Include    = USB.inf
+Needs      = Composite.Dev.NT.Services
+AddService = qcfilter,, filter_Service_Inst 
+
+[filter_Service_Inst]
+DisplayName    = %qcfilter.SvcDesc%                            
+ServiceType    = 1
+StartType      = 3
+ErrorControl   = 1
+ServiceBinary  = %12%\qcusbfilter.sys                            
+
+[Strings]
+QUALCOMM                    = "SimTech Incorporated"
+QcomSrcDisk                 = "SimTech USB Driver Disk"
+qcfilter.DeviceDesc9205     = "SimTech USB Composite Device 9205"
+qcfilter.DeviceDesc9206     = "SimTech USB Composite Device 9206"
+qcfilter.DeviceDesc         = "Qualcomm USB Composite Device 7000"
+qcfilter.DeviceDesc7000     = "Qualcomm USB Composite Device 7000"
+qcfilter.DeviceDesc7001     = "Qualcomm USB Composite Device 7001"
+qcfilter.DeviceDesc7002     = "Qualcomm USB Composite Device 7002"
+qcfilter.DeviceDesc7101     = "Qualcomm USB Composite Device 7101"
+qcfilter.DeviceDesc7102     = "Qualcomm USB Composite Device 7102"
+qcfilter.DeviceDesc8000     = "Qualcomm USB Composite Device 8000"
+qcfilter.DeviceDesc8001     = "Qualcomm USB Composite Device 8001"
+qcfilter.DeviceDesc9000     = "Qualcomm USB Composite Device 9000"
+qcfilter.DeviceDesc9001     = "Qualcomm USB Composite Device 9001"
+qcfilter.DeviceDesc9003     = "Qualcomm USB Composite Device 9003"
+qcfilter.DeviceDesc9005     = "Qualcomm USB Composite Device 9005"
+qcfilter.DeviceDesc900A     = "Qualcomm USB Composite Device 900A"
+qcfilter.DeviceDesc900B     = "Qualcomm USB Composite Device 900B"
+qcfilter.DeviceDesc900C     = "Qualcomm USB Composite Device 900C"
+qcfilter.DeviceDesc900D     = "Qualcomm USB Composite Device 900D"
+qcfilter.DeviceDesc900F     = "Qualcomm USB Composite Device 900F"
+qcfilter.DeviceDesc9010     = "Qualcomm USB Composite Device 9010"
+qcfilter.DeviceDesc9011     = "Qualcomm USB Composite Device 9011"
+qcfilter.DeviceDesc9021     = "Qualcomm USB Composite Device 9021"
+qcfilter.DeviceDesc9022     = "Qualcomm USB Composite Device 9022"
+qcfilter.DeviceDesc9025     = "Qualcomm USB Composite Device 9025"
+qcfilter.DeviceDesc9026     = "Qualcomm USB Composite Device 9026"
+qcfilter.DeviceDesc902E     = "Qualcomm USB Composite Device 902E"
+qcfilter.DeviceDesc9031     = "Qualcomm USB Composite Device 9031"
+qcfilter.DeviceDesc9032     = "Qualcomm USB Composite Device 9032"
+qcfilter.DeviceDesc9033     = "Qualcomm USB Composite Device 9033"
+qcfilter.DeviceDesc9034     = "Qualcomm USB Composite Device 9034"
+qcfilter.DeviceDesc9035     = "Qualcomm USB Composite Device 9035"
+qcfilter.DeviceDesc9036     = "Qualcomm USB Composite Device 9036"
+qcfilter.DeviceDesc9037     = "Qualcomm USB Composite Device 9037"
+qcfilter.DeviceDesc9038     = "Qualcomm USB Composite Device 9038"
+qcfilter.DeviceDesc903B     = "Qualcomm USB Composite Device 903B"
+qcfilter.DeviceDesc903C     = "Qualcomm USB Composite Device 903C"
+qcfilter.DeviceDesc903D     = "Qualcomm USB Composite Device 903D"
+qcfilter.DeviceDesc903E     = "Qualcomm USB Composite Device 903E"
+qcfilter.DeviceDesc9043     = "Qualcomm USB Composite Device 9043"
+qcfilter.DeviceDesc9046     = "Qualcomm USB Composite Device 9046"
+qcfilter.DeviceDesc9047     = "Qualcomm USB Composite Device 9047"
+qcfilter.DeviceDesc9048     = "Qualcomm USB Composite Device 9048"
+qcfilter.DeviceDesc9049     = "Qualcomm USB Composite Device 9049"
+qcfilter.DeviceDesc904B     = "Qualcomm USB Composite Device 904B"
+qcfilter.DeviceDesc904C     = "Qualcomm USB Composite Device 904C"
+qcfilter.DeviceDesc904F     = "Qualcomm USB Composite Device 904F"
+qcfilter.DeviceDesc9050     = "Qualcomm USB Composite Device 9050"
+qcfilter.DeviceDesc9051     = "Qualcomm USB Composite Device 9051"
+qcfilter.DeviceDesc9052     = "Qualcomm USB Composite Device 9052"
+qcfilter.DeviceDesc9053     = "Qualcomm USB Composite Device 9053"
+qcfilter.DeviceDesc9054     = "Qualcomm USB Composite Device 9054"
+qcfilter.DeviceDesc9055     = "Qualcomm USB Composite Device 9055"
+qcfilter.DeviceDesc9056     = "Qualcomm USB Composite Device 9056"
+qcfilter.DeviceDesc920D     = "Qualcomm Gobi 3000 USB Composite Device"
+qcfilter.DeviceDesc3197     = "Qualcomm USB Composite Device 3197"
+qcfilter.DeviceDesc3199     = "Qualcomm USB Composite Device 3199"
+qcfilter.DeviceDesc319A     = "Qualcomm USB Composite Device 319A"
+qcfilter.DeviceDesc319B     = "Qualcomm USB Composite Device 319B"
+qcfilter.DeviceDesc3200     = "Qualcomm USB Composite Device 3200"
+qcfilter.DeviceDesc6000     = "Qualcomm USB Composite Device 6000"
+qcfilter.DeviceDesc8002     = "Qualcomm USB Composite Device 8002"
+qcfilter.DeviceDesc9002     = "Qualcomm USB Composite Device 9002"
+qcfilter.DeviceDesc9004     = "Qualcomm USB Composite Device 9004"
+qcfilter.DeviceDesc9006     = "Qualcomm USB Composite Device 9006"
+qcfilter.DeviceDesc9012     = "Qualcomm USB Composite Device 9012"
+qcfilter.DeviceDesc9013     = "Qualcomm USB Composite Device 9013"
+qcfilter.DeviceDesc9016     = "Qualcomm USB Composite Device 9016"
+qcfilter.DeviceDesc9017     = "Qualcomm USB Composite Device 9017"
+qcfilter.DeviceDesc9018     = "Qualcomm USB Composite Device 9018"
+qcfilter.DeviceDesc9019     = "Qualcomm USB Composite Device 9019"
+qcfilter.DeviceDesc901B     = "Qualcomm USB Composite Device 901B"
+qcfilter.DeviceDesc901C     = "Qualcomm USB Composite Device 901C"
+qcfilter.DeviceDesc901D     = "Qualcomm USB Composite Device 901D"
+qcfilter.DeviceDesc901F     = "Qualcomm USB Composite Device 901F"
+qcfilter.DeviceDesc9020     = "Qualcomm USB Composite Device 9020"
+qcfilter.DeviceDesc9028     = "Qualcomm USB Composite Device 9028"
+qcfilter.DeviceDesc9029     = "Qualcomm USB Composite Device 9029"
+qcfilter.DeviceDesc902C     = "Qualcomm USB Composite Device 902C"
+qcfilter.DeviceDesc902D     = "Qualcomm USB Composite Device 902D"
+qcfilter.DeviceDesc902F     = "Qualcomm USB Composite Device 902F"
+qcfilter.DeviceDesc9030     = "Qualcomm USB Composite Device 9030"
+qcfilter.DeviceDesc903A     = "Qualcomm USB Composite Device 903A"
+qcfilter.DeviceDesc903F     = "Qualcomm USB Composite Device 903F"
+qcfilter.DeviceDesc9040     = "Qualcomm USB Composite Device 9040"
+qcfilter.DeviceDesc9041     = "Qualcomm USB Composite Device 9041"
+qcfilter.DeviceDesc9042     = "Qualcomm USB Composite Device 9042"
+qcfilter.DeviceDesc9044     = "Qualcomm USB Composite Device 9044"
+qcfilter.DeviceDesc9045     = "Qualcomm USB Composite Device 9045"
+qcfilter.DeviceDesc9059     = "Qualcomm USB Composite Device 9059"
+qcfilter.DeviceDesc905A     = "Qualcomm USB Composite Device 905A"
+qcfilter.DeviceDesc905D     = "Qualcomm USB Composite Device 905D"
+qcfilter.DeviceDesc905E     = "Qualcomm USB Composite Device 905E"
+qcfilter.DeviceDesc905F     = "Qualcomm USB Composite Device 905F"
+qcfilter.DeviceDesc9060     = "Qualcomm USB Composite Device 9060"
+qcfilter.DeviceDesc9061     = "Qualcomm USB Composite Device 9061"
+qcfilter.DeviceDesc9062     = "Qualcomm USB Composite Device 9062"
+qcfilter.DeviceDesc9064     = "Qualcomm USB Composite Device 9064"
+qcfilter.DeviceDesc9065     = "Qualcomm USB Composite Device 9065"
+qcfilter.DeviceDesc9066     = "Qualcomm USB Composite Device 9066"
+qcfilter.DeviceDesc9067     = "Qualcomm USB Composite Device 9067"
+qcfilter.DeviceDesc9068     = "Qualcomm USB Composite Device 9068"
+qcfilter.DeviceDesc9069     = "Qualcomm USB Composite Device 9069"
+qcfilter.DeviceDesc9070     = "Qualcomm USB Composite Device 9070"
+qcfilter.DeviceDesc9071     = "Qualcomm USB Composite Device 9071"
+qcfilter.DeviceDesc9072     = "Qualcomm USB Composite Device 9072"
+qcfilter.DeviceDesc9073     = "Qualcomm USB Composite Device 9073"
+qcfilter.DeviceDesc9074     = "Qualcomm USB Composite Device 9074"
+qcfilter.DeviceDesc9075     = "Qualcomm USB Composite Device 9075"
+qcfilter.DeviceDesc9076     = "Qualcomm USB Composite Device 9076"
+qcfilter.DeviceDesc9077     = "Qualcomm USB Composite Device 9077"
+qcfilter.DeviceDesc9078     = "Qualcomm USB Composite Device 9078"
+qcfilter.DeviceDesc9079     = "Qualcomm USB Composite Device 9079"
+qcfilter.DeviceDesc9080     = "Qualcomm USB Composite Device 9080"
+qcfilter.DeviceDesc9081     = "Qualcomm USB Composite Device 9081"
+qcfilter.DeviceDesc9082     = "Qualcomm USB Composite Device 9082"
+qcfilter.DeviceDesc9083     = "Qualcomm USB Composite Device 9083"
+qcfilter.DeviceDesc9084     = "Qualcomm USB Composite Device 9084"
+qcfilter.DeviceDesc9085     = "Qualcomm USB Composite Device 9085"
+qcfilter.DeviceDesc9086     = "Qualcomm USB Composite Device 9086"
+qcfilter.DeviceDesc9087     = "Qualcomm USB Composite Device 9087"
+qcfilter.DeviceDesc9088     = "Qualcomm USB Composite Device 9088"
+qcfilter.DeviceDesc9089     = "Qualcomm USB Composite Device 9089"
+qcfilter.DeviceDesc908A     = "Qualcomm USB Composite Device 908A"
+qcfilter.DeviceDesc908B     = "Qualcomm USB Composite Device 908B"
+qcfilter.DeviceDesc908E     = "Qualcomm USB Composite Device 908E"
+qcfilter.DeviceDesc908F     = "Qualcomm USB Composite Device 908F"
+qcfilter.DeviceDesc9090     = "Qualcomm USB Composite Device 9090"
+qcfilter.DeviceDesc9091     = "Qualcomm USB Composite Device 9091"
+qcfilter.DeviceDesc9092     = "Qualcomm USB Composite Device 9092"
+qcfilter.DeviceDesc9093     = "Qualcomm USB Composite Device 9093"
+qcfilter.DeviceDesc9094     = "Qualcomm USB Composite Device 9094"
+qcfilter.DeviceDesc9095     = "Qualcomm USB Composite Device 9095"
+qcfilter.DeviceDesc9096     = "Qualcomm USB Composite Device 9096"
+qcfilter.DeviceDesc9097     = "Qualcomm USB Composite Device 9097"
+qcfilter.DeviceDesc9098     = "Qualcomm USB Composite Device 9098"
+qcfilter.DeviceDesc9099     = "Qualcomm USB Composite Device 9099"
+qcfilter.DeviceDesc909A     = "Qualcomm USB Composite Device 909A"
+qcfilter.DeviceDesc909B     = "Qualcomm USB Composite Device 909B"
+qcfilter.DeviceDesc909C     = "Qualcomm USB Composite Device 909C"
+qcfilter.DeviceDesc909D     = "Qualcomm USB Composite Device 909D"
+qcfilter.DeviceDesc909E     = "Qualcomm USB Composite Device 909E"
+qcfilter.DeviceDesc909F     = "Qualcomm USB Composite Device 909F"
+qcfilter.DeviceDesc90A0     = "Qualcomm USB Composite Device 90A0"
+qcfilter.DeviceDesc90A1     = "Qualcomm USB Composite Device 90A1"
+qcfilter.DeviceDesc90A2     = "Qualcomm USB Composite Device 90A2"
+qcfilter.DeviceDesc90A3     = "Qualcomm USB Composite Device 90A3"
+qcfilter.DeviceDesc90A5     = "Qualcomm USB Composite Device 90A5"
+qcfilter.DeviceDesc90A6     = "Qualcomm USB Composite Device 90A6"
+qcfilter.DeviceDesc90A7     = "Qualcomm USB Composite Device 90A7"
+qcfilter.DeviceDesc90A8     = "Qualcomm USB Composite Device 90A8"
+qcfilter.DeviceDesc90A9     = "Qualcomm USB Composite Device 90A9"
+qcfilter.DeviceDesc90AA     = "Qualcomm USB Composite Device 90AA"
+qcfilter.DeviceDesc90AB     = "Qualcomm USB Composite Device 90AB"
+qcfilter.DeviceDesc90AC     = "Qualcomm USB Composite Device 90AC"
+qcfilter.DeviceDesc90AD     = "Qualcomm USB Composite Device 90AD"
+qcfilter.DeviceDesc90AE     = "Qualcomm USB Composite Device 90AE"
+qcfilter.DeviceDesc90AF     = "Qualcomm USB Composite Device 90AF"
+qcfilter.DeviceDesc90B0     = "Qualcomm USB Composite Device 90B0"
+qcfilter.DeviceDesc90B2     = "Qualcomm USB Composite Device 90B2"
+qcfilter.DeviceDesc90B3     = "Qualcomm USB Composite Device 90B3"
+qcfilter.DeviceDesc90B4     = "Qualcomm USB Composite Device 90B4"
+qcfilter.DeviceDesc90B5     = "Qualcomm USB Composite Device 90B5"
+qcfilter.DeviceDesc90B6     = "Qualcomm USB Composite Device 90B6"
+qcfilter.DeviceDesc90B7     = "Qualcomm USB Composite Device 90B7"
+qcfilter.DeviceDesc90B8     = "Qualcomm USB Composite Device 90B8"
+qcfilter.DeviceDesc90B9     = "Qualcomm USB Composite Device 90B9"
+qcfilter.DeviceDesc90BF     = "Qualcomm USB Composite Device 90BF"
+qcfilter.DeviceDesc90C0     = "Qualcomm USB Composite Device 90C0"
+qcfilter.DeviceDesc90C1     = "Qualcomm USB Composite Device 90C1"
+qcfilter.DeviceDesc90C2     = "Qualcomm USB Composite Device 90C2"
+qcfilter.DeviceDesc90C3     = "Qualcomm USB Composite Device 90C3"
+qcfilter.DeviceDesc90C5     = "Qualcomm USB Composite Device 90C5"
+qcfilter.DeviceDesc90C6     = "Qualcomm USB Composite Device 90C6"
+qcfilter.DeviceDesc90C7     = "Qualcomm USB Composite Device 90C7"
+qcfilter.DeviceDesc90C8     = "Qualcomm USB Composite Device 90C8"
+qcfilter.DeviceDesc90C9     = "Qualcomm USB Composite Device 90C9"
+qcfilter.QcomDevice90CA     = "Qualcomm USB Composite Device 90CA"
+qcfilter.QcomDevice90CB     = "Qualcomm USB Composite Device 90CB"
+qcfilter.QcomDevice90CC     = "Qualcomm USB Composite Device 90CC"
+qcfilter.QcomDevice90CD     = "Qualcomm USB Composite Device 90CD"
+qcfilter.QcomDevice90D0     = "Qualcomm USB Composite Device 90D0"
+qcfilter.QcomDevice90D1     = "Qualcomm USB Composite Device 90D1"
+qcfilter.DeviceDesc90D2     = "Qualcomm USB Composite Device 90D2"
+qcfilter.DeviceDesc90D3     = "Qualcomm USB Composite Device 90D3"
+qcfilter.DeviceDesc90D4     = "Qualcomm USB Composite Device 90D4"
+qcfilter.DeviceDesc90D5     = "Qualcomm USB Composite Device 90D5"
+qcfilter.DeviceDesc90D6     = "Qualcomm USB Composite Device 90D6"
+qcfilter.DeviceDesc90D7     = "Qualcomm USB Composite Device 90D7"
+qcfilter.DeviceDesc90D8     = "Qualcomm USB Composite Device 90D8"
+qcfilter.DeviceDesc90D9     = "Qualcomm USB Composite Device 90D9"
+qcfilter.DeviceDesc90DA     = "Qualcomm USB Composite Device 90DA"
+qcfilter.DeviceDesc90DB     = "Qualcomm USB Composite Device 90DB"
+qcfilter.DeviceDesc90DC     = "Qualcomm USB Composite Device 90DC"
+qcfilter.DeviceDesc90DD     = "Qualcomm USB Composite Device 90DD"
+qcfilter.DeviceDesc90DE     = "Qualcomm USB Composite Device 90DE"
+qcfilter.DeviceDesc90DF     = "Qualcomm USB Composite Device 90DF"
+qcfilter.DeviceDesc90E0     = "Qualcomm USB Composite Device 90E0"
+qcfilter.DeviceDesc90E1     = "Qualcomm USB Composite Device 90E1"
+qcfilter.DeviceDesc90E2     = "Qualcomm USB Composite Device 90E2"
+qcfilter.DeviceDesc90E3     = "Qualcomm USB Composite Device 90E3"
+qcfilter.DeviceDesc90E4     = "Qualcomm USB Composite Device 90E4"
+qcfilter.DeviceDesc90E5     = "Qualcomm USB Composite Device 90E5"
+qcfilter.DeviceDesc90E6     = "Qualcomm USB Composite Device 90E6"
+qcfilter.DeviceDesc90E7     = "Qualcomm USB Composite Device 90E7"
+qcfilter.DeviceDesc90E8     = "Qualcomm USB Composite Device 90E8"
+qcfilter.DeviceDesc90E9     = "Qualcomm USB Composite Device 90E9"
+qcfilter.DeviceDesc90EA     = "Qualcomm USB Composite Device 90EA"
+qcfilter.DeviceDesc90EB     = "Qualcomm USB Composite Device 90EB"
+qcfilter.DeviceDesc90EC     = "Qualcomm USB Composite Device 90EC"
+qcfilter.DeviceDesc90ED     = "Qualcomm USB Composite Device 90ED"
+qcfilter.DeviceDesc90EE     = "Qualcomm USB Composite Device 90EE"
+qcfilter.DeviceDesc90EF     = "Qualcomm USB Composite Device 90EF"
+qcfilter.DeviceDesc90F0     = "Qualcomm USB Composite Device 90F0"
+qcfilter.DeviceDesc90F1     = "Qualcomm USB Composite Device 90F1"
+qcfilter.DeviceDesc90F2     = "Qualcomm USB Composite Device 90F2"
+qcfilter.DeviceDesc9100     = "Qualcomm USB Composite Device 9100"
+qcfilter.DeviceDesc9101     = "Qualcomm USB Composite Device 9101"
+qcfilter.DeviceDesc9402     = "Qualcomm USB Composite Device 9402"
+qcfilter.DeviceDesc9404     = "Qualcomm USB Composite Device 9404"
+qcfilter.SvcDesc            = "Qualcomm USB Composite Device Filter Driver"
