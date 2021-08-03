@@ -21,11 +21,11 @@
 7.  Open the upgrade tool and follow the diagram below 
 
     ![](../image/7600SA/update_sim7600_8.png)
-    ![](../image/7600SA/update_simxxxx_9.png)
-    ![](../image/7600SA/update_simxxxx_10.png)
-    ![](../image/7600SA/update_simxxxx_11.png)
-    ![](../image/7600SA/update_simxxxx_12.png)
-    ![](../image/7600SA/update_simxxxx_13.png)
+    ![](../image/7600SA/update_sim7600_9.png)
+    ![](../image/7600SA/update_sim7600_10.png)
+    ![](../image/7600SA/update_sim7600_11.png)
+    ![](../image/7600SA/update_sim7600_12.png)
+    ![](../image/7600SA/update_sim7600_13.png)
     ![](../image/7600SA/update_simxxxx_15.png)
 
 
