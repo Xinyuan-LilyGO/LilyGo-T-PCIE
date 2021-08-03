@@ -3,7 +3,7 @@
 
 1. To solder the USB to the upgrade solder joint, you can choose a flying lead or directly solder the USB to the contact. 
 2. Power on the T-PCIE board, and at the same time connect the USB interface to the computer port (please note that you need to insert the SIM card during the upgrade process) 
-    ![](../image/7600x/update_simxxxx_1.png)
+    ![](../image/7600SA/update_simxxxx_1.png)
 
 3.  [SIM7600 Driver](https://github.com/Xinyuan-LilyGO/LilyGo-T-PCIE/tree/master/update_simxxxx_firmware/USB_driver)
 4. Open the computer device manager and follow the steps below to add the driver. 
