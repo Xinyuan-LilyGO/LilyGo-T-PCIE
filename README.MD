@@ -27,4 +27,5 @@
 ## 4. How to update firmware?
 
    [SIM7600 Upgrade guidelines ](doc/sim7600X_update_firmware.md)
+   
    [SIM7080 Upgrade guidelines ](doc/sim7080_update_firmware.md)
