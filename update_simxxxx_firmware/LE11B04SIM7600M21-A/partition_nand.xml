@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nandboot>
+	<magic_numbers>
+		<usr_part_magic1>0xAA7D1B9A</usr_part_magic1>
+		<usr_part_magic2>0x1F7D48BC</usr_part_magic2>
+	</magic_numbers>
+	<partition_version length="4">0x4</partition_version>
+	<partitions>
+		<partition>
+			<name length="16" type="string">0:SBL</name>
+			<size_blks length="4">0x8</size_blks>
+			<pad_blks length="4">0x2</pad_blks>
+			<which_flash>0</which_flash>
+			<attr>0xFF</attr>
+			<attr>0x01</attr>
+			<attr>0x00</attr>
+			<attr>0xFE</attr>
+            <img_name type="string">sbl1.mbn</img_name>
+		</partition>
+		<partition>
+			<name length="16" type="string">0:MIBIB</name>
+			<size_blks length="4">0x6</size_blks>
+			<pad_blks length="4">0x4</pad_blks>
+			<which_flash>0</which_flash>
+			<attr>0xFF</attr>
+			<attr>0x01</attr>
+			<attr>0xFF</attr>
+			<attr>0xFE</attr>
+            <img_name type="string">partition.mbn</img_name>
+		</partition>
+		<partition>
+			<name length="16" type="string">0:EFS2</name>
+			<size_kb length="4">11264</size_kb>
+			<pad_kb length="4">1024</pad_kb>
+			<which_flash>0</which_flash>
+			<attr>0xFF</attr>
+			<attr>0x01</attr>
+			<attr>0xFF</attr>
+			<attr>0xFF</attr>
+		</partition>
+		<partition>
+			<name length="16" type="string">0:TZ</name>
+			<size_kb length="4">550</size_kb>
+			<pad_kb length="4">50</pad_kb>
+			<which_flash>0</which_flash>
+			<attr>0xFF</attr>
+			<attr>0x01</attr>
+			<attr>0x00</attr>
+			<attr>0xFF</attr>
+            <img_name type="string">tz.mbn</img_name>
+		</partition>
+		<partition>
+			<name length="16" type="string">0:RPM</name>
+			<size_kb length="4">200</size_kb>
+			<pad_kb length="4">50</pad_kb>
+			<which_flash>0</which_flash>
+			<attr>0xFF</attr>
+			<attr>0x01</attr>
+			<attr>0x00</attr>
+			<attr>0xFF</attr>
+            <img_name type="string">rpm.mbn</img_name>
+		</partition>
+		<partition>
+			<name length="16" type="string">0:aboot</name>
+			<size_kb length="4">600</size_kb>
+			<pad_kb length="4">50</pad_kb>
+			<which_flash>0</which_flash>
+			<attr>0xFF</attr>
+			<attr>0x01</attr>
+			<attr>0x00</attr>
+			<attr>0xFF</attr>
+            <img_name type="string">appsboot.mbn</img_name>
+		</partition>		
+		<partition>
+			<name length="16" type="string">0:boot</name>
+			<size_kb length="4">7500</size_kb>
+			<pad_kb length="4">500</pad_kb>
+			<which_flash>0</which_flash>
+			<attr>0xFF</attr>
+			<attr>0x01</attr>
+			<attr>0x00</attr>
+			<attr>0xFF</attr>
+		</partition>		
+		<partition>
+	        	<name length="16" type="string">0:SCRUB</name>
+			<size_kb length="4">16500</size_kb>
+			<pad_kb length="4">50</pad_kb>
+			<which_flash>0</which_flash>
+			<attr>0xFF</attr>
+			<attr>0x01</attr>
+			<attr>0x00</attr>
+			<attr>0xFF</attr>
+		</partition>		
+		<partition>
+	        	<name length="16" type="string">0:EFS2_BAK</name>
+			<size_kb length="4">11776</size_kb>
+			<pad_kb length="4">1024</pad_kb>
+			<which_flash>0</which_flash>
+			<attr>0xFF</attr>
+			<attr>0x01</attr>
+			<attr>0x00</attr>
+			<attr>0xFF</attr>
+		</partition>		
+		<partition>
+			<name length="16" type="string">0:modem</name>
+			<size_kb length="4">50000</size_kb>
+			<pad_kb length="4">1024</pad_kb>
+			<which_flash>0</which_flash>
+			<attr>0xFF</attr>
+			<attr>0x01</attr>
+			<attr>0x00</attr>
+			<attr>0xFF</attr>
+		</partition>		
+		<partition>
+			<name length="16" type="string">0:misc</name>
+			<size_kb length="4">1126</size_kb>
+			<pad_kb length="4">128</pad_kb>
+			<which_flash>0</which_flash>
+			<attr>0xFF</attr>
+			<attr>0x01</attr>
+			<attr>0x00</attr>
+			<attr>0xFF</attr>
+		</partition>		
+		<partition>
+			<name length="16" type="string">0:recovery</name>
+			<size_kb length="4">6600</size_kb>
+			<pad_kb length="4">300</pad_kb>
+			<which_flash>0</which_flash>
+			<attr>0xFF</attr>
+			<attr>0x01</attr>
+			<attr>0x00</attr>
+			<attr>0xFF</attr>
+		</partition>		
+		<partition>
+			<name length="16" type="string">0:fota</name>
+			<size_kb length="4">1236</size_kb>
+			<pad_kb length="4">256</pad_kb>
+			<which_flash>0</which_flash>
+			<attr>0xFF</attr>
+			<attr>0x01</attr>
+			<attr>0x00</attr>
+			<attr>0xFF</attr>
+		</partition>	
+		<partition>
+			<name length="16" type="string">0:recoveryfs</name>
+			<size_kb length="4">21000</size_kb>
+			<pad_kb length="4">300</pad_kb>
+			<which_flash>0</which_flash>
+			<attr>0xFF</attr>
+			<attr>0x01</attr>
+			<attr>0x00</attr>
+			<attr>0xFF</attr>
+		</partition>
+        <partition>
+			<name length="16" type="string">0:system</name>
+			<flags length="4">0xFFFFFFFF</flags>
+			<flags length="4">0xFFFF</flags>
+			<which_flash>0</which_flash>
+			<attr>0xFF</attr>
+			<attr>0x01</attr>
+			<attr>0x00</attr>
+			<attr>0xFF</attr>
+		</partition>
+	</partitions>
+</nandboot>

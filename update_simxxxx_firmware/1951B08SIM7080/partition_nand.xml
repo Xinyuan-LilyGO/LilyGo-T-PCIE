@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nandboot>
+	<magic_numbers>
+		<usr_part_magic1>0xAA7D1B9A</usr_part_magic1>
+		<usr_part_magic2>0x1F7D48BC</usr_part_magic2>
+	</magic_numbers>
+	<partition_version length="4">0x4</partition_version>
+	<partitions>
+		<partition>
+			<name length="16" type="string">reserved</name>
+			<size_blks length="4">0x1</size_blks>
+			<pad_blks length="4">0x0</pad_blks>
+			<which_flash>0</which_flash>
+			<attr>0xFF</attr>
+			<attr>0x01</attr>
+			<attr>0x00</attr>
+			<attr>0xFE</attr>
+		</partition>	
+		<partition>
+			<name length="16" type="string">sbl</name>
+			<size_blks length="4">0xA</size_blks>
+			<pad_blks length="4">0x3</pad_blks>
+			<which_flash>0</which_flash>
+			<attr>0xFF</attr>
+			<attr>0x01</attr>
+			<attr>0x00</attr>
+			<attr>0xFE</attr>
+            <img_name type="string">sbl1.mbn</img_name>
+		</partition>
+		<partition>
+			<name length="16" type="string">mibib</name>
+      <size_blks length="4">0x2</size_blks>    <!-- SIMCOM Jumping add it at 19-10-31 for adjust partition --> 
+      <pad_blks length="4">0x2</pad_blks>    <!-- SIMCOM Jumping add it at 19-10-31 for adjust partition --> 
+			<which_flash>0</which_flash>
+			<attr>0xFF</attr>
+			<attr>0x01</attr>
+			<attr>0xFF</attr>
+			<attr>0xFE</attr>
+            <img_name type="string">partition.mbn</img_name>
+		</partition>
+		<partition>
+			<name length="16" type="string">qdsp_swap</name>
+			<size_kb length="4">2048</size_kb>
+			<pad_kb length="4">1280</pad_kb>
+			<which_flash>0</which_flash>
+			<attr>0xFF</attr>
+			<attr>0x01</attr>
+			<attr>0x00</attr>
+			<attr>0xFF</attr>
+    </partition>		
+    <!-- SIMCOM mengxiangning added for backup function begin @20190429 -->
+		<partition>
+			<name length="16" type="string">efs2bak</name>
+			<size_kb length="4">1024</size_kb>
+			<pad_kb length="4">128</pad_kb>
+			<which_flash>0</which_flash>
+			<attr>0xFF</attr>
+			<attr>0x01</attr>
+			<attr>0x00</attr>
+			<attr>0xFF</attr>
+		</partition>
+		<partition>
+    <!-- SIMCOM mengxiangning added for backup function end @20190429 -->
+			<name length="16" type="string">efs2</name>
+			<size_kb length="4">4864</size_kb>
+			<pad_kb length="4">384</pad_kb>
+			<which_flash>0</which_flash>
+			<attr>0xFF</attr>
+			<attr>0x01</attr>
+      <!-- SIMCOM mengxiangning modify for backup function begin @20190429 -->
+			<attr>0x00</attr>
+      <!-- SIMCOM mengxiangning modify for backup function end @20190429 -->
+			<attr>0xFF</attr>
+		</partition>
+		<partition>
+			<name length="16" type="string">qdsp_paging</name>
+			<size_kb length="4">6272</size_kb>
+			<pad_kb length="4">384</pad_kb>
+			<which_flash>0</which_flash>
+			<attr>0xFF</attr>
+			<attr>0x01</attr>
+			<attr>0x00</attr>
+			<attr>0xFF</attr>
+			<img_name type="string">qdsp6sw_paging.bin</img_name>
+		</partition>
+		<partition>
+			<name length="16" type="string">qdsp</name>
+      <size_kb length="4">11264</size_kb>    <!-- SIMCOM Jumping add it at 19-10-31 for adjust partition --> 
+<!-- SIMCOM mengxiangning modify for fota begin -->
+      <pad_kb length="4">640</pad_kb>    <!-- SIMCOM Jumping add it at 19-10-31 for adjust partition --> 
+<!-- SIMCOM mengxiangning modify for fota end -->
+			<which_flash>0</which_flash>
+			<attr>0xFF</attr>
+			<attr>0x01</attr>
+			<attr>0x00</attr>
+			<attr>0xFF</attr>
+			<img_name type="string">qdsp6sw.mbn</img_name>
+		</partition>
+		<partition>
+			<name length="16" type="string">qdsp_tiny</name>
+			<size_kb length="4">3712</size_kb>
+			<pad_kb length="4">384</pad_kb>
+			<which_flash>0</which_flash>
+			<attr>0xFF</attr>
+			<attr>0x01</attr>
+			<attr>0x00</attr>
+			<attr>0xFF</attr>
+			<img_name type="string">qdsp6sw_2.mbn</img_name>
+		</partition>		
+		<partition>
+			<name length="16" type="string">tz</name>
+			<size_kb length="4">896</size_kb>
+      <pad_kb length="4">256</pad_kb>    <!-- SIMCOM Jumping add it at 19-10-31 for adjust partition --> 
+			<which_flash>0</which_flash>
+			<attr>0xFF</attr>
+			<attr>0x01</attr>
+			<attr>0x00</attr>
+			<attr>0xFF</attr>
+            <img_name type="string">tz.mbn</img_name>
+		</partition>
+		<partition>
+			<name length="16" type="string">rpm</name>
+			<size_kb length="4">384</size_kb>
+      <pad_kb length="4">256</pad_kb>    <!-- SIMCOM Jumping add it at 19-10-31 for adjust partition --> 
+			<which_flash>0</which_flash>
+			<attr>0xFF</attr>
+			<attr>0x01</attr>
+			<attr>0x00</attr>
+			<attr>0xFF</attr>
+            <img_name type="string">rpm.mbn</img_name>
+		</partition>
+		<partition>
+			<name length="16" type="string">tz_devcfg</name>
+			<size_kb length="4">256</size_kb>
+      <pad_kb length="4">128</pad_kb>    <!-- SIMCOM Jumping add it at 19-10-31 for adjust partition --> 
+			<which_flash>0</which_flash>
+			<attr>0xFF</attr>
+			<attr>0x01</attr>
+			<attr>0x00</attr>
+			<attr>0xFF</attr>
+			<img_name type="string">devcfg.mbn</img_name>
+		</partition>
+<!-- SIMCOM mengxiangning modify for fota begin -->
+		<partition>
+			<name length="16" type="string">fota_tz_devcfg</name>
+			<size_kb length="4">256</size_kb>
+      <pad_kb length="4">128</pad_kb>    <!-- SIMCOM Jumping add it at 19-10-31 for adjust partition --> 
+			<which_flash>0</which_flash>
+			<attr>0xFF</attr>
+			<attr>0x01</attr>
+			<attr>0x00</attr>
+			<attr>0xFF</attr>
+		</partition>
+<!-- SIMCOM mengxiangning modify for fota end -->
+		<partition>
+			<name length="16" type="string">apps</name>
+			<size_kb length="4">4224</size_kb>
+			<pad_kb length="4">384</pad_kb>
+			<which_flash>0</which_flash>
+			<attr>0xFF</attr>
+			<attr>0x01</attr>
+			<attr>0x00</attr>
+			<attr>0xFF</attr>
+			<img_name type="string">apps.mbn</img_name>
+		</partition>
+		<partition>
+			<name length="16" type="string">acdb</name>
+			<size_kb length="4">384</size_kb>
+			<pad_kb length="4">256</pad_kb>
+			<which_flash>0</which_flash>
+			<attr>0xFF</attr>
+			<attr>0x01</attr>
+			<attr>0x00</attr>
+			<attr>0xFF</attr>
+			<img_name type="string">acdb.mbn</img_name>
+		</partition>
+		<partition>
+			<name length="16" type="string">apdp</name>
+			<size_kb length="4">256</size_kb>
+			<pad_kb length="4">256</pad_kb>
+			<which_flash>0</which_flash>
+			<attr>0xFF</attr>
+			<attr>0x01</attr>
+			<attr>0x00</attr>
+			<attr>0xFF</attr>
+		</partition>	
+		<partition>
+			<name length="16" type="string">loader_sti</name>
+			<size_kb length="4">128</size_kb>
+			<pad_kb length="4">128</pad_kb>
+			<which_flash>0</which_flash>
+			<attr>0xFF</attr>
+			<attr>0x01</attr>
+			<attr>0x00</attr>
+			<attr>0xFF</attr>
+		</partition>
+		<partition>
+			<name length="16" type="string">multi_image</name>
+			<size_kb length="4">256</size_kb>
+			<pad_kb length="4">256</pad_kb>
+			<which_flash>0</which_flash>
+			<attr>0xFF</attr>
+			<attr>0x01</attr>
+			<attr>0x00</attr>
+			<attr>0xFF</attr>
+			<img_name type="string">multi_image.mbn</img_name>
+		</partition>
+		<partition>
+			<name length="16" type="string">multi_image_qti</name>
+			<size_kb length="4">256</size_kb>
+			<pad_kb length="4">256</pad_kb>
+			<which_flash>0</which_flash>
+			<attr>0xFF</attr>
+			<attr>0x01</attr>
+			<attr>0x00</attr>
+			<attr>0xFF</attr>
+		</partition>
+		<partition>
+			<name length="16" type="string">scrub</name>
+<!-- SIMCOM mengxiangning modify for fota begin -->
+			<size_kb length="4">8192</size_kb>
+      <pad_kb length="4">640</pad_kb>    <!-- SIMCOM Jumping add it at 19-10-31 for adjust partition --> 
+<!-- SIMCOM mengxiangning modify for fota end -->
+			<which_flash>0</which_flash>
+			<attr>0xFF</attr>
+			<attr>0x01</attr>
+			<attr>0x00</attr>
+			<attr>0xFF</attr>
+		</partition>
+		<partition>
+			<name length="16" type="string">secdata</name>
+			<size_kb length="4">256</size_kb>
+			<pad_kb length="4">256</pad_kb>
+			<which_flash>0</which_flash>
+			<attr>0xFF</attr>
+			<attr>0x01</attr>
+			<attr>0x00</attr>
+			<attr>0xFF</attr>
+			<img_name type="string">sec.elf</img_name>
+<!-- SIMCOM mengxiangning modify for fota begin -->
+		</partition>
+				<partition>
+			<name length="16" type="string">fota_simcom</name>
+			<size_kb length="4">128</size_kb>
+			<pad_kb length="4">128</pad_kb>
+			<which_flash>0</which_flash>
+			<attr>0xFF</attr>
+			<attr>0x01</attr>
+			<attr>0x00</attr>
+			<attr>0xFF</attr>
+<!-- SIMCOM mengxiangning modify for fota end -->
+		</partition>
+				<partition>
+			<name length="16" type="string">cache</name>
+			<size_kb length="4">128</size_kb>
+			<pad_kb length="4">128</pad_kb>
+			<which_flash>0</which_flash>
+			<attr>0xFF</attr>
+			<attr>0x01</attr>
+			<attr>0x00</attr>
+			<attr>0xFF</attr>
+		</partition>
+		<partition>
+			<name length="16" type="string">misc</name>
+			<size_kb length="4">128</size_kb>
+			<pad_kb length="4">128</pad_kb>
+			<which_flash>0</which_flash>
+			<attr>0xFF</attr>
+			<attr>0x01</attr>
+			<attr>0x00</attr>
+			<attr>0xFF</attr>
+		</partition>		
+    <!-- SIMCOM mengxiangning added for backup function begin @20190429 -->
+		<partition>
+			<name length="16" type="string">efs2appsbak</name>
+      <size_kb length="4">1280</size_kb>    <!-- SIMCOM Jumping add it at 19-10-31 for adjust partition --> 
+			<pad_kb length="4">128</pad_kb>
+			<which_flash>0</which_flash>
+			<attr>0xFF</attr>
+			<attr>0x01</attr>
+			<attr>0x00</attr>
+			<attr>0xFF</attr>
+		</partition>
+    <!-- SIMCOM mengxiangning added for backup function end @20190429 -->
+		<partition>
+			<name length="16" type="string">efs2apps</name>
+			<size_kb length="4">0xFFFFFFFF</size_kb>
+			<pad_kb length="4">0xFFFF</pad_kb>
+			<which_flash>0</which_flash>
+			<attr>0xFF</attr>
+			<attr>0x01</attr>
+			<attr>0x00</attr>
+			<attr>0xFF</attr>
+			<img_name type="string">cefs.mbn</img_name>
+		</partition>		
+	</partitions>
+</nandboot>

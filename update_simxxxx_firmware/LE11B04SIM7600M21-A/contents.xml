@@ -1,0 +1,528 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+==========================================================================
+
+  contents.xml
+
+  General Description
+     Contains information about component builds for this target.
+
+ Copyright (c) 2011-2011 by Qualcomm Technologies, Incorporated.
+ All Rights Reserved.
+ QUALCOMM Proprietary/GTDR
+
+==========================================================================
+ 
+ $Header: //components/rel/config.glue/1.10/contents_template.xml $
+ $DateTime: 2015/11/02 15:00:45 $
+ $Change: 9322473 $
+==========================================================================
+-->
+<contents>
+  <product_info>
+    <product_name>MDM9607.LE.1.0</product_name>
+    <hlos_type cmm_var="HLOS_TYPE">LE</hlos_type> 
+  <chipid cmm_var="CHIPID">MDM9607</chipid>
+  </product_info>
+  <builds_flat>
+    <!-- This section contains a list of all component builds -->
+    <build>
+      <!-- Name of this build -->
+      <name>common</name>
+      <!--HW Chipset for this build (QC-Internal) -->
+      <role>common</role>
+	  <chipset>MDM9607</chipset>
+      <!-- Build ID for this build (QC-Internal) -->
+      <build_id></build_id>
+      <!-- Path to root of this build, on Windows -->
+      <!-- All paths must end in a slash.  All absolute paths
+      must begin with a slash, or drive-letter, colon, slash.  All
+      relative paths must begin with a name. -->
+      <windows_root_path>.\</windows_root_path>
+      <!-- Path to root of this build, on Linux -->
+      <linux_root_path>./</linux_root_path>
+      <!-- Name of top-level, or 'image' directory for this build. -->
+      <image_dir>common</image_dir>
+      <download_file minimized = "true" get_binary="True">
+        <file_name>partition.mbn</file_name>
+        <file_path>common/build/</file_path>
+      </download_file>
+      <download_file minimized = "true" get_binary="True">
+        <!-- download_file sections points to files that are downloaded by QPST -->
+        <file_name>NON-HLOS.ubi</file_name>
+        <file_path>common/build/</file_path>
+      </download_file>
+	  <file_ref get_binary="True" minimized="true" partition="modem" fastboot="modem">
+        <file_name>NON-HLOS.ubi</file_name>
+        <file_path>common/build/</file_path>
+      </file_ref>
+      <partition_file>
+        <!-- The partition_file section points to the main partition xml file
+        This is used by QPST during its download operation -->
+        <file_name >partition_nand.xml</file_name>
+      </partition_file>
+ </build>
+  <build>
+      <name>glue</name>
+      <role>glue</role>
+      <chipset>mdm9607</chipset>
+      <build_id></build_id>
+      <windows_root_path>.\</windows_root_path>
+      <linux_root_path>./</linux_root_path>
+      <release_path></release_path>
+      <image_dir>common</image_dir>
+    </build>
+    <build>
+      <name>apps</name>
+	    <role>apps</role>
+	    <chipset>MDM9607</chipset>
+      <build_id></build_id>
+      <!-- The 'cmm_root_path_var' attribute names a CMM variable that will be initialized to
+      the value of this element by the gen_cmm_data.py script.  This is used by the
+      Trace32 scripts to find other builds. -->
+      <windows_root_path cmm_root_path_var="APSS_BUILDROOT">.\</windows_root_path>
+      <linux_root_path cmm_root_path_var="APSS_BUILDROOT">./</linux_root_path>
+      <image_dir>apps_proc</image_dir>
+	  <release_path></release_path>
+      <file_ref minimized="true" fastboot_complete="aboot">
+        <file_name>appsboot.mbn</file_name>
+        <file_path>apps_proc/oe-core/build/tmp-glibc/deploy/images/mdm9607/</file_path>
+      </file_ref>
+	  <file_ref minimized="true" fastboot="boot" partition="boot">
+        <file_name>mdm9607-boot.img</file_name>
+        <file_path>apps_proc/oe-core/build/tmp-glibc/deploy/images/mdm9607/</file_path>
+      </file_ref>
+      <file_ref minimized="true" fastboot="system" partition="system">
+        <file_name>mdm9607-sysfs.ubi</file_name>
+        <file_path>apps_proc/oe-core/build/tmp-glibc/deploy/images/mdm9607/</file_path>
+      </file_ref>
+	  <file_ref minimized="true" NHLOS_tools="True">
+        <file_name>mkfs.ubifs</file_name>
+        <file_path>apps_proc/oe-core/build/tmp-glibc/sysroots/x86_64-linux/usr/sbin/</file_path>
+      </file_ref>
+	  <file_ref minimized="true" NHLOS_tools="True">
+        <file_name>ubinize</file_name>
+        <file_path>apps_proc/oe-core/build/tmp-glibc/sysroots/x86_64-linux/usr/sbin/</file_path>
+      </file_ref>
+      <download_file cmm_file_var="APSSBOOT_BINARY" minimized="true">
+        <file_name>appsboot.mbn</file_name>
+        <file_path>apps_proc/oe-core/build/tmp-glibc/deploy/images/mdm9607/</file_path>
+      </download_file>	  
+      <download_file cmm_file_var="APSS_BINARY" minimized="true" >
+        <file_name>mdm9607-sysfs.ubi</file_name>
+        <file_path>apps_proc/oe-core/build/tmp-glibc/deploy/images/mdm9607/</file_path>
+      </download_file>
+      <download_file cmm_file_var="APSS_BINARY" minimized="true" >
+        <file_name>mdm9607-boot.img</file_name>
+        <file_path>apps_proc/oe-core/build/tmp-glibc/deploy/images/mdm9607/</file_path>
+      </download_file>
+	  <download_file cmm_file_var="APSS_ELF" minimized="true" >
+        <file_name>vmlinux-3.18.*</file_name>
+        <file_path>apps_proc/oe-core/build/tmp-glibc/sysroots/mdm9607/boot/</file_path>
+      </download_file>
+      </build>
+    <build>
+      <name>modem</name>
+	    <role>modem</role>
+	    <chipset>MDM9607</chipset>
+      <build_id></build_id>
+      <windows_root_path cmm_root_path_var="MPSS_BUILDROOT">.\</windows_root_path>
+      <linux_root_path cmm_root_path_var="MPSS_BUILDROOT">./</linux_root_path>
+      <image_dir>modem_proc</image_dir>
+	  <release_path>PCT/SRC</release_path>
+       <file_ref minimized="true">
+        <file_name>qdsp6sw.mbn</file_name>
+        <file_path>modem_proc/build/ms/bin/${modem_bid:9607.gen.prod}/</file_path>
+      </file_ref>
+	  <file_ref minimized="true" get_binary="True">
+        <file_name>efs1.bin</file_name>
+        <file_path>modem_proc/build/ms/bin/${modem_bid:9607.gen.prod}/</file_path>
+      </file_ref>
+	  <file_ref minimized="true" get_binary="True">
+        <file_name>efs2.bin</file_name>
+        <file_path>modem_proc/build/ms/bin/${modem_bid:9607.gen.prod}/</file_path>
+      </file_ref>
+	  <file_ref minimized="true" get_binary="True">
+        <file_name>efs3.bin</file_name>
+        <file_path>modem_proc/build/ms/bin/${modem_bid:9607.gen.prod}/</file_path>
+      </file_ref>
+      <file_ref symbol="modem">
+        <file_name>M9607${modem_bid:9607.gen.prod}*.elf</file_name>
+        <file_path>modem_proc/build/ms/</file_path>
+      </file_ref>
+      <file_ref debug_script="load_coredump">
+        <file_name>load_coredump.cmm</file_name>
+        <file_path>modem_proc/core/debugtools/err/cmm/</file_path>
+	  </file_ref> 
+      <file_ref debug_script="recover_ulog_dumps">
+        <file_name>ULogDump.cmm</file_name>
+        <file_path>modem_proc/core/power/ulog/scripts/</file_path>
+      </file_ref>
+      <file_ref debug_script="recover_npa_dumps">
+        <file_name>NPADump.cmm</file_name>
+        <file_path>modem_proc/core/power/npa/scripts/</file_path>
+      </file_ref>
+      <file_ref debug_script="recover_sleepctl_logs">
+        <file_name>SleepDump.cmm</file_name>
+        <file_path>modem_proc/core/power/sleep2.0/scripts/</file_path>
+      </file_ref>
+      <file_ref debug_script="analyze_qurt_kernel_error_info" >
+        <file_name>analy_qurt_error.cmm</file_name>
+        <file_path>modem_proc/core/kernel/qurt/scripts</file_path>
+      </file_ref>
+      <!--<download_file cmm_file_var="MPSS_BINARY" minimized="true" get_binary="True" ubi_file="True">
+        <file_name>qdsp6a.qdb</file_name>
+        <file_path>modem_proc/build/ms/bin/${modem_bid:9645.LEgen.prod}/</file_path>
+      </download_file>
+      <download_file cmm_file_var="MPSS_BINARY" minimized="true" get_binary="True" ubi_file="True">
+        <file_name>qdsp6m.qdb</file_name>
+        <file_path>modem_proc/build/ms/bin/${modem_bid:9645.LEgen.prod}/</file_path>
+      </download_file>-->	  
+      <download_file cmm_file_var="MPSS_BINARY" minimized="true" get_binary="True"  pil_split ="modem">
+        <file_name>qdsp6sw.mbn</file_name>
+        <file_path>modem_proc/build/ms/bin/${modem_bid:9607.gen.prod}/</file_path>
+      </download_file>
+	  <download_file cmm_file_var="MBA_BINARY" minimized="true" get_binary="True"  pil_split ="mba" ubi_file="True">
+        <file_name>mba.mbn</file_name>
+        <file_path>modem_proc/build/ms/bin/${modem_bid:9607.gen.prod}/</file_path>
+      </download_file>
+      <download_file cmm_file_var="MPSS_ELF" minimized="true">
+        <file_name>M9607${modem_bid:9607.gen.prod}*.elf</file_name>
+        <file_path>modem_proc/build/ms/</file_path>
+      </download_file>
+	</build> 
+	<build>
+      <name>tz</name>
+      <role>tz</role>
+      <chipset>MDM9607</chipset>
+      <build_id></build_id>
+      <windows_root_path cmm_root_path_var="TZ_BUILDROOT">.\</windows_root_path>
+      <linux_root_path cmm_root_path_var="TZ_BUILDROOT">./</linux_root_path>
+      <image_dir>trustzone_images</image_dir>
+	  <release_path>HY11_CompileTest</release_path>
+      <download_file minimized = "true" cmm_file_var="BOOT_TZ_MBN" fastboot_complete="tz">
+        <file_name>tz.mbn</file_name>
+        <file_path>trustzone_images/build/ms/bin/${tz_bid:MARAANAA}/</file_path>
+      </download_file>
+      <download_file cmm_file_var="TZ_BINARY" minimized="true" get_binary="True">
+        <file_name>tz.mbn</file_name>
+        <file_path>trustzone_images/build/ms/bin/${tz_bid:MARAANAA}/</file_path>
+      </download_file>
+      <download_file cmm_file_var="TZ_ELF" minimized="true">
+        <file_name>tz.elf</file_name>
+        <file_path>trustzone_images/core/bsp/tzbsp/build/${tz_bid:MARAANAA}/</file_path>
+      </download_file>  	  
+    </build>
+    <build>
+      <name>boot</name>
+	    <role>boot</role>
+	    <chipset>MDM9607</chipset>
+      <build_id></build_id>
+      <windows_root_path cmm_root_path_var="BOOT_BUILDROOT">.\</windows_root_path>
+      <linux_root_path cmm_root_path_var="BOOT_BUILDROOT">./</linux_root_path>
+      <image_dir>boot_images</image_dir>
+	  <release_path>HY11_CompileTest</release_path>
+	  <flash_programmer minimized = "true" get_binary="True">
+        <!-- The flash_programmer section points to the flash programmer.  This information
+        is used by QPST when downloading a build. -->
+        <file_name>NPRG9x07.mbn</file_name>
+        <file_path>boot_images/build/ms/bin/9x07/${boot_bid:nand}/</file_path>
+      </flash_programmer>
+	  <device_programmer_vip minimized="true">
+        <file_name>validated_nand_firehose_9x07.mbn</file_name>
+        <file_path>boot_images/build/ms/bin/${boot_bid:nand}/</file_path>
+	  </device_programmer_vip>
+	  <download_file minimized = "true" get_binary="True">
+        <file_name>ENPRG9x07.mbn</file_name>
+        <file_path>boot_images/build/ms/bin/9x07/${boot_bid:nand}/</file_path>
+      </download_file>
+	  <download_file minimized = "true" get_binary="True">
+        <file_name>NPRG9x07.mbn</file_name>
+        <file_path>boot_images/build/ms/bin/9x07/${boot_bid:nand}/</file_path>
+      </download_file>
+     <download_file minimized = "true">
+        <file_name>sbl1.mbn</file_name>
+        <file_path></file_path>
+      </download_file>
+     <file_ref minimized = "true">
+        <file_name>hwio.cmm</file_name>
+        <file_path>boot_images/core/systemdrivers/hwio/scripts/mdm9x07/</file_path>
+      </file_ref>
+      <file_ref minimized = "true">
+        <file_name>*</file_name>
+        <file_path>boot_images/core/storage/flash/tools/src/nand/</file_path>
+      </file_ref>
+      <file_ref minimized = "true">
+        <file_name>hwioreg.cmm</file_name>
+        <file_path>boot_images/core/systemdrivers/hwio/scripts/mdm9x07/</file_path>
+      </file_ref>
+      <file_ref minimized = "true" >
+        <file_name>*</file_name>
+        <file_path>boot_images/core/storage/tools/ptool/</file_path>
+      </file_ref>
+      <!-- <file_ref minimized = "true">
+        <file_name>mjsdload.cmm</file_name>
+        <file_path>boot_images/core/storage/tools/jsdcc/</file_path>
+      </file_ref> -->
+	  <file_ref minimized = "true">
+        <file_name>clk_init_9x07.cmm</file_name>
+        <file_path>boot_images/build/ms/</file_path>
+      </file_ref>
+      <download_file minimized = "true">
+        <file_name>hwio.cmm</file_name>
+        <file_path>boot_images/core/systemdrivers/hwio/scripts/mdm9x07/</file_path>
+      </download_file>
+      <download_file cmm_file_var="BOOT_ELF" minimized="true">
+        <file_name>SBL1_${boot_bid:nand}.elf</file_name>
+        <file_path>boot_images/core/bsp/bootloaders/sbl1/build/mdm9x07/</file_path>
+      </download_file>
+      <download_file cmm_file_var="BOOT_BINARY" minimized="true" get_binary="True" fastboot_complete="sbl">
+        <file_name>sbl1.mbn</file_name>
+        <file_path>boot_images/build/ms/bin/9x07/${boot_bid:nand}/</file_path>
+      </download_file>
+      </build>
+ 
+    <build>
+      <name>cnss</name>
+		  <role>cnss</role> 
+		  <chipset>MDM9607</chipset>
+		  <build_id></build_id>
+		  <windows_root_path cmm_root_path_var="CNSS_BUILD_ROOT">.\</windows_root_path>
+		  <linux_root_path cmm_root_path_var="CNSS_BUILD_ROOT">./</linux_root_path>
+		  <image_dir>wlan_proc</image_dir>
+		  <release_path></release_path>
+
+		  <file_ref  minimized="True" ubi_file="True" get_binary="True">
+		     <file_name>qwlan.bin</file_name>
+			   <file_path>wlan_proc/wlan/fw/target/.output/AR6320/hw.3/bin/</file_path>
+		  </file_ref>
+		  <file_ref  minimized="True" ubi_file="True" get_binary="True">
+		     <file_name>otp.bin</file_name>
+			   <file_path>wlan_proc/wlan/fw/target/.output/AR6320/hw.3/bin/</file_path>
+		  </file_ref>		  
+		  <file_ref  minimized="True" ubi_file="True" get_binary="True">
+		     <file_name>utf.bin</file_name>
+		     <file_path>wlan_proc/wlan/fw/target/.output/AR6320/hw.3/bin/</file_path>
+		   </file_ref>
+		  <file_ref  minimized="True" ubi_file="True" get_binary="True">
+		     <file_name>bdwlan.bin</file_name>
+		     <file_path>wlan_proc/wlan/fw/target/halphy/ftm/host/systemtools/tools/eepromUtil/qc9377/</file_path>
+		  </file_ref>
+	 </build>
+	 
+	 <build>
+      <name>btfm</name>
+		  <role>btfm</role> 
+		  <chipset>MDM9607</chipset>
+		  <build_id></build_id>
+		  <windows_root_path cmm_root_path_var="BTFM_BUILDROOT">.\</windows_root_path>
+		  <linux_root_path cmm_root_path_var="BTFM_BUILDROOT">./</linux_root_path>
+		  <image_dir>btfm_proc</image_dir>
+		  <release_path></release_path>
+
+		  <file_ref  minimized="True" ubi_file="True" get_binary="True">
+		     <file_name>tfbtfw11.tlv</file_name>
+		     <file_path>btfm_proc/bt/build/ms/bin/QCA9377/</file_path>
+		  </file_ref>
+		  <file_ref  minimized="True" ubi_file="True" get_binary="True">
+		     <file_name>tfbtnv11.bin</file_name>
+		     <file_path>btfm_proc/bt/build/ms/bin/QCA9377/</file_path>
+		  </file_ref>
+	 </build>	
+ 
+	  <build>
+      <name>rpm</name>
+	    <role>rpm</role>
+	    <chipset>MDM9607</chipset>
+      <build_id></build_id>
+      <windows_root_path cmm_root_path_var="RPM_BUILDROOT">.\</windows_root_path>
+      <linux_root_path cmm_root_path_var="RPM_BUILDROOT">./</linux_root_path>
+      <image_dir>rpm_proc</image_dir>
+	  <release_path>HY11_CompileTest</release_path>
+      <file_ref minimized = "true">
+        <file_name>rpm.mbn</file_name>
+        <file_path>rpm_proc/build/ms/bin/9x07/</file_path>
+      </file_ref> 
+      <file_ref debug_script="recover_ulog_dumps">
+        <file_name>rpm_ulogdump.cmm</file_name>
+        <file_path>rpm_proc/core/power/ulog/scripts</file_path>
+      </file_ref>
+      <file_ref debug_script="recover_npa_dumps">
+        <file_name>rpm_npadump.cmm</file_name>
+        <file_path>rpm_proc/core/power/npa/scripts</file_path>
+      </file_ref>
+      <file_ref debug_script="parse_merged_logs">
+        <file_name>rpm_log_bfam.py</file_name>
+        <file_path>rpm_proc/core/power/rpm/debug/scripts</file_path> 
+       </file_ref> 
+      <file_ref symbol="true">  
+        <file_name>RPM_AAAAANAAR.elf</file_name> 
+        <file_path>rpm_proc/core/bsp/rpm/build/9x07/</file_path>
+	   </file_ref> 
+      <download_file cmm_file_var="RPM_BINARY" minimized="true" get_binary="True" fastboot_complete="rpm">
+        <file_name>rpm.mbn</file_name>
+        <file_path>rpm_proc/build/ms/bin/9x07/</file_path>
+      </download_file>
+      <download_file cmm_file_var="RPM_ELF" minimized="true">
+        <file_name>RPM_AAAAANAAR.elf</file_name>
+        <file_path>rpm_proc/core/bsp/rpm/build/9x07/</file_path>
+      </download_file>				
+    </build>
+	
+    </builds_flat>
+        <build_tools>
+    <!-- the build_tools section points to various tools that are used by the
+    update_common_info.py script. -->
+    <tool>
+      <name>cpfatfs</name>
+      <build>boot</build>
+      <path>boot_images/core/storage/tools/fattool/</path>
+    </tool>
+    <tool>
+      <name>fatadd</name>
+      <build>boot</build>
+      <path>boot_images/core/storage/tools/fattool/</path>
+    </tool>
+    <tool>
+      <name>msp</name>
+      <build>boot</build>
+      <path>boot_images/core/storage/tools/ptool/</path>
+    </tool>
+    <tool>
+      <name>checksparse</name>
+      <build>boot</build>
+      <path>boot_images/core/storage/tools/ptool/</path>
+    </tool>
+  </build_tools>
+  <external_tools>
+    <!-- The external_tools section lists the recommended version numbers
+    for various tools.  Though not in use at this time, it could be used by
+    automation tools to start the right version of these tools. -->
+    <tool>
+      <name>trace32</name>
+      <version>June 2011</version> 
+      <path>\\qcdfs\QCT\qctdata\CoreBSPTarget\Shelby\T32</path> 
+    </tool> 
+    <tool>
+      <name>qpst</name>
+      <version>QPST 2.7.420</version>
+      <path>\\cold\tools\Installers\QPST</path>
+    </tool>
+    <tool>
+      <name>qxdm</name>
+      <version>QXDM 3.14.777</version>
+      <path>\\cold\tools\Installers\QXDM</path>
+    </tool>
+  </external_tools>
+  <builds_nested>
+    <!-- Nested build structure (QC-Internal) -->
+  </builds_nested>
+
+<workflow>
+      <!--Pil_splitter.py and mkyaffs2image will be copied to ..../common/tools/meta/ --> 
+      <tool>
+      <name>pil-splitter.py</name>
+      <build>common</build>
+      <path>common/config/</path>
+    </tool>
+    <tool>
+      <name>nand_mbn_generator.py</name>
+      <build>boot</build>
+      <path>boot_images/core/storage/tools/nandbootmbn/</path>
+    </tool>
+    <tool>
+      <name>mkfs.ubifs</name>
+      <build>common</build>
+      <path>common/config/storage/</path>  
+    </tool>
+    <tool>
+      <name>ubinize</name>
+      <build>common</build>
+      <path>common/config/storage/</path>  
+    </tool>
+    <tool>
+      <name>genext2fs</name>
+      <build>common</build>
+      <path>common/config/storage/</path>  
+        </tool>
+        <tool>
+      <name>e2fsck</name>
+      <build>common</build>
+      <path>common/config/storage/</path>  
+        </tool>
+        <tool>
+	
+<name>tune2fs</name>
+      <build>common</build>
+      <path>common/config/storage/</path>  
+    </tool>
+	<!-- partion MBN generation-->
+	<step type="exec">
+      <params>python @tool_name ./../config/partition_nand.xml partition.mbn</params>
+      <tool_name>nand_mbn_generator.py</tool_name>
+    </step>
+    <!--PIL SPLITTER-->
+	<!--Old NON-HLOS.ubi and all Previously PIL-Splitted images will be deleted if they are existing already-->
+    <step filter="non_hlos" type="delete">
+      <destn>./NON-HLOS.ubifs</destn>
+    </step>
+    <step filter="non_hlos" type="delete">
+      <destn>./NON-HLOS.ubi</destn>
+    </step>
+    <step filter="non_hlos" type="delete">
+      <destn>./NON-HLOS.ext4</destn>
+    </step>	
+    <step filter="non_hlos" type="delete">
+      <destn>./bin/image</destn>
+    </step>	
+
+	<!--All images with Attribute pil_split will be PIL-Splitted and will be stored in specified "Destn_Dir" -->
+    <step type="exec">
+      <params>python @tool_name @src_file @destn_dir + @src_file_var</params>
+      <tool_name>pil-splitter.py</tool_name>      
+	  <src_file_vars>$[attribute:pil_split]</src_file_vars>
+      <destn_dir>./bin/image</destn_dir>
+    </step>
+    
+	<!-- All Images with Attribute ext4_file & ubi_file will be copied over to "destn_dir" -->
+	<step type="copy">      
+      <src_files>$[attribute:ubi_file]</src_files>
+	  <destn_dir>./bin/image</destn_dir>
+    </step>
+	<step type="copy">      
+      <src_files>$[attribute:get_binary]</src_files>
+	  <destn_dir>./../../binaries</destn_dir>
+    </step>
+	<step type="copy">      
+      <src_files>Ver_Info.txt</src_files>
+	  <destn_dir>./bin/image</destn_dir>
+    </step>
+	<step type="copy">      
+      <src_files>$[attribute:NHLOS_tools]</src_files>
+	  <destn_dir>./../config/storage/</destn_dir>
+    </step>
+	
+	<!-- All The images under which is in "src_dir" will be used to be combibed to make single NON-HLOS.ubi image -->
+	<!--./mkfs.ubifs -r bin -o NON-HLOS.ubifs -m 2048 -e 126976 -c 567 â€“F -->
+    <step type="exec">
+      <params>@tool_name -r @src_dir -o @destn_image -m @min_ip_op_unit_size -e @eraseblock_size -c @max_file_system_size_logical_eraseblocks -F</params>
+      <tool_name>mkfs.ubifs</tool_name>
+	  <src_dir>./bin</src_dir>
+      <max_file_system_size_logical_eraseblocks>567</max_file_system_size_logical_eraseblocks>
+      <eraseblock_size>253952</eraseblock_size>
+	  <min_ip_op_unit_size>4096</min_ip_op_unit_size>
+	  <destn_image>NON-HLOS.ubifs</destn_image>
+    </step>
+	<!--./ubinize -v -o NON-HLOS.ubi -m 2048 -p 128KiB -s 2048 my_ubi.ini -->
+    <step type="exec">
+      <params>@tool_name -v -o @destn_image -m @min_ip_op_unit_size -p @physical_eraseblock_size -s @sub_page_size ./../config/my_ubi.ini</params>
+      <tool_name>ubinize</tool_name>
+      <min_ip_op_unit_size>4096</min_ip_op_unit_size>
+      <physical_eraseblock_size>256KiB</physical_eraseblock_size>
+      <sub_page_size>4096</sub_page_size>
+	  <destn_image>NON-HLOS.ubi</destn_image>
+    </step>
+    
+</workflow>  
+
+</contents>

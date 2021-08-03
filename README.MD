@@ -24,8 +24,7 @@
 ## 3.Dimensions
 ![](image/dimensions.png)
 
-
-
 ## 4. How to update firmware?
 
-   [SIM7080 Upgrade guidelines ](doc/How%20to%20update%20firmware.md)
+   [SIM7600 Upgrade guidelines ](doc/sim7600X_update_firmware.md)
+   [SIM7080 Upgrade guidelines ](doc/sim7080_update_firmware.md)
