@@ -5,7 +5,7 @@
 2. Power on the T-PCIE board, and at the same time connect the USB interface to the computer port (please note that you need to insert the SIM card during the upgrade process) 
     ![](../image/7600SA/update_simxxxx_1.png)
 
-3.  [SIM7600 Driver](https://github.com/Xinyuan-LilyGO/LilyGo-T-PCIE/tree/master/update_simxxxx_firmware/USB_driver)
+3.  [SIM7600SA Driver](https://github.com/Xinyuan-LilyGO/LilyGo-T-PCIE/tree/master/update_simxxxx_firmware/USB_driver/SIM7000_SIM7100_SIM7500_SIM7600_SIM7800%20Series%20Windows%20USB%20driver_V1.02)
 4. Open the computer device manager and follow the steps below to add the driver. 
     ![](../image/7600SA/update_simxxxx_2.png)
     ![](../image/7600SA/update_simxxxx_3.png)
