@@ -1,4 +1,4 @@
-#define TINY_GSM_MODEM_SIM800
+#define TINY_GSM_MODEM_SIM800 //The SIM7020 AT instruction is compatible with SIM800C
 
 
 //Set serial for debug console (to the Serial Monitor, default speed 115200)
@@ -109,23 +109,6 @@ void setup()
 
     SerialAT.begin(UART_BAUD, SERIAL_8N1, PIN_RX, PIN_TX);
 
-/*
-    //    // Uncomment below will perform loopback test
-    while (1) {
-        while (SerialMon.available()) {
-              SerialAT.write(SerialMon.read());
-          }
-          while (SerialAT.available()) {
-              SerialMon.write(SerialAT.read());
-          }
-      }*/
-      // Restart takes quite some time
-      // To skip it, call init() instead of restart()
-      /* DBG("Initializing modem...");
-       if (!modem.init()) {
-           DBG("Failed to restart modem, delaying 10s and retrying");
-           return;
-       }*/
 }
 
 void loop()

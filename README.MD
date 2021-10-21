@@ -3,9 +3,9 @@
 
 <h2 align = "left">Product 📷:</h2>
 
-| Examples |  Product  Link   | Status |
-| :------: | :--------------: | :----: |
-|  T-PCIE  | [Product link]() |   ✅    |
+| Examples |                                                       Product  Link                                                       | Status |
+| :------: | :-----------------------------------------------------------------------------------------------------------------------: | :----: |
+|  T-PCIE  | [Aliexpress](https://www.aliexpress.com/item/4001142716386.html)   [Amazon](https://www.amazon.com/gp/product/B09JP1HQVX) |   ✅    |
 
 
 ## 1.Steps:
