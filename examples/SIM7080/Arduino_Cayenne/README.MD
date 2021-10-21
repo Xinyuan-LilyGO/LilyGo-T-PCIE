@@ -2,7 +2,7 @@
 
 💦 ☀💨🌹 The sample code is based on the **[T-PCIE-SIM7080](https://pt.aliexpress.com/item/1005003064611515.html)** board, which takes the data of the external BMP180 sensor and uploads it to **[Cayenne](https://cayenne.mydevices.com/)**.
 
-[](../../image/Cayenne/SIM7080.png)
+[](../../../image/Cayenne/SIM7080.png)
 
 
 # Steps:
