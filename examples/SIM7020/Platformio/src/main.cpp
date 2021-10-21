@@ -67,6 +67,121 @@ Ticker tick;
 
 bool get_SIM();
 
+bool get_SIM()
+{
+
+    modem.sendAT("+CPIN?");
+    if (modem.waitResponse(10000L) != 1) {
+
+         delay(1000);
+        DBG(" SIM card not inserted ");
+        return false;
+    }
+
+    DBG(" SIM card READY");
+    return true;
+}
+
+
+String getModemNameImpl()
+{
+    String name = "";
+
+
+    modem.sendAT(GF("+GMM"));
+    String res2;
+    if (modem.waitResponse(1000L, res2) != 1) {
+        return name;
+    }
+    res2.replace(GSM_NL "OK" GSM_NL, "");
+    res2.replace("_", " ");
+    res2.trim();
+
+    name = res2;
+    DBG("### Modem:", name);
+    return name;
+}
+
+
+String getModemInfoImpl()
+{
+    modem.sendAT(GF("+GMR"));
+    String res;
+    if (modem.waitResponse(1000L, res) != 1) {
+        return "";
+    }
+    res.replace(GSM_NL "OK" GSM_NL, "");
+    res.replace(GSM_NL, " ");
+    res.trim();
+    DBG("### Modem Info:", res);
+    return res;
+}
+
+inline int16_t streamGetIntBefore(char lastChar)
+{
+    char   buf[7];
+    size_t bytesRead = modem.stream.readBytesUntil(
+                           lastChar, buf, static_cast<size_t>(7));
+    // if we read 7 or more bytes, it's an overflow
+    if (bytesRead && bytesRead < 7) {
+        buf[bytesRead] = '\0';
+        int16_t res    = atoi(buf);
+        return res;
+    }
+
+    return -9999;
+}
+inline bool streamSkipUntil(const char c, const uint32_t timeout_ms = 1000L)
+{
+    uint32_t startMillis = millis();
+    while (millis() - startMillis < timeout_ms) {
+        while (millis() - startMillis < timeout_ms &&
+                !modem.stream.available()) {
+            TINY_GSM_YIELD();
+        }
+        if (modem.stream.read() == c) {
+            return true;
+        }
+    }
+    return false;
+}
+
+// Gets signal quality report according to 3GPP TS command AT+CSQ
+int8_t getSignalQualityImpl()
+{
+    modem.sendAT(GF("+CSQ"));
+    if (modem.waitResponse(1000L, GF("+CSQ:")) != 1) {
+        return 99;
+    }
+    int8_t res = streamGetIntBefore(',');
+    modem.waitResponse();
+    DBG("### Signal Quality :", res);
+    return res;
+}
+
+// Gets the modem's registration status via CREG/CGREG/CEREG
+
+int8_t getRegistrationStatusXREG()
+{
+    int status = 0;
+    do {
+        modem.sendAT(GF("+CGREG?"));
+        // check for any of the three for simplicity
+        if (modem.waitResponse(1000L,GF("+CGREG:")) != 1) {
+            return 99;
+        }
+        streamSkipUntil(','); /* Skip format (0) */
+        status = streamGetIntBefore('\n');
+        modem.waitResponse();
+        if (status != 1) {
+            DBG("### Registration Status :", status);
+            delay(1000);
+        }
+    } while (status != 1);
+
+    DBG("### Registration Status :", status);
+    return status;
+}
 void setup()
 {
     // Set console baud rate
@@ -191,119 +306,4 @@ void loop()
     esp_deep_sleep_start();
 }
 
-bool get_SIM()
-{
-
-    modem.sendAT("+CPIN?");
-    if (modem.waitResponse(10000L) != 1) {
-
-         delay(1000);
-        DBG(" SIM card not inserted ");
-        return false;
-    }
-
-    DBG(" SIM card READY");
-    return true;
-}
-
-
-String getModemNameImpl()
-{
-    String name = "";
-
-
-    modem.sendAT(GF("+GMM"));
-    String res2;
-    if (modem.waitResponse(1000L, res2) != 1) {
-        return name;
-    }
-    res2.replace(GSM_NL "OK" GSM_NL, "");
-    res2.replace("_", " ");
-    res2.trim();
-
-    name = res2;
-    DBG("### Modem:", name);
-    return name;
-}
-
-
-String getModemInfoImpl()
-{
-    modem.sendAT(GF("+GMR"));
-    String res;
-    if (modem.waitResponse(1000L, res) != 1) {
-        return "";
-    }
-    res.replace(GSM_NL "OK" GSM_NL, "");
-    res.replace(GSM_NL, " ");
-    res.trim();
-    DBG("### Modem Info:", res);
-    return res;
-}
-
-inline int16_t streamGetIntBefore(char lastChar)
-{
-    char   buf[7];
-    size_t bytesRead = modem.stream.readBytesUntil(
-                           lastChar, buf, static_cast<size_t>(7));
-    // if we read 7 or more bytes, it's an overflow
-    if (bytesRead && bytesRead < 7) {
-        buf[bytesRead] = '\0';
-        int16_t res    = atoi(buf);
-        return res;
-    }
-
-    return -9999;
-}
-inline bool streamSkipUntil(const char c, const uint32_t timeout_ms = 1000L)
-{
-    uint32_t startMillis = millis();
-    while (millis() - startMillis < timeout_ms) {
-        while (millis() - startMillis < timeout_ms &&
-                !modem.stream.available()) {
-            TINY_GSM_YIELD();
-        }
-        if (modem.stream.read() == c) {
-            return true;
-        }
-    }
-    return false;
-}
-
-// Gets signal quality report according to 3GPP TS command AT+CSQ
-int8_t getSignalQualityImpl()
-{
-    modem.sendAT(GF("+CSQ"));
-    if (modem.waitResponse(1000L, GF("+CSQ:")) != 1) {
-        return 99;
-    }
-    int8_t res = streamGetIntBefore(',');
-    modem.waitResponse();
-    DBG("### Signal Quality :", res);
-    return res;
-}
-
-// Gets the modem's registration status via CREG/CGREG/CEREG
-
-int8_t getRegistrationStatusXREG()
-{
-    int status = 0;
-    do {
-        modem.sendAT(GF("+CGREG?"));
-        // check for any of the three for simplicity
-        if (modem.waitResponse(1000L,GF("+CGREG:")) != 1) {
-            return 99;
-        }
-        streamSkipUntil(','); /* Skip format (0) */
-        status = streamGetIntBefore('\n');
-        modem.waitResponse();
-        if (status != 1) {
-            DBG("### Registration Status :", status);
-            delay(1000);
-        }
-    } while (status != 1);
-
-    DBG("### Registration Status :", status);
-    return status;
-}
 
