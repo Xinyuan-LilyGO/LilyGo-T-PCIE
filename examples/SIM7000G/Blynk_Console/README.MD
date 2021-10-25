@@ -38,11 +38,11 @@
 ![](../../../image/Blynk/SIM7000/4-5-Dash_board.png)
 ![](../../../image/Blynk/SIM7000/4-6-Dash_board.png)
 
-7. Prepare your code
+7. Replace the macro definition in the code
 
-#define BLYNK_TEMPLATE_ID ""
-#define BLYNK_DEVICE_NAME ""
-#define BLYNK_AUTH_TOKEN "";
+    #define BLYNK_TEMPLATE_ID ""
+    #define BLYNK_DEVICE_NAME ""
+    #define BLYNK_AUTH_TOKEN "";
 
 ![](../../../image/Blynk/SIM7000/5-Ready_code.png)
 
