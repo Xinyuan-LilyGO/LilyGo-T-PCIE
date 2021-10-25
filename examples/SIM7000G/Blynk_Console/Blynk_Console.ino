@@ -164,8 +164,6 @@ void setup() {
   delay(500);
   Serial.println("Modem Name: " + name);
 
-
-
       // Launch BMP085
     if (!bmp.begin()) {
         Serial.println("Could not find a valid BMP085 sensor, check wiring!");
