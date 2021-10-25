@@ -91,16 +91,6 @@ BLYNK_CONNECTED()
 Blynk.syncVirtual(V3);  // will cause BLYNK_WRITE(V0) to be executed
 }
 
-
-float readBattery(uint8_t pin)
-{
-    int vref = 1100;
-    uint16_t volt = analogRead(pin);
-    float battery_voltage = ((float)volt / 4095.0) * 2.0 * 3.3 * (vref);
-
-    return battery_voltage;
-}
-
  // This function sends Arduino's up time every second to Virtual Pin (5).
 // In the app, Widget's reading frequency should be set to PUSH. This means
 // that you define how often to send data to Blynk App.
