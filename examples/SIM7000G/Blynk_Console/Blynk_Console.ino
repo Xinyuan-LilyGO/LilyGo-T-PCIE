@@ -26,10 +26,9 @@
  *************************************************************/
 
 /* Fill-in your Template ID (only if using Blynk.Cloud) */
-//#define BLYNK_TEMPLATE_ID   "YourTemplateID"
-#define BLYNK_TEMPLATE_ID "TMPLuDDGmXmn"
-#define BLYNK_DEVICE_NAME "T PCIE SIM7000"
-#define BLYNK_AUTH_TOKEN "uvDQoIK00I3w7BHFtm7aZFFFYVBHwObB";
+#define BLYNK_TEMPLATE_ID ""
+#define BLYNK_DEVICE_NAME ""
+#define BLYNK_AUTH_TOKEN "";
 
 // Select your modem:
 #define TINY_GSM_MODEM_SIM7000
