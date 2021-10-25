@@ -2,8 +2,9 @@
 
 ## **[English](./README.MD) | [中文](./README_CN.MD)**
 
-# Steps:
-1.需要安装下面的库
+# 步骤:
+
+1. 需要安装下面的库
      - [Adafruit BMP085 Library](https://github.com/adafruit/Adafruit-BMP085-Library)
      - [blynk-library](https://github.com/blynkkk/blynk-library)
      - [TinyGSM](https://github.com/vshymanskyy/TinyGSM)
@@ -15,6 +16,7 @@
 ![](../../../image/Blynk/SIM7000/1-Create_Template.png)
 
 4. 当模板准备好，进入搜索->设备-创建新设备  
+
 ![](../../../image/Blynk/SIM7000/2-Create_device.png)
 
 5. 配置模块
@@ -37,6 +39,7 @@
 ![](../../../image/Blynk/SIM7000/4-6-Dash_board.png)
 
 7. 替换代码中的宏
+
 #define BLYNK_TEMPLATE_ID ""
 #define BLYNK_DEVICE_NAME ""
 #define BLYNK_AUTH_TOKEN "";

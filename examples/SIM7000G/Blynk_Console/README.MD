@@ -16,6 +16,7 @@
 ![](../../../image/Blynk/SIM7000/1-Create_Template.png)
 
 4.   When the Template is ready, go to Search -> Devices - Create New Device
+
 ![](../../../image/Blynk/SIM7000/2-Create_device.png)
 
 5. Configuration module
@@ -38,6 +39,7 @@
 ![](../../../image/Blynk/SIM7000/4-6-Dash_board.png)
 
 7. Prepare your code
+
 #define BLYNK_TEMPLATE_ID ""
 #define BLYNK_DEVICE_NAME ""
 #define BLYNK_AUTH_TOKEN "";
@@ -47,7 +49,7 @@
 
 8. Upload the code and now you control the LDE and get the data in the cloud
    
-   ![](../../../image/Blynk/SIM7000/6.png)
+![](../../../image/Blynk/SIM7000/6.png)
 
 
 9. Reference[Documentation](https://docs.blynk.io/en/)
