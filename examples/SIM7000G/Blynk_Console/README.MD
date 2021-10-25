@@ -1,8 +1,6 @@
 <h1 align = "center">T-PCIE-SIM7000 Blynk_Console</h1>
 
-💦 ☀💨🌹 The sample code is based on the **[T-PCIE-SIM7000](https://www.aliexpress.com/item/4001142716386.html)** board, which takes the data of the external BMP180 sensor and uploads it to **[Cayenne](https://cayenne.mydevices.com/)**.
-
-![](../../../image/Cayenne/SIM7000.png)
+## **[English](./README.MD) | [中文](./README_CN.MD)**
 
 
 # Steps:

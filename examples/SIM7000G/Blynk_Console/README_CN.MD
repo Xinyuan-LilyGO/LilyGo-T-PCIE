@@ -1,5 +1,6 @@
 <h1 align = "center">T-PCIE-SIM7000 Blynk_Console</h1>
 
+## **[English](./README.MD) | [中文](./README_CN.MD)**
 
 # Steps:
 1.需要安装下面的库
