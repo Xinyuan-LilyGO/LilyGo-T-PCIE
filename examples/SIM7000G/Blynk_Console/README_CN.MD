@@ -44,12 +44,11 @@
 #define BLYNK_DEVICE_NAME ""
 #define BLYNK_AUTH_TOKEN "";
 
-![](../../../image/Blynk/5-Ready_code-SIM7000.png)
-
+![](../../../image/Blynk/5-Ready_code.png)
 
 8. 上传代码，可以控制LDE和获取数据
 
-   ![](../../../image/Blynk/6-SIM7000.png)
+ ![](../../../image/Blynk/6.png)
 
 10. 参考[文档](https://docs.blynk.io/en/)
 
@@ -61,8 +60,4 @@
 | GND         | GND        |
 | GPIO21(SDA) | SDA        |
 | GPIO22(SCL) | SCL        |
-
-
-
-
 
