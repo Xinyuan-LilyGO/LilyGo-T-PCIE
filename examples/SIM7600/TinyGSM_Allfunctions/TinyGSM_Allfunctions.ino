@@ -147,7 +147,7 @@ void loop()
     // Restart takes quite some time
     // To skip it, call init() instead of restart()
     DBG("Initializing modem...");
-    if (!modem.restart()) {
+    if (!modem.init()) {
         DBG("Failed to restart modem, delaying 10s and retrying");
         return;
     }
