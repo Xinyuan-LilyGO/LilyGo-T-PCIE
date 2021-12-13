@@ -106,16 +106,16 @@ void setup()
     SerialMon.begin(115200);
     delay(10);
 
-    // Onboard LED light, it can be used freely LED灯，可自由使用
+    // Onboard LED light, it can be used freely 
     pinMode(LED_PIN, OUTPUT);
     digitalWrite(LED_PIN, LOW);
 
-    // POWER_PIN : This pin controls the power supply of the Modem  POWER_PIN:控制调制解调器的电源
+    // POWER_PIN : This pin controls the power supply of the Modem  
     pinMode(POWER_PIN, OUTPUT);
     digitalWrite(POWER_PIN, HIGH);
 
-    // PWR_PIN ： This Pin is the PWR-KEY of the Modem PWR_PIN:调制解调器的pwr_key
-    // The time of active low level impulse of PWRKEY pin to power on module , type 500 ms  PWRKEY引脚对上电模块的有效低电平脉冲时间，类型为500ms
+    // PWR_PIN ： This Pin is the PWR-KEY of the Modem 
+    // The time of active low level impulse of PWRKEY pin to power on module , type 500 ms  P
     pinMode(PWR_PIN, OUTPUT);
     digitalWrite(PWR_PIN, HIGH);
     delay(500);
@@ -123,13 +123,13 @@ void setup()
     // delay(500);
     //digitalWrite(PWR_PIN, HIGH);
 
-    // IND_PIN: It is connected to the Modem status Pin, IND_PIN:连接到调制解调器状态Pin，
-    // through which you can know whether the module starts normally. 可以了解模块是否正常启动。
+    // IND_PIN: It is connected to the Modem status Pin, 
+    // through which you can know whether the module starts normally.
     pinMode(IND_PIN, INPUT);
 
     attachInterrupt(IND_PIN, []() {
         detachInterrupt(IND_PIN);
-        // If Modem starts normally, then set the onboard LED to flash once every 1 second 如果Modem正常启动，则设置板载LED每1秒闪一次
+        // If Modem starts normally, then set the onboard LED to flash once every 1 second 
         tick.attach_ms(1000, []() {
             digitalWrite(LED_PIN, !digitalRead(LED_PIN));
         });

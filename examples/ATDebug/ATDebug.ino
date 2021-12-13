@@ -1,8 +1,8 @@
 // Select your modem:
 // #define TINY_GSM_MODEM_SIM868
 // #define TINY_GSM_MODEM_SIM7000  
-//#define TINY_GSM_MODEM_SIM7600
-#define TINY_GSM_MODEM_SIM7080  
+#define TINY_GSM_MODEM_SIM7600
+//#define TINY_GSM_MODEM_SIM7080  
 //#define TINY_GSM_MODEM_SIM800 //The SIM7020 AT instruction is compatible with SIM800C
 
 // Set serial for debug console (to the Serial Monitor, default speed 115200)
