@@ -125,7 +125,15 @@ void setup()
         return ;
     }
 
+    modem.sendAT(GF("+CGDRT=4,1"));//GPIO5 output
+   if (modem.waitResponse(10000L) != 1) {
+            return ;
+        }
 
+    modem.sendAT(GF("+CGSETV=4,1"));//Power off the GNSS
+   if (modem.waitResponse(10000L) != 1) {
+            return ;
+        }
 
 #if 0
     //https://github.com/vshymanskyy/TinyGSM/pull/405
@@ -301,6 +309,19 @@ void loop()
 #endif
 
 #if TINY_GSM_TEST_GPS
+
+   modem.sendAT(GF("+CGSETV=4,1"));//on GNSS_1V8
+    if (modem.waitResponse(10000L) != 1) {
+         
+          while (1)
+          {
+             DBG("+CGSETV=4,1 FALL");
+              delay(1000);
+          }
+         
+           
+     }
+
     modem.enableGPS();
 
     modem.sendAT("+CGNSSPWR=1");

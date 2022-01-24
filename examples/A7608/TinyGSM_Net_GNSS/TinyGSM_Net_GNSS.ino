@@ -112,12 +112,12 @@ void setup()
         return;
     }
 
-/*
-    
-    2 Automatic
-    13 GSM Only
-    38 LTE Only
-    */
+    /*
+
+        2 Automatic
+        13 GSM Only
+        38 LTE Only
+        */
     String result;
     result = modem.setNetworkMode(38);
     if (modem.waitResponse(10000L) != 1) {
@@ -126,14 +126,14 @@ void setup()
     }
 
     modem.sendAT(GF("+CGDRT=5,1"));//GPIO5 output
-   if (modem.waitResponse(10000L) != 1) {
-            return ;
-        }
+    if (modem.waitResponse(10000L) != 1) {
+        return ;
+    }
 
-    modem.sendAT(GF("+CGDRT=5,0"));//GPIO5 low, Power off the GNSS
-   if (modem.waitResponse(10000L) != 1) {
-            return ;
-        }
+    modem.sendAT(GF("+CGSETV=5,1"));// Power off the GNSS_1V8
+    if (modem.waitResponse(10000L) != 1) {
+        return ;
+    }
 
 #if 0
     //https://github.com/vshymanskyy/TinyGSM/pull/405
@@ -171,8 +171,8 @@ void loop()
     while (Serial.available()) {
         SerialAT.write(Serial.read());
     }
-  }
-  */
+    }
+    */
     String name = modem.getModemName();
     DBG("Modem Name:", name);
 
@@ -229,43 +229,43 @@ void loop()
 
 #endif
 
-#if TINY_GSM_TEST_TCP 
-  TinyGsmClient client(modem, 0);
-  const int     port = 80;
-  DBG("Connecting to", server);
-  if (!client.connect(server, port)) {
-    DBG("... failed");
-  } else {
-    // Make a HTTP GET request:
-    client.print(String("GET ") + resource + " HTTP/1.0\r\n");
-    client.print(String("Host: ") + server + "\r\n");
-    client.print("Connection: close\r\n\r\n");
+#if TINY_GSM_TEST_TCP
+    TinyGsmClient client(modem, 0);
+    const int     port = 80;
+    DBG("Connecting to", server);
+    if (!client.connect(server, port)) {
+        DBG("... failed");
+    } else {
+        // Make a HTTP GET request:
+        client.print(String("GET ") + resource + " HTTP/1.0\r\n");
+        client.print(String("Host: ") + server + "\r\n");
+        client.print("Connection: close\r\n\r\n");
 
-    // Wait for data to arrive
-    uint32_t start = millis();
-    while (client.connected() && !client.available() &&
-           millis() - start < 30000L) {
-      delay(100);
-    };
+        // Wait for data to arrive
+        uint32_t start = millis();
+        while (client.connected() && !client.available() &&
+                millis() - start < 30000L) {
+            delay(100);
+        };
 
-    // Read data
-    start          = millis();
-    char logo[640] = {
-        '\0',
-    };
-    int read_chars = 0;
-    while (client.connected() && millis() - start < 10000L) {
-      while (client.available()) {
-        logo[read_chars]     = client.read();
-        logo[read_chars + 1] = '\0';
-        read_chars++;
-        start = millis();
-      }
+        // Read data
+        start          = millis();
+        char logo[640] = {
+            '\0',
+        };
+        int read_chars = 0;
+        while (client.connected() && millis() - start < 10000L) {
+            while (client.available()) {
+                logo[read_chars]     = client.read();
+                logo[read_chars + 1] = '\0';
+                read_chars++;
+                start = millis();
+            }
+        }
+        SerialMon.println(logo);
+        DBG("#####  RECEIVED:", strlen(logo), "CHARACTERS");
+        client.stop();
     }
-    SerialMon.println(logo);
-    DBG("#####  RECEIVED:", strlen(logo), "CHARACTERS");
-    client.stop();
-  }
 #endif
 
 
@@ -279,48 +279,47 @@ void loop()
 #endif
 
 
-#if TINY_GSM_TEST_GSM_LOCATION 
-  float lat      = 0;
-  float lon      = 0;
-  float accuracy = 0;
-  int   year     = 0;
-  int   month    = 0;
-  int   day      = 0;
-  int   hour     = 0;
-  int   min      = 0;
-  int   sec      = 0;
-  for (int8_t i = 15; i; i--) {
-    DBG("Requesting current GSM location");
-    if (modem.getGsmLocation(&lat, &lon, &accuracy, &year, &month, &day, &hour,
-                             &min, &sec)) {
-      DBG("Latitude:", String(lat, 8), "\tLongitude:", String(lon, 8));
-      DBG("Accuracy:", accuracy);
-      DBG("Year:", year, "\tMonth:", month, "\tDay:", day);
-      DBG("Hour:", hour, "\tMinute:", min, "\tSecond:", sec);
-      break;
-    } else {
-      DBG("Couldn't get GSM location, retrying in 15s.");
-      delay(15000L);
+#if TINY_GSM_TEST_GSM_LOCATION
+    float lat      = 0;
+    float lon      = 0;
+    float accuracy = 0;
+    int   year     = 0;
+    int   month    = 0;
+    int   day      = 0;
+    int   hour     = 0;
+    int   min      = 0;
+    int   sec      = 0;
+    for (int8_t i = 15; i; i--) {
+        DBG("Requesting current GSM location");
+        if (modem.getGsmLocation(&lat, &lon, &accuracy, &year, &month, &day, &hour,
+                                 &min, &sec)) {
+            DBG("Latitude:", String(lat, 8), "\tLongitude:", String(lon, 8));
+            DBG("Accuracy:", accuracy);
+            DBG("Year:", year, "\tMonth:", month, "\tDay:", day);
+            DBG("Hour:", hour, "\tMinute:", min, "\tSecond:", sec);
+            break;
+        } else {
+            DBG("Couldn't get GSM location, retrying in 15s.");
+            delay(15000L);
+        }
     }
-  }
-  DBG("Retrieving GSM location again as a string");
-  String location = modem.getGsmLocation();
-  DBG("GSM Based Location String:", location);
+    DBG("Retrieving GSM location again as a string");
+    String location = modem.getGsmLocation();
+    DBG("GSM Based Location String:", location);
 #endif
 
 #if TINY_GSM_TEST_GPS
 
-   modem.sendAT(GF("+CGDRT=5,1"));//GPIO5 is set to high 
+    modem.sendAT(GF("+CGSETV=5,0"));// on the GNSS_1V8
     if (modem.waitResponse(10000L) != 1) {
-         
-          while (1)
-          {
-             DBG("+CGDRT=5,1 FALL");
-              delay(1000);
-          }
-         
-           
-     }
+
+        while (1) {
+            DBG("+CGDRT=5,0 FALL");
+            delay(1000);
+        }
+
+
+    }
 
     modem.enableGPS();
 
@@ -330,7 +329,7 @@ void loop()
             delay(1000);
             DBG("EnableGPS  false");
         }
-        
+
     }
 
     float LAT,  LON;
