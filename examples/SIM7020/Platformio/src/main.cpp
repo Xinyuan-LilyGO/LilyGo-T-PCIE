@@ -73,7 +73,7 @@ bool get_SIM()
     modem.sendAT("+CPIN?");
     if (modem.waitResponse(10000L) != 1) {
 
-         delay(1000);
+        delay(1000);
         DBG(" SIM card not inserted ");
         return false;
     }
@@ -167,7 +167,7 @@ int8_t getRegistrationStatusXREG()
     do {
         modem.sendAT(GF("+CGREG?"));
         // check for any of the three for simplicity
-        if (modem.waitResponse(1000L,GF("+CGREG:")) != 1) {
+        if (modem.waitResponse(1000L, GF("+CGREG:")) != 1) {
             return 99;
         }
         streamSkipUntil(','); /* Skip format (0) */
@@ -199,6 +199,8 @@ void setup()
     // PWR_PIN ： This Pin is the PWR-KEY of the Modem
     // The time of active low level impulse of PWRKEY pin to power on module , type 500 ms
     pinMode(PWR_PIN, OUTPUT);
+    digitalWrite(PWR_PIN, LOW);
+    delay(500);
     digitalWrite(PWR_PIN, HIGH);
     delay(500);
     digitalWrite(PWR_PIN, LOW);
@@ -224,42 +226,44 @@ void setup()
 
     SerialAT.begin(UART_BAUD, SERIAL_8N1, PIN_RX, PIN_TX);
 
-/*
-    //    // Uncomment below will perform loopback test
-    while (1) {
-        while (SerialMon.available()) {
-              SerialAT.write(SerialMon.read());
+    
+        //    // Uncomment below will perform loopback test
+        while (1) {
+            while (SerialMon.available()) {
+                  SerialAT.write(SerialMon.read());
+              }
+              while (SerialAT.available()) {
+                  SerialMon.write(SerialAT.read());
+              }
           }
-          while (SerialAT.available()) {
-              SerialMon.write(SerialAT.read());
-          }
-      }*/
-      // Restart takes quite some time
-      // To skip it, call init() instead of restart()
-      /* DBG("Initializing modem...");
-       if (!modem.init()) {
-           DBG("Failed to restart modem, delaying 10s and retrying");
-           return;
-       }*/
+    // Restart takes quite some time
+    // To skip it, call init() instead of restart()
+    /* DBG("Initializing modem...");
+     if (!modem.init()) {
+         DBG("Failed to restart modem, delaying 10s and retrying");
+         return;
+     }*/
 }
 
 void loop()
 {
-/*
-    while (1) {
-        while (SerialMon.available()) {
-              SerialAT.write(SerialMon.read());
-          }
-          while (SerialAT.available()) {
-              SerialMon.write(SerialAT.read());
-          }
-      }*/
+    /*
+        while (1) {
+            while (SerialMon.available()) {
+                  SerialAT.write(SerialMon.read());
+              }
+              while (SerialAT.available()) {
+                  SerialMon.write(SerialAT.read());
+              }
+          }*/
 
 
 
     getModemNameImpl();
     getModemInfoImpl();
-    if(get_SIM()==false){ return; }
+    if (get_SIM() == false) {
+        return;
+    }
 
     //modem.getSimStatus();
     delay(1000);
@@ -270,28 +274,28 @@ void loop()
 
 
 
-         modem.sendAT(GF("+CGACT?"));
-        // check for any of the three for simplicity
-        if (modem.waitResponse(1000L) != 1) {
-            return ;
-        }
-        modem.sendAT(GF("+COPS?"));
-        // check for any of the three for simplicity
-        if (modem.waitResponse(1000L) != 1) {
-            return ;
-        }
-        modem.sendAT(GF("+CGCONTRDP"));
-        // check for any of the three for simplicity
-        if (modem.waitResponse(1000L) != 1) {
-            return ;
-        }
+    modem.sendAT(GF("+CGACT?"));
+    // check for any of the three for simplicity
+    if (modem.waitResponse(1000L) != 1) {
+        return ;
+    }
+    modem.sendAT(GF("+COPS?"));
+    // check for any of the three for simplicity
+    if (modem.waitResponse(1000L) != 1) {
+        return ;
+    }
+    modem.sendAT(GF("+CGCONTRDP"));
+    // check for any of the three for simplicity
+    if (modem.waitResponse(1000L) != 1) {
+        return ;
+    }
 
-        modem.sendAT(GF("+CDNSGIP=\"www.baidu.com\""));
-        // check for any of the three for simplicity
-        if (modem.waitResponse(1000L) != 1) {
-            return ;
-        }
-        delay(3000);
+    modem.sendAT(GF("+CDNSGIP=\"www.baidu.com\""));
+    // check for any of the three for simplicity
+    if (modem.waitResponse(1000L) != 1) {
+        return ;
+    }
+    delay(3000);
 #if TINY_GSM_POWERDOWN
     // Try to power-off (modem may decide to restart automatically)
     // To turn off modem completely, please use Reset/Enable pins
