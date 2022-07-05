@@ -296,16 +296,16 @@ bool initPMU()
     PMU.setPowerOutPut(AXP192_LDO3, AXP202_OFF);
     PMU.setPowerOutPut(AXP192_EXTEN, AXP202_OFF);
 
-    /*
-     * Set the power of LoRa and GPS module to 3.3V
-     **/
-    PMU.setLDO2Voltage(3300);
-    PMU.setLDO3Voltage(3300);
-    PMU.setDCDC1Voltage(3300);
+    PMU.setDCDC3Voltage(3300);
+    PMU.setPowerOutPut(AXP192_DCDC3, AXP202_ON);
 
-    PMU.setPowerOutPut(AXP192_DCDC1, AXP202_ON);
-    PMU.setPowerOutPut(AXP192_LDO2, AXP202_ON);
-    PMU.setPowerOutPut(AXP192_LDO3, AXP202_ON);
+    // PMU.setLDO2Voltage(3300);
+    // PMU.setLDO3Voltage(3300);
+    // PMU.setDCDC1Voltage(3300);
+
+    // PMU.setPowerOutPut(AXP192_DCDC1, AXP202_ON);
+    // PMU.setPowerOutPut(AXP192_LDO2, AXP202_ON);
+    // PMU.setPowerOutPut(AXP192_LDO3, AXP202_ON);
 
     pinMode(PMU_IRQ, INPUT_PULLUP);
     attachInterrupt(PMU_IRQ, [] {
