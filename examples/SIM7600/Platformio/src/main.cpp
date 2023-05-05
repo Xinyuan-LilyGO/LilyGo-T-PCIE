@@ -109,7 +109,7 @@ void setup()
     }
 
     //Set to GSM mode, please refer to manual 5.11 AT+CNMP Preferred mode selection for more parameters
-    String result;
+    bool result;
     do {
         result = modem.setNetworkMode(13);
         delay(500);

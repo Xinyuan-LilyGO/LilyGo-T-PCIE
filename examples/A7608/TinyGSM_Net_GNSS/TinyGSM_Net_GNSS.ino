@@ -118,7 +118,7 @@ void setup()
         13 GSM Only
         38 LTE Only
         */
-    String result;
+    bool result;
     result = modem.setNetworkMode(38);
     if (modem.waitResponse(10000L) != 1) {
         DBG(" setNetworkMode faill");

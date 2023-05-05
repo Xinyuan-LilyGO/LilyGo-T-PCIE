@@ -79,10 +79,10 @@ void setup()
     // The time of active low level impulse of PWRKEY pin to power on module , type 500 ms
     pinMode(PWR_PIN, OUTPUT);
     digitalWrite(PWR_PIN, HIGH);
-    delay(500);    
+    delay(500);
     digitalWrite(PWR_PIN, LOW);
 
-    // IND_PIN: It is connected to the Modem status Pin, 
+    // IND_PIN: It is connected to the Modem status Pin,
     // through which you can know whether the module starts normally.
     pinMode(IND_PIN, INPUT);
 
@@ -109,18 +109,18 @@ void setup()
     }
 
     //Set to GSM mode, please refer to manual 5.11 AT+CNMP Preferred mode selection for more parameters
-    String result;
+    bool result;
     do {
         result = modem.setNetworkMode(13);
         delay(500);
     } while (result != "OK");
 
-   /*
-    2 Automatic
-    13 GSM only
-    38 LTE only
-    51 GSM and LTE only
-    * * * */
+    /*
+     2 Automatic
+     13 GSM only
+     38 LTE only
+     51 GSM and LTE only
+     * * * */
     String res;
     do {
         res = modem.setNetworkMode(13);

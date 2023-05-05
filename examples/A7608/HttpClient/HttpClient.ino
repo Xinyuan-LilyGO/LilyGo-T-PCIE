@@ -82,7 +82,7 @@ Ticker tick;
 
 void setup()
 {
-  // Set console baud rate
+    // Set console baud rate
     SerialMon.begin(115200);
     delay(10);
 
@@ -133,7 +133,7 @@ void setup()
     14 WCDMA Only
     38 LTE Only
     */
-    String result;
+    bool result;
     result = modem.setNetworkMode(38);
     if (modem.waitResponse(10000L) != 1) {
         DBG(" setNetworkMode faill");
@@ -145,11 +145,11 @@ void loop()
 {
     // Restart takes quite some time
     // To skip it, call init() instead of restart()
-  /*  DBG("Initializing modem...");
-    if (!modem.restart()) {
-        DBG("Failed to restart modem, delaying 10s and retrying");
-        return;
-    }*/
+    /*  DBG("Initializing modem...");
+      if (!modem.restart()) {
+          DBG("Failed to restart modem, delaying 10s and retrying");
+          return;
+      }*/
 
     String name = modem.getModemName();
     DBG("Modem Name:", name);
@@ -158,106 +158,114 @@ void loop()
     DBG("Modem Info:", modemInfo);
 
 #if TINY_GSM_USE_GPRS
-  // Unlock your SIM card with a PIN if needed
-  if (GSM_PIN && modem.getSimStatus() != 3) { modem.simUnlock(GSM_PIN); }
+    // Unlock your SIM card with a PIN if needed
+    if (GSM_PIN && modem.getSimStatus() != 3) {
+        modem.simUnlock(GSM_PIN);
+    }
 #endif
 
 
 #if TINY_GSM_USE_WIFI
-  // Wifi connection parameters must be set before waiting for the network
-  SerialMon.print(F("Setting SSID/password..."));
-  if (!modem.networkConnect(wifiSSID, wifiPass)) {
-    SerialMon.println(" fail");
-    delay(10000);
-    return;
-  }
-  SerialMon.println(" success");
+    // Wifi connection parameters must be set before waiting for the network
+    SerialMon.print(F("Setting SSID/password..."));
+    if (!modem.networkConnect(wifiSSID, wifiPass)) {
+        SerialMon.println(" fail");
+        delay(10000);
+        return;
+    }
+    SerialMon.println(" success");
 #endif
 
 #if TINY_GSM_USE_GPRS && defined TINY_GSM_MODEM_XBEE
-  // The XBee must run the gprsConnect function BEFORE waiting for network!
-  modem.gprsConnect(apn, gprsUser, gprsPass);
+    // The XBee must run the gprsConnect function BEFORE waiting for network!
+    modem.gprsConnect(apn, gprsUser, gprsPass);
 #endif
 
-  SerialMon.print("Waiting for network...");
-  if (!modem.waitForNetwork()) {
-    SerialMon.println(" fail");
-    delay(10000);
-    return;
-  }
-  SerialMon.println(" success");
+    SerialMon.print("Waiting for network...");
+    if (!modem.waitForNetwork()) {
+        SerialMon.println(" fail");
+        delay(10000);
+        return;
+    }
+    SerialMon.println(" success");
 
-  if (modem.isNetworkConnected()) { SerialMon.println("Network connected"); }
+    if (modem.isNetworkConnected()) {
+        SerialMon.println("Network connected");
+    }
 
 
 #if TINY_GSM_USE_GPRS
-  // GPRS connection parameters are usually set after network registration
-  SerialMon.print(F("Connecting to "));
-  SerialMon.print(apn);
-  if (!modem.gprsConnect(apn, gprsUser, gprsPass)) {
-    SerialMon.println(" fail");
-    delay(10000);
-    return;
-  }
-  SerialMon.println(" success");
+    // GPRS connection parameters are usually set after network registration
+    SerialMon.print(F("Connecting to "));
+    SerialMon.print(apn);
+    if (!modem.gprsConnect(apn, gprsUser, gprsPass)) {
+        SerialMon.println(" fail");
+        delay(10000);
+        return;
+    }
+    SerialMon.println(" success");
 
-  if (modem.isGprsConnected()) { SerialMon.println("GPRS connected"); }
+    if (modem.isGprsConnected()) {
+        SerialMon.println("GPRS connected");
+    }
 #endif
 
-  SerialMon.print(F("Performing HTTP GET request... "));
-  int err = http.get(resource);
-  if (err != 0) {
-    SerialMon.println(F("failed to connect"));
-    delay(10000);
-    return;
-  }
+    SerialMon.print(F("Performing HTTP GET request... "));
+    int err = http.get(resource);
+    if (err != 0) {
+        SerialMon.println(F("failed to connect"));
+        delay(10000);
+        return;
+    }
 
-  int status = http.responseStatusCode();
-  SerialMon.print(F("Response status code: "));
-  SerialMon.println(status);
-  if (!status) {
-    delay(10000);
-    return;
-  }
+    int status = http.responseStatusCode();
+    SerialMon.print(F("Response status code: "));
+    SerialMon.println(status);
+    if (!status) {
+        delay(10000);
+        return;
+    }
 
-  SerialMon.println(F("Response Headers:"));
-  while (http.headerAvailable()) {
-    String headerName  = http.readHeaderName();
-    String headerValue = http.readHeaderValue();
-    SerialMon.println("    " + headerName + " : " + headerValue);
-  }
+    SerialMon.println(F("Response Headers:"));
+    while (http.headerAvailable()) {
+        String headerName  = http.readHeaderName();
+        String headerValue = http.readHeaderValue();
+        SerialMon.println("    " + headerName + " : " + headerValue);
+    }
 
-  int length = http.contentLength();
-  if (length >= 0) {
-    SerialMon.print(F("Content length is: "));
-    SerialMon.println(length);
-  }
-  if (http.isResponseChunked()) {
-    SerialMon.println(F("The response is chunked"));
-  }
+    int length = http.contentLength();
+    if (length >= 0) {
+        SerialMon.print(F("Content length is: "));
+        SerialMon.println(length);
+    }
+    if (http.isResponseChunked()) {
+        SerialMon.println(F("The response is chunked"));
+    }
 
-  String body = http.responseBody();
-  SerialMon.println(F("Response:"));
-  SerialMon.println(body);
+    String body = http.responseBody();
+    SerialMon.println(F("Response:"));
+    SerialMon.println(body);
 
-  SerialMon.print(F("Body length is: "));
-  SerialMon.println(body.length());
+    SerialMon.print(F("Body length is: "));
+    SerialMon.println(body.length());
 
-  // Shutdown
+    // Shutdown
 
-  http.stop();
-  SerialMon.println(F("Server disconnected"));
+    http.stop();
+    SerialMon.println(F("Server disconnected"));
 
 #if TINY_GSM_USE_WIFI
-  modem.networkDisconnect();
-  SerialMon.println(F("WiFi disconnected"));
+    modem.networkDisconnect();
+    SerialMon.println(F("WiFi disconnected"));
 #endif
 #if TINY_GSM_USE_GPRS
-  modem.gprsDisconnect();
-  SerialMon.println(F("GPRS disconnected"));
+    modem.gprsDisconnect();
+    SerialMon.println(F("GPRS disconnected"));
 #endif
 
-  // Do nothing forevermore
-  while (true) { delay(1000); }
+    // Do nothing forevermore
+    while (true) {
+        delay(1000);
+    }
 
 }
