@@ -112,28 +112,20 @@ void setup()
         return;
     }
 
-/*
-    
+    /*
     2 Automatic
     13 GSM Only
     38 LTE Only
     */
-    String result;
+    bool result;
     result = modem.setNetworkMode(38);
-    if (modem.waitResponse(10000L) != 1) {
-        DBG(" setNetworkMode faill");
-        return ;
-    }
+    modem.waitResponse(10000L);
 
     modem.sendAT(GF("+CGDRT=4,1"));//GPIO5 output
-   if (modem.waitResponse(10000L) != 1) {
-            return ;
-        }
+    modem.waitResponse(10000L);
 
-    modem.sendAT(GF("+CGSETV=4,1"));//Power off the GNSS
-   if (modem.waitResponse(10000L) != 1) {
-            return ;
-        }
+    modem.sendAT(GF("+CGSETV=4,0"));//Power on the GNSS
+    modem.waitResponse(10000L);
 
 #if 0
     //https://github.com/vshymanskyy/TinyGSM/pull/405
@@ -171,8 +163,8 @@ void loop()
     while (Serial.available()) {
         SerialAT.write(Serial.read());
     }
-  }
-  */
+    }
+    */
     String name = modem.getModemName();
     DBG("Modem Name:", name);
 
@@ -229,43 +221,43 @@ void loop()
 
 #endif
 
-#if TINY_GSM_TEST_TCP 
-  TinyGsmClient client(modem, 0);
-  const int     port = 80;
-  DBG("Connecting to", server);
-  if (!client.connect(server, port)) {
-    DBG("... failed");
-  } else {
-    // Make a HTTP GET request:
-    client.print(String("GET ") + resource + " HTTP/1.0\r\n");
-    client.print(String("Host: ") + server + "\r\n");
-    client.print("Connection: close\r\n\r\n");
+#if TINY_GSM_TEST_TCP
+    TinyGsmClient client(modem, 0);
+    const int     port = 80;
+    DBG("Connecting to", server);
+    if (!client.connect(server, port)) {
+        DBG("... failed");
+    } else {
+        // Make a HTTP GET request:
+        client.print(String("GET ") + resource + " HTTP/1.0\r\n");
+        client.print(String("Host: ") + server + "\r\n");
+        client.print("Connection: close\r\n\r\n");
 
-    // Wait for data to arrive
-    uint32_t start = millis();
-    while (client.connected() && !client.available() &&
-           millis() - start < 30000L) {
-      delay(100);
-    };
+        // Wait for data to arrive
+        uint32_t start = millis();
+        while (client.connected() && !client.available() &&
+                millis() - start < 30000L) {
+            delay(100);
+        };
 
-    // Read data
-    start          = millis();
-    char logo[640] = {
-        '\0',
-    };
-    int read_chars = 0;
-    while (client.connected() && millis() - start < 10000L) {
-      while (client.available()) {
-        logo[read_chars]     = client.read();
-        logo[read_chars + 1] = '\0';
-        read_chars++;
-        start = millis();
-      }
+        // Read data
+        start          = millis();
+        char logo[640] = {
+            '\0',
+        };
+        int read_chars = 0;
+        while (client.connected() && millis() - start < 10000L) {
+            while (client.available()) {
+                logo[read_chars]     = client.read();
+                logo[read_chars + 1] = '\0';
+                read_chars++;
+                start = millis();
+            }
+        }
+        SerialMon.println(logo);
+        DBG("#####  RECEIVED:", strlen(logo), "CHARACTERS");
+        client.stop();
     }
-    SerialMon.println(logo);
-    DBG("#####  RECEIVED:", strlen(logo), "CHARACTERS");
-    client.stop();
-  }
 #endif
 
 
@@ -279,67 +271,86 @@ void loop()
 #endif
 
 
-#if TINY_GSM_TEST_GSM_LOCATION 
-  float lat      = 0;
-  float lon      = 0;
-  float accuracy = 0;
-  int   year     = 0;
-  int   month    = 0;
-  int   day      = 0;
-  int   hour     = 0;
-  int   min      = 0;
-  int   sec      = 0;
-  for (int8_t i = 15; i; i--) {
-    DBG("Requesting current GSM location");
-    if (modem.getGsmLocation(&lat, &lon, &accuracy, &year, &month, &day, &hour,
-                             &min, &sec)) {
-      DBG("Latitude:", String(lat, 8), "\tLongitude:", String(lon, 8));
-      DBG("Accuracy:", accuracy);
-      DBG("Year:", year, "\tMonth:", month, "\tDay:", day);
-      DBG("Hour:", hour, "\tMinute:", min, "\tSecond:", sec);
-      break;
-    } else {
-      DBG("Couldn't get GSM location, retrying in 15s.");
-      delay(15000L);
+#if TINY_GSM_TEST_GSM_LOCATION
+    float lat      = 0;
+    float lon      = 0;
+    float accuracy = 0;
+    int   year     = 0;
+    int   month    = 0;
+    int   day      = 0;
+    int   hour     = 0;
+    int   min      = 0;
+    int   sec      = 0;
+    for (int8_t i = 15; i; i--) {
+        DBG("Requesting current GSM location");
+        if (modem.getGsmLocation(&lat, &lon, &accuracy, &year, &month, &day, &hour,
+                                 &min, &sec)) {
+            DBG("Latitude:", String(lat, 8), "\tLongitude:", String(lon, 8));
+            DBG("Accuracy:", accuracy);
+            DBG("Year:", year, "\tMonth:", month, "\tDay:", day);
+            DBG("Hour:", hour, "\tMinute:", min, "\tSecond:", sec);
+            break;
+        } else {
+            DBG("Couldn't get GSM location, retrying in 15s.");
+            delay(15000L);
+        }
     }
-  }
-  DBG("Retrieving GSM location again as a string");
-  String location = modem.getGsmLocation();
-  DBG("GSM Based Location String:", location);
+    DBG("Retrieving GSM location again as a string");
+    String location = modem.getGsmLocation();
+    DBG("GSM Based Location String:", location);
 #endif
 
 #if TINY_GSM_TEST_GPS
 
-   modem.sendAT(GF("+CGSETV=4,1"));//on GNSS_1V8
-    if (modem.waitResponse(10000L) != 1) {
-         
-          while (1)
-          {
-             DBG("+CGSETV=4,1 FALL");
-              delay(1000);
-          }
-         
-           
-     }
+    //Disable gnss
+    modem.sendAT("+CGNSSPWR=0");
+    modem.waitResponse(10000L);
 
-    modem.enableGPS();
-
+    //Enable gnss
     modem.sendAT("+CGNSSPWR=1");
-    if (modem.waitResponse(10000L) != 1) {
-        while (1) {
-            delay(1000);
-            DBG("EnableGPS  false");
-        }
-        
-    }
+    modem.waitResponse(10000L);
 
-    float LAT,  LON;
+    //Wait gnss start.
+    SerialMon.print("\tWait GPS reday.");
+    while (modem.waitResponse(1000UL, "+CGNSSPWR: READY!") != 1) {
+        SerialMon.print(".");
+    }
+    SerialMon.println();
+
+    //Set gnss mode use GPS.
+    modem.sendAT("+CGNSSMODE=1");
+    modem.waitResponse(10000L);
+
+
+    float parameter1,  parameter2;
+    char buf[16];
     while (1) {
-        if (modem.getGPS(&LAT, &LON)) {
-            Serial.printf("LAT:%f LON:%f\n", LAT, LON);
-            tick.attach_ms(200, []() {
-                digitalWrite(LED_PIN, !digitalRead(LED_PIN));
-            });
+        if (modem.getGPS(&parameter1, &parameter2)) {
+            modem.sendAT(GF("+CGNSSINFO"));
+            if (modem.waitResponse(GF(GSM_NL "+CGNSSINFO:")) == 1) {
+                String res = modem.stream.readStringUntil('\n');
+                String lat = "";
+                String n_s = "";
+                String lon = "";
+                String e_w = "";
+                res.trim();
+                lat = res.substring(8, res.indexOf(',', 8));
+                n_s = res.substring(19, res.indexOf(',', res.indexOf(',', 19)));
+                lon = res.substring(21, res.indexOf(',', res.indexOf(',', 21)));
+                e_w = res.substring(33, res.indexOf(',', res.indexOf(',', 33)));
+                delay(100);
+                Serial.println("****************GNSS********************");
+                Serial.printf("lat:%s %s\n", lat, n_s);
+                Serial.printf("lon:%s %s\n", lon, e_w);
+                float flat = atof(lat.c_str());
+                float flon = atof(lon.c_str());
+                flat = (floor(flat / 100) + fmod(flat, 100.) / 60) *
+                       (n_s == "N" ? 1 : -1);
+                flon = (floor(flon / 100) + fmod(flon, 100.) / 60) *
+                       (e_w == "E" ? 1 : -1);
+                Serial.print("Latitude:"); Serial.println(flat);
+                Serial.print("Longitude:"); Serial.println(flon);
+            }
             break;
         } else {
             Serial.print("getGPS ");
@@ -347,7 +358,10 @@ void loop()
         }
         delay(2000);
     }
-    modem.disableGPS();
+
+    //Disable gnss
+    modem.sendAT("+CGNSSPWR=0");
+    modem.waitResponse(10000L);
 #endif
 
 
