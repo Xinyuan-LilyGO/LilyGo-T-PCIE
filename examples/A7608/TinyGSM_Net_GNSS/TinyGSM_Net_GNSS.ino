@@ -113,27 +113,24 @@ void setup()
     }
 
     /*
-
-        2 Automatic
-        13 GSM Only
-        38 LTE Only
-        */
+    2 Automatic
+    13 GSM Only
+    38 LTE Only
+    */
     bool result;
     result = modem.setNetworkMode(38);
-    if (modem.waitResponse(10000L) != 1) {
-        DBG(" setNetworkMode faill");
-        return ;
-    }
+    modem.waitResponse(10000L);
 
-    modem.sendAT(GF("+CGDRT=5,1"));//GPIO5 output
-    if (modem.waitResponse(10000L) != 1) {
-        return ;
-    }
+    // Power On the GNSS_1V8
+    modem.sendAT(GF("+CGDRT=5,1"));
+    modem.waitResponse(10000L);
+    modem.sendAT(GF("+CGSETV=5,1"));
+    modem.waitResponse(10000L);
+    modem.sendAT(GF("+CVAUXS=1"));
+    modem.waitResponse(10000L);
 
-    modem.sendAT(GF("+CGSETV=5,1"));// Power off the GNSS_1V8
-    if (modem.waitResponse(10000L) != 1) {
-        return ;
-    }
+
+
 
 #if 0
     //https://github.com/vshymanskyy/TinyGSM/pull/405
@@ -310,16 +307,6 @@ void loop()
 
 #if TINY_GSM_TEST_GPS
 
-    modem.sendAT(GF("+CGSETV=5,0"));// on the GNSS_1V8
-    if (modem.waitResponse(10000L) != 1) {
-
-        while (1) {
-            DBG("+CGDRT=5,0 FALL");
-            delay(1000);
-        }
-
-
-    }
 
     modem.enableGPS();
 
@@ -329,7 +316,6 @@ void loop()
             delay(1000);
             DBG("EnableGPS  false");
         }
-
     }
 
     float LAT,  LON;
