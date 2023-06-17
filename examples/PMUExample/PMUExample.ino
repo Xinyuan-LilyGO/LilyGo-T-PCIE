@@ -1,35 +1,22 @@
-/*
-MIT License
+/**
+ * @file      PMUExample.ino
+ * @author    Lewis He (lewishe@outlook.com)
+ * @license   MIT
+ * @copyright Copyright (c) 2023  Shenzhen Xin Yuan Electronic Technology Co., Ltd
+ * @date      2023-06-17
+ *
+ */
+#include "XPowersLib.h"
 
-Copyright (c) 2019 lewis he
+#ifndef PMU_WIRE_PORT
+#define PMU_WIRE_PORT   Wire
+#endif
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-*/
-
-#include "axp20x.h"     // https://github.com/lewisxhe/AXP202X_Library.git
-
-AXP20X_Class axp;
+XPowersLibInterface *PMU = NULL;
 const uint8_t i2c_sda = 21;
 const uint8_t i2c_scl = 22;
-const uint8_t slave_address = AXP192_SLAVE_ADDRESS;             //use axp192
-
-void printPowerChannel();
+const uint8_t PMU_IRQ = 35;
+bool pmu_irq = false;
 
 void setup(void)
 {
@@ -37,116 +24,179 @@ void setup(void)
 
     Wire.begin(i2c_sda, i2c_scl);
 
-    Serial.println("AXP192/AXP202 ADC Test");
+    if (!PMU) {
+        PMU = new XPowersAXP2101(PMU_WIRE_PORT);
+        if (!PMU->init()) {
+            Serial.println("Warning: Failed to find AXP2101 power management");
+            delete PMU;
+            PMU = NULL;
+        } else {
+            Serial.println("AXP2101 PMU init succeeded, using AXP2101 PMU");
 
-    /* Initialise the pmu */
-    int ret = axp.begin(Wire, slave_address);
-    if (ret) {
-        /* There was a problem detecting the AXP202/192 ... check your connections */
-        Serial.println("Ooops, AXP202/AXP192 power chip detected ... Check your wiring!");
-        while (1);
+            // Set the minimum common working voltage of the PMU VBUS input,
+            // below this value will turn off the PMU
+            PMU->setVbusCurrentLimit(XPOWERS_AXP2101_VBUS_VOL_LIM_4V36);
+
+            // Set the maximum current of the PMU VBUS input,
+            // higher than this value will turn off the PMU
+            PMU->setVbusCurrentLimit(XPOWERS_AXP2101_VBUS_CUR_LIM_2000MA);
+        }
     }
 
-    /*Enable AXP ADC function*/
-    axp.adc1Enable(AXP202_VBUS_VOL_ADC1 |
-                   AXP202_VBUS_CUR_ADC1 |
-                   AXP202_BATT_CUR_ADC1 |
-                   AXP202_BATT_VOL_ADC1,
-                   true);
+    if (!PMU) {
+        PMU = new XPowersAXP192(PMU_WIRE_PORT);
+        if (!PMU->init()) {
+            Serial.println("Warning: Failed to find AXP192 power management");
+            delete PMU;
+            PMU = NULL;
+        } else {
+            Serial.println("AXP192 PMU init succeeded, using AXP192 PMU");
+        }
+    }
 
-    Serial.println("");
+    while (!PMU) {
+        Serial.println("The address of the power management device was not found. The power communication of this board failed! Please check.");
+        delay(1000);
+    }
 
-    printPowerChannel();
+    // Set VSY off voltage as 2600mV , Adjustment range 2600mV ~ 3300mV
+    PMU->setSysPowerDownVoltage(2600);
+
+    /*
+     * The charging indicator can be turned on or off
+     * * * */
+    PMU->setChargingLedMode(XPOWERS_CHG_LED_BLINK_1HZ);
+
+
+    pinMode(PMU_IRQ, INPUT_PULLUP);
+    attachInterrupt(PMU_IRQ, [] {
+        pmu_irq = true;
+    }, FALLING);
+
+
+    //T-PCI V1.1 Version use AXP192
+    if (PMU->getChipModel() == XPOWERS_AXP192) {
+        /*
+        * The default ESP32 power supply has been turned on,
+        * no need to set, please do not set it, if it is turned off,
+        * it will not be able to program
+        * * * */
+        //protected esp32 power source
+        PMU->setProtectedChannel(XPOWERS_DCDC3);
+        PMU->disablePowerOutput(XPOWERS_DCDC2);
+        PMU->disablePowerOutput(XPOWERS_DCDC3);
+        PMU->disablePowerOutput(XPOWERS_LDO1);
+        PMU->disablePowerOutput(XPOWERS_LDO2);
+
+
+        //T-PCI V1.2 Version use AXP2101
+    } else if (PMU->getChipModel() == XPOWERS_AXP2101) {
+        /*
+         * The default ESP32 power supply has been turned on,
+         * no need to set, please do not set it, if it is turned off,
+         * it will not be able to program
+         * * * */
+        //ESP32 VDD 3300mV ， protected esp32 power source
+        PMU->setProtectedChannel(XPOWERS_DCDC1);
+
+        //Unuse power channel
+        PMU->disablePowerOutput(XPOWERS_DCDC2);
+        PMU->disablePowerOutput(XPOWERS_DCDC3);
+        PMU->disablePowerOutput(XPOWERS_DCDC4);
+        PMU->disablePowerOutput(XPOWERS_DCDC5);
+        PMU->disablePowerOutput(XPOWERS_ALDO1);
+        PMU->disablePowerOutput(XPOWERS_ALDO4);
+        PMU->disablePowerOutput(XPOWERS_BLDO1);
+        PMU->disablePowerOutput(XPOWERS_BLDO2);
+        PMU->disablePowerOutput(XPOWERS_DLDO1);
+        PMU->disablePowerOutput(XPOWERS_DLDO2);
+        PMU->disablePowerOutput(XPOWERS_VBACKUP);
+    }
+
+    PMU->clearIrqStatus();
+
+    PMU->disableInterrupt(XPOWERS_ALL_INT);
+
+    PMU->enableInterrupt(XPOWERS_USB_INSERT_INT |
+                         XPOWERS_USB_REMOVE_INT |
+                         XPOWERS_BATTERY_INSERT_INT |
+                         XPOWERS_BATTERY_REMOVE_INT |
+                         XPOWERS_PWR_BTN_CLICK_INT |
+                         XPOWERS_PWR_BTN_LONGPRESSED_INT);
+
+    // Set the time of pressing the button to turn off
+    PMU->setPowerKeyPressOffTime(XPOWERS_POWEROFF_4S);
+
+
+}
+
+
+void printPmuInfo()
+{
+    static uint32_t lastUpdate = 0;
+    if (millis() > lastUpdate) {
+        lastUpdate = millis() + 3000;
+        Serial.print("isCharging:"); Serial.println(PMU->isCharging() ? "YES" : "NO");
+        Serial.print("isDischarge:"); Serial.println(PMU->isDischarge() ? "YES" : "NO");
+        Serial.print("isVbusIn:"); Serial.println(PMU->isVbusIn() ? "YES" : "NO");
+        Serial.print("getBattVoltage:"); Serial.print(PMU->getBattVoltage()); Serial.println("mV");
+        Serial.print("getVbusVoltage:"); Serial.print(PMU->getVbusVoltage()); Serial.println("mV");
+        Serial.print("getSystemVoltage:"); Serial.print(PMU->getSystemVoltage()); Serial.println("mV");
+
+        // The battery percentage may be inaccurate at first use, the PMU will automatically
+        // learn the battery curve and will automatically calibrate the battery percentage
+        // after a charge and discharge cycle
+        if (PMU->isBatteryConnect()) {
+            Serial.print("getBatteryPercent:"); Serial.print(PMU->getBatteryPercent()); Serial.println("%");
+        }
+        Serial.println();
+    }
 }
 
 void loop(void)
 {
-    Serial.println("=========================");
-    Serial.print("VBUS STATUS: ");
-    // You can use isVBUSPlug to check whether the USB connection is normal
-    if (axp.isVBUSPlug()) {
-
-        Serial.println("CONNECT");
-
-        // Get USB voltage
-        Serial.print("VBUS Volate:");
-        Serial.print(axp.getVbusVoltage());
-        Serial.println(" mV");
-
-        // Get USB current
-        Serial.print("VBUS Current: ");
-        Serial.print(axp.getVbusCurrent());
-        Serial.println(" mA");
-
-    } else {
-        Serial.println("DISCONNECT");
+    if (!PMU) {
+        Serial.println("Error! PMU not found!"); delay(1000);
+        return;
     }
 
-    Serial.println("=========================");
+    printPmuInfo();
 
-    Serial.print("BATTERY STATUS: ");
+    if (pmu_irq) {
+        uint64_t status =  PMU->getIrqStatus();
+        // Get PMU Interrupt Status Register
+        Serial.print("STATUS => HEX:");
+        Serial.print(status, HEX);
+        Serial.print(" BIN:");
+        Serial.println(status, BIN);
 
-    // You can use isBatteryConnect() to check whether the battery is connected properly
-    if (axp.isBatteryConnect()) {
-
-        Serial.println("CONNECT");
-
-        // Get battery voltage
-        Serial.print("BAT Volate:");
-        Serial.print(axp.getBattVoltage());
-        Serial.println(" mV");
-
-        // To display the charging status, you must first discharge the battery,
-        // and it is impossible to read the full charge when it is fully charged
-        if (axp.isChargeing()) {
-            Serial.print("Charge:");
-            Serial.print(axp.getBattChargeCurrent());
-            Serial.println(" mA");
-        } else {
-            // Show current consumption
-            Serial.print("Discharge:");
-            Serial.print(axp.getBattDischargeCurrent());
-            Serial.println(" mA");
-
-            /*getBattPercentage just only support axp202 */
-            if (slave_address == AXP202_SLAVE_ADDRESS) {
-                Serial.print("Per: ");
-                Serial.print(axp.getBattPercentage());
-                Serial.println(" %");
-            }
+        if (PMU->isVbusInsertIrq()) {
+            Serial.println("isVbusInsert");
         }
-    } else {
-        Serial.println("DISCONNECT");
+        if (PMU->isVbusRemoveIrq()) {
+            Serial.println("isVbusRemove");
+        }
+        if (PMU->isBatInsertIrq()) {
+            Serial.println("isBatInsert");
+        }
+        if (PMU->isBatRemoveIrq()) {
+            Serial.println("isBatRemove");
+        }
+        if (PMU->isPekeyShortPressIrq()) {
+            Serial.println("isPekeyShortPress");
+        }
+        if (PMU->isPekeyLongPressIrq()) {
+            Serial.println("isPekeyLongPress");
+        }
+        if (PMU->isBatChagerDoneIrq()) {
+            Serial.println("isBatChagerDone");
+        }
+        if (PMU->isBatChagerStartIrq()) {
+            Serial.println("isBatChagerStart");
+        }
+        // Clear PMU Interrupt Status Register
+        PMU->clearIrqStatus();
+        pmu_irq = false;
     }
-    Serial.println();
-    Serial.println();
-    delay(3000);
 }
 
-
-void printPowerChannel()
-{
-    Serial.print("DC2:");
-    Serial.print(axp.isDCDC2Enable() ? String(axp.getDCDC2Voltage()) + " mv" : "DISABLE");
-    Serial.print("  ");
-
-    Serial.print("DC3:");
-    Serial.print(axp.isDCDC3Enable() ? String(axp.getDCDC3Voltage()) + " mv" : "DISABLE");
-    Serial.print("  ");
-
-    Serial.print("LDO2:");
-    Serial.print(axp.isLDO2Enable() ? String(axp.getLDO2Voltage()) + " mv" : "DISABLE");
-    Serial.print("  ");
-
-    Serial.print("LDO3:");
-    Serial.print(axp.isLDO3Enable() ? String(axp.getLDO3Voltage()) + " mv" : "DISABLE");
-    Serial.print("  ");
-
-    Serial.print("LDO4:");
-    Serial.print(axp.isLDO4Enable() ? "ENABLE" : "DISABLE");
-    Serial.print("  ");
-
-    Serial.print("Exten:");
-    Serial.print(axp.isExtenEnable() ? "ENABLE" : "DISABLE");
-    Serial.print("\r\n");
-}
