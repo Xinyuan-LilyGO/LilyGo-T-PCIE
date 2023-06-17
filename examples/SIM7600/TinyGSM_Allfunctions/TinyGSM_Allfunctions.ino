@@ -66,9 +66,7 @@ Ticker tick;
 #define I2C_SDA                 21
 #define I2C_SCL                 22
 
-#include <axp20x.h>
-AXP20X_Class PMU;
-bool initPMU();
+
 
 void setup()
 {
@@ -76,8 +74,6 @@ void setup()
     SerialMon.begin(115200);
     delay(10);
 
-    Wire.begin(I2C_SDA, I2C_SCL);
-    initPMU();
 
     // Onboard LED light, it can be used freely
     pinMode(LED_PIN, OUTPUT);
@@ -266,68 +262,6 @@ void loop()
     delay(200);
     esp_deep_sleep_start();
 }
-bool initPMU()
-{
-    if (PMU.begin(Wire, AXP192_SLAVE_ADDRESS) == AXP_FAIL) {
-        return false;
-    }
-    /*
-     * The charging indicator can be turned on or off
-     * * * */
-    // PMU.setChgLEDMode(LED_BLINK_4HZ);
-
-    /*
-    * The default ESP32 power supply has been turned on,
-    * no need to set, please do not set it, if it is turned off,
-    * it will not be able to program
-    *
-    *   PMU.setDCDC3Voltage(3300);
-    *   PMU.setPowerOutPut(AXP192_DCDC3, AXP202_ON);
-    *
-    * * * */
-
-    /*
-     *   Turn off unused power sources to save power
-     * **/
-
-    PMU.setPowerOutPut(AXP192_DCDC1, AXP202_OFF);
-    PMU.setPowerOutPut(AXP192_DCDC2, AXP202_OFF);
-    PMU.setPowerOutPut(AXP192_LDO2, AXP202_OFF);
-    PMU.setPowerOutPut(AXP192_LDO3, AXP202_OFF);
-    PMU.setPowerOutPut(AXP192_EXTEN, AXP202_OFF);
-
-    PMU.setDCDC3Voltage(3300);
-    PMU.setPowerOutPut(AXP192_DCDC3, AXP202_ON);
-
-    // PMU.setLDO2Voltage(3300);
-    // PMU.setLDO3Voltage(3300);
-    // PMU.setDCDC1Voltage(3300);
-
-    // PMU.setPowerOutPut(AXP192_DCDC1, AXP202_ON);
-    // PMU.setPowerOutPut(AXP192_LDO2, AXP202_ON);
-    // PMU.setPowerOutPut(AXP192_LDO3, AXP202_ON);
-
-    pinMode(PMU_IRQ, INPUT_PULLUP);
-    attachInterrupt(PMU_IRQ, [] {
-        // pmu_irq = true;
-    }, FALLING);
-
-    PMU.adc1Enable(AXP202_VBUS_VOL_ADC1 |
-                   AXP202_VBUS_CUR_ADC1 |
-                   AXP202_BATT_CUR_ADC1 |
-                   AXP202_BATT_VOL_ADC1,
-                   AXP202_ON);
-
-    PMU.enableIRQ(AXP202_VBUS_REMOVED_IRQ |
-                  AXP202_VBUS_CONNECT_IRQ |
-                  AXP202_BATT_REMOVED_IRQ |
-                  AXP202_BATT_CONNECT_IRQ,
-                  AXP202_ON);
-    PMU.clearIRQ();
-
-    return true;
-}
-
 
 
 
