@@ -84,7 +84,7 @@ void setup(void)
         //protected esp32 power source
         PMU->setProtectedChannel(XPOWERS_DCDC3);
         PMU->disablePowerOutput(XPOWERS_DCDC2);
-        PMU->disablePowerOutput(XPOWERS_DCDC3);
+        PMU->disablePowerOutput(XPOWERS_DCDC1);
         PMU->disablePowerOutput(XPOWERS_LDO1);
         PMU->disablePowerOutput(XPOWERS_LDO2);
 
