@@ -1,5 +1,10 @@
 <h1 align = "center">LilyGO T-PCIE</h1>
 
+# News
+
+- A7670 Series Jump here [LilyGO-T-A76XX](https://github.com/Xinyuan-LilyGO/LilyGO-T-A76XX)
+
+
 
 <h2 align = "left">Product 📷:</h2>
 
