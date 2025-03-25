@@ -34,3 +34,8 @@
    [SIM7600SA Upgrade guidelines ](doc/sim7600SA_update_firmware.md)
 
    [SIM7080 Upgrade guidelines ](doc/sim7080_update_firmware.md)
+
+## 5. Deepsleep current
+
+![Deepsleep](./image/deepsleep.jpg)
+

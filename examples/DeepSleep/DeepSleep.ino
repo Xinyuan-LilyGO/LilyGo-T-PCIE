@@ -30,7 +30,7 @@ void setup(void)
     digitalWrite(LED_PIN, LOW);
 
     Wire.begin(i2c_sda, i2c_scl);
-    if (!power.init(Wire, AXP2101_SLAVE_ADDRESS, i2c_sda, i2c_scl)) {
+    if (!power.init(Wire, i2c_sda, i2c_scl, AXP2101_SLAVE_ADDRESS)) {
         while (1) {
             Serial.println("Warning: Failed to find AXP2101 power management");
             delay(1000);
@@ -94,6 +94,7 @@ void setup(void)
     esp_sleep_enable_timer_wakeup(TIME_TO_SLEEP * uS_TO_S_FACTOR);
     Serial.println("Setup ESP32 to sleep for every " + String(TIME_TO_SLEEP) + " Seconds");
 
+    // ~ 350uA
     Serial.println("Going to sleep now");
     Serial.flush();
     esp_deep_sleep_start();
